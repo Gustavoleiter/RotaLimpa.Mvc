@@ -1,0 +1,45 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RotaLimpa.Mvc.Views.Usuarios.LoginView"
+             Title="LoginView">
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#02A3C7" Offset="0"/>
+            <GradientStop Color="#16A34A" Offset="1"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <Grid VerticalOptions="CenterAndExpand" BackgroundColor="Blue" WidthRequest="450" HeightRequest="500">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Rótulo "Entrar" -->
+        <Label x:Name="informacao" Text="Entrar" FontSize="24" HorizontalOptions="CenterAndExpand" Grid.Row="0" BackgroundColor="Transparent" />
+        
+        <BoxView HeightRequest="1" HorizontalOptions="CenterAndExpand" Grid.Row="1" BackgroundColor="Black" />
+
+        <!-- Barra horizontal -->
+        <BoxView HeightRequest="1" HorizontalOptions="CenterAndExpand" Grid.Row="2" BackgroundColor="Transparent"/>
+
+        <!-- Campos de entrada -->
+        <Entry x:Name="user" Placeholder="Digite seu nome de usuário" Margin="0,10,0,0"
+       WidthRequest="360" Grid.Row="3" BackgroundColor="White" />
+        <Entry x:Name="senha" Placeholder="Digite a senha" Text="{Binding Senha}" IsPassword="True"
+       Margin="0,10,0,0" WidthRequest="360" Grid.Row="5" BackgroundColor="White" />
+
+
+        <!-- Container para os botões -->
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="10" Grid.Row="7">
+            <!-- Botão "Entrar" -->
+            <Button x:Name="btnAutenticar" Text="Entrar" Command="{Binding AutenticarCommand}" Margin="0,100,0,0" WidthRequest="360"/>
+        </StackLayout>
+
+    </Grid>
+</ContentPage>
