@@ -3,10 +3,10 @@ using RotaLimpa.Mvc.ViewModels.Usuarios;
 
 namespace RotaLimpa.Mvc.Views.Usuarios;
 
-public partial class CadastroView : ContentPage
+public partial class CadastroVeiculo : ContentPage
 {
 	UsuarioViewModel viewModel;
-	public CadastroView()
+	public CadastroVeiculo()
 	{
 		InitializeComponent();
 		viewModel = new UsuarioViewModel();
