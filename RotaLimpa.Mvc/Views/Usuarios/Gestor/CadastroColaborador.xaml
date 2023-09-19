@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RotaLimpa.Mvc.Views.Usuarios.Gestor.CadastroColaborador"
+             Title="CadastroColaborador">
+    <Grid>
+        <Grid.RowDefinitions>
+            <!-- Defina a primeira linha para ocupar uma pequena parte superior da tela -->
+            <RowDefinition Height="*" />
+            <!-- Defina a segunda linha para ocupar a maior parte da tela -->
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackLayout Grid.Row="0">
+            <!-- Conteúdo para a primeira linha, se desejar -->
+        </StackLayout>
+
+        <Frame Grid.Row="0" CornerRadius="10" BackgroundColor="White" Margin="0,00,0,0">
+            <StackLayout Padding="0">
+                <!-- Campo de entrada de texto 1 -->
+                <Entry Placeholder="Nome" />
+                <!-- Campo de entrada de texto 2 -->
+                <Entry Placeholder="Email" />
+                <!-- Botões -->
+                <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                    <Button Text="VOLTAR" BackgroundColor="Transparent" BorderColor="#02A3C7" TextColor="#02A3C7" HorizontalOptions="FillAndExpand" Clicked="OnSalvarClicked" />
+                    <Button Text="CADASTRO" BackgroundColor="#02A3C7" TextColor="Black" HorizontalOptions="FillAndExpand" />
+                    <Frame BackgroundColor="Gray" CornerRadius="0" Padding="0">
+                        <Picker x:Name="DropDown" Title="CADASTRO" TextColor="Black" BackgroundColor="Transparent">
+                            <Picker.ItemsSource>
+                                <!-- Defina as opções da lista suspensa aqui -->
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>SETORES</x:String>
+                                    <x:String>VEICULOS</x:String>
+                                    <x:String>COLABORADORES</x:String>
+                                    <x:String>MENU</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </Frame>
+
+
+
+
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>

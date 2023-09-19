@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RotaLimpa.Mvc.Views.Usuarios.Gestor.ListaSetores"
+             Title="ListaSetores">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="End" Padding="0,0,0,0" >
+
+            <Image
+                Source="logo.png"
+                HeightRequest="50"
+                HorizontalOptions="Start"
+                Margin="15,0,0,0"/>
+
+
+            <Button Text="SETORES" TextColor="Black" BackgroundColor="Gray" Margin="350,0,10,0" CornerRadius="0">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#A8A8A8" Offset="0.0" />
+                        <GradientStop Color="Transparent" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Text="MOTORISTAS" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#A8A8A8" Offset="0.0" />
+                        <GradientStop Color="Transparent" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Text="VEICULOS" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#A8A8A8" Offset="0.0" />
+                        <GradientStop Color="Transparent" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <!--<Button Text="CADASTRO" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#A8A8A8" Offset="0.0" />
+                        <GradientStop Color="Transparent" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>-->
+            <Picker x:Name="DropDown" Title="CADASTRO" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0">
+                <Picker.ItemsSource>
+                    <!-- Defina as opções da lista suspensa aqui -->
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>SETORES</x:String>
+                        <x:String>VEICULOS</x:String>
+                        <x:String>COLABORADORES</x:String>
+                        <x:String>MENU</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Button Text="CONTA" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#A8A8A8" Offset="0.0" />
+                        <GradientStop Color="Transparent" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+
+            <Entry Placeholder="PESQUISAR" PlaceholderColor="White" BackgroundColor="#A8A8A8" TextColor="White" WidthRequest="200"  />
+
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+</ContentPage>
