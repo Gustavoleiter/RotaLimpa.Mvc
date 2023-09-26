@@ -37,13 +37,18 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
+<<<<<<< HEAD
             <!--<Button Text="CADASTRO" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0">
+=======
+            <Button Text="CADASTRO" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0">
+>>>>>>> 0b32538c087ce7457fe297acc2ed55ed87597041
                 <Button.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                         <GradientStop Color="#A8A8A8" Offset="0.0" />
                         <GradientStop Color="Transparent" Offset="1.0" />
                     </LinearGradientBrush>
                 </Button.Background>
+<<<<<<< HEAD
             </Button>-->
             <Picker x:Name="DropDown" Title="CADASTRO" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0">
                 <Picker.ItemsSource>
@@ -56,6 +61,9 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
+=======
+            </Button>
+>>>>>>> 0b32538c087ce7457fe297acc2ed55ed87597041
             <Button Text="CONTA" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0">
                 <Button.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">

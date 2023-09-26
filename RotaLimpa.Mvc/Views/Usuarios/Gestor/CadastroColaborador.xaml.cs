@@ -5,6 +5,7 @@ public partial class CadastroColaborador : ContentPage
 	public CadastroColaborador()
 	{
         InitializeComponent();
+<<<<<<< HEAD
         DropDown.SelectedIndexChanged += DropDown_SelectedIndexChanged;
     }
     private async void OnSalvarClicked(object sender, EventArgs e)
@@ -37,4 +38,8 @@ public partial class CadastroColaborador : ContentPage
     }
 
 
+=======
+	}
+   
+>>>>>>> 0b32538c087ce7457fe297acc2ed55ed87597041
 }

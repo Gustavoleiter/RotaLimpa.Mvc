@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RotaLimpa.Mvc.Views.Usuarios.Colaborador.MenuRota"
+<<<<<<< HEAD
              xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
              Title="MenuRota">
     <maps:Map x:Name="mapa" IsShowingUser="True" IsZoomEnabled="True" IsTrafficEnabled="True"
@@ -15,4 +16,13 @@
         </maps:Map.ItemTemplate>
     </maps:Map>
 
+=======
+             Title="MenuRota">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>
+>>>>>>> 0b32538c087ce7457fe297acc2ed55ed87597041
 </ContentPage>

@@ -23,6 +23,7 @@
                 <Entry Placeholder="Email" />
                 <!-- Botões -->
                 <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+<<<<<<< HEAD
                     <Button Text="VOLTAR" BackgroundColor="Transparent" BorderColor="#02A3C7" TextColor="#02A3C7" HorizontalOptions="FillAndExpand" Clicked="OnSalvarClicked" />
                     <Button Text="CADASTRO" BackgroundColor="#02A3C7" TextColor="Black" HorizontalOptions="FillAndExpand" />
                     <Frame BackgroundColor="Gray" CornerRadius="0" Padding="0">
@@ -42,6 +43,10 @@
 
 
 
+=======
+                    <Button Text="VOLTAR" BackgroundColor="Transparent" BorderColor="#02A3C7" TextColor="#02A3C7" HorizontalOptions="FillAndExpand" />
+                    <Button Text="SALVAR" BackgroundColor="#02A3C7" TextColor="Black" HorizontalOptions="FillAndExpand" />
+>>>>>>> 0b32538c087ce7457fe297acc2ed55ed87597041
                 </StackLayout>
             </StackLayout>
         </Frame>

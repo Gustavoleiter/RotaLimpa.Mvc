@@ -5,6 +5,7 @@ public partial class ListaSetores : ContentPage
 	public ListaSetores()
 	{
 		InitializeComponent();
+<<<<<<< HEAD
         DropDown.SelectedIndexChanged += DropDown_SelectedIndexChanged;
     }
     private void DropDown_SelectedIndexChanged(object sender, EventArgs e)
@@ -30,4 +31,7 @@ public partial class ListaSetores : ContentPage
             Navigation.PushAsync(new ListaSetores());
         }
     }
+=======
+	}
+>>>>>>> 0b32538c087ce7457fe297acc2ed55ed87597041
 }
