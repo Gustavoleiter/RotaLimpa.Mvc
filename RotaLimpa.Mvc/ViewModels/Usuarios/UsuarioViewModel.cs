@@ -7,6 +7,7 @@ using System.Windows.Input;
 using RotaLimpa.Mvc.Models;
 using RotaLimpa.Mvc.Services.Usuarios;
 using RotaLimpa.Mvc.Views.Usuarios;
+using RotaLimpa.Mvc.Views.Usuarios.Gestão;
 
 namespace RotaLimpa.Mvc.ViewModels.Usuarios
 {
