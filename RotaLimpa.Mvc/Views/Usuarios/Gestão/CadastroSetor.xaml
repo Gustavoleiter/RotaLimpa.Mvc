@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RotaLimpa.Mvc.Views.Usuarios.Gestão.CadastroSetor"
+             Title="CadastroSetor">
+
+    <ContentPage.Background>
+        <Color>#C3C3C3</Color>
+    </ContentPage.Background>
+
+    <ContentPage.Content>
+
+        <VerticalStackLayout  HorizontalOptions="Center" >
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label Text="CADASTRO DE SETORES" Margin="0,30,0,0" FontSize="36" FontAttributes="Bold" 
+                       HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <BoxView Color="Black" Margin="0,0,0,30" HeightRequest="2" WidthRequest="1200"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="0,40,0,0">
+                <Label FontSize="16" TextColor="Black" Text="PLACA DO VEÍCULO" WidthRequest="380"/>
+                <Label FontSize="16" TextColor="Black" Text="NÚMERO DO SETOR" WidthRequest="360"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Entry FontSize="16" Margin="0,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
+                <Entry FontSize="16" Margin="20,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="0,20,0,0">
+                <Label FontSize="16" TextColor="Black" Text="MOTORISTA 1" WidthRequest="380"/>
+                <Label FontSize="16" TextColor="Black" Text="CPF 1" WidthRequest="360"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Entry FontSize="16" Margin="0,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
+                <Entry FontSize="16" Margin="20,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="0,20,0,0">
+                <Label FontSize="16" TextColor="Black" Text="MOTORISTA 2" WidthRequest="380"/>
+                <Label FontSize="16" TextColor="Black" Text="CPF 2" WidthRequest="360"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Entry FontSize="16" Margin="0,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
+                <Entry FontSize="16" Margin="20,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="0,20,0,0">
+                <Label FontSize="16" TextColor="Black" Text="MOTORISTA 3" WidthRequest="380"/>
+                <Label FontSize="16" TextColor="Black" Text="CPF 3" WidthRequest="360"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Entry FontSize="16" Margin="0,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
+                <Entry FontSize="16" Margin="20,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Button x:Name="btnCancelar" Text="CANCELAR" TextColor="#02A3C7" FontAttributes="Bold" FontSize="18" 
+                        Command="{Binding CancelarCommand}" Margin="0,40,0,0" WidthRequest="360" HeightRequest="55" 
+                        BackgroundColor="Transparent" BorderWidth="1.5" BorderColor="#02A3C7" CornerRadius="2"/>
+                <Button x:Name="btnSalvarSetor" Text="SALVAR" TextColor="Black" FontAttributes="Bold" FontSize="18" 
+                        Command="{Binding SalvarSetorCommand}" Margin="20,40,0,0" WidthRequest="360" HeightRequest="55" 
+                        BackgroundColor="#02A3C7" BorderWidth="1.5" BorderColor="#02A3C7" CornerRadius="2"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+
+    </ContentPage.Content>
+
+
+
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End" Padding="0,0,0,0" >
+            <HorizontalStackLayout>
+                <Image
+                    Source="logo.png"
+                    HeightRequest="40"
+                    HorizontalOptions="End"
+                    Margin="15,0,0,0"/>
+            </HorizontalStackLayout>
+
+            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Button Text="SETORES" TextColor="Black" BackgroundColor="Gray" Margin="150,0,10,0" CornerRadius="0" HeightRequest="40">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="#A8A8A8" Offset="0.0" />
+                            <GradientStop Color="Transparent" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button Text="MOTORISTAS" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0" HeightRequest="40">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="#A8A8A8" Offset="0.0" />
+                            <GradientStop Color="Transparent" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button Text="VEICULOS" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0" HeightRequest="40">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="#A8A8A8" Offset="0.0" />
+                            <GradientStop Color="Transparent" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button Text="CADASTRO" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0" HeightRequest="40">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="#A8A8A8" Offset="0.0" />
+                            <GradientStop Color="Transparent" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button Text="CONTA" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0" HeightRequest="40">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="#A8A8A8" Offset="0.0" />
+                            <GradientStop Color="Transparent" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Margin="0,3.5,0,0">
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Entry Placeholder="PESQUISAR" PlaceholderColor="White" BackgroundColor="#A8A8A8" TextColor="White" WidthRequest="200" HeightRequest="40" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+                
+        </StackLayout>
+    </NavigationPage.TitleView>
+</ContentPage>

@@ -1,4 +1,4 @@
-namespace RotaLimpa.Mvc.Views.Usuarios.Gestor;
+namespace RotaLimpa.Mvc.Views.Usuarios.Gestão;
 
 public partial class CadastroSetor : ContentPage
 {
