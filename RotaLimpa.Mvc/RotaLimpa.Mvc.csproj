@@ -49,44 +49,47 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Fonts\Comfortaa-Bold.ttf" />
-	  <None Remove="Resources\Fonts\Comfortaa-Light.ttf" />
-	  <None Remove="Resources\Fonts\Comfortaa-Medium.ttf" />
-	  <None Remove="Resources\Fonts\Comfortaa-Regular.ttf" />
-	  <None Remove="Resources\Fonts\Comfortaa-SemiBold.ttf" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\Usuarios\Gestor\CadastroVeiculo.xaml.cs">
+	    <DependentUpon>CadastroVeiculo.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\Usuarios\LoginView.xaml.cs">
 	    <DependentUpon>LoginView.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\Usuarios\CadastroView.xaml">
+	  <MauiXaml Update="Views\Usuarios\Colaborador\ListaTurno.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Usuarios\Gestão\CadastroView.xaml">
+	  <MauiXaml Update="Views\Usuarios\Colaborador\MenuRota.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Usuarios\Gestão\CadastroSetor.xaml">
+	  <MauiXaml Update="Views\Usuarios\Gestor\CadastroColaborador.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Usuarios\Gestão\ListaSetores.xaml">
+	  <MauiXaml Update="Views\Usuarios\Gestor\CadastroRota.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Usuarios\Gestor\CadastroSetor.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Usuarios\Gestor\CadastroVeiculo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Usuarios\Gestor\CadastroView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Usuarios\Gestor\ListaSetores.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Usuarios\LoginView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Views\Usuarios\Colaboradores\" />
 	</ItemGroup>
 
 </Project>

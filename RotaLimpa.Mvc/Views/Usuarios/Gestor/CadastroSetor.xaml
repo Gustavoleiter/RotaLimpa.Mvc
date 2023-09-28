@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RotaLimpa.Mvc.Views.Usuarios.Gestão.CadastroSetor"
+             x:Class="RotaLimpa.Mvc.Views.Usuarios.Gestor.CadastroSetor"
+             xmlns:local="clr-namespace:RotaLimpa.Mvc.Views.Usuarios.Gestor"
              Title="CadastroSetor">
+    <!--<NavigationPage.TitleView>
+        <local:MeuCabecalho />
+        --><!-- Use o controle personalizado aqui --><!--
+    </NavigationPage.TitleView>-->
 
     <ContentPage.Background>
         <Color>#C3C3C3</Color>
@@ -36,7 +41,7 @@
                 <Entry FontSize="16" Margin="0,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
                 <Entry FontSize="16" Margin="20,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
             </HorizontalStackLayout>
-            
+
             <HorizontalStackLayout HorizontalOptions="Center" Margin="0,20,0,0">
                 <Label FontSize="16" TextColor="Black" Text="MOTORISTA 2" WidthRequest="380"/>
                 <Label FontSize="16" TextColor="Black" Text="CPF 2" WidthRequest="360"/>
@@ -83,46 +88,46 @@
 
             <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
                 <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                <Button Text="SETORES" TextColor="Black" BackgroundColor="Gray" Margin="150,0,10,0" CornerRadius="0" HeightRequest="40">
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="#A8A8A8" Offset="0.0" />
-                            <GradientStop Color="Transparent" Offset="1.0" />
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-                <Button Text="MOTORISTAS" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0" HeightRequest="40">
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="#A8A8A8" Offset="0.0" />
-                            <GradientStop Color="Transparent" Offset="1.0" />
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-                <Button Text="VEICULOS" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0" HeightRequest="40">
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="#A8A8A8" Offset="0.0" />
-                            <GradientStop Color="Transparent" Offset="1.0" />
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-                <Button Text="CADASTRO" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0" HeightRequest="40">
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="#A8A8A8" Offset="0.0" />
-                            <GradientStop Color="Transparent" Offset="1.0" />
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-                <Button Text="CONTA" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0" HeightRequest="40">
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="#A8A8A8" Offset="0.0" />
-                            <GradientStop Color="Transparent" Offset="1.0" />
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
+                    <Button Text="SETORES" TextColor="Black" BackgroundColor="Gray" Margin="150,0,10,0" CornerRadius="0" HeightRequest="40">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="#A8A8A8" Offset="0.0" />
+                                <GradientStop Color="Transparent" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Text="MOTORISTAS" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0" HeightRequest="40">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="#A8A8A8" Offset="0.0" />
+                                <GradientStop Color="Transparent" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Text="VEICULOS" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0" HeightRequest="40">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="#A8A8A8" Offset="0.0" />
+                                <GradientStop Color="Transparent" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Text="CADASTRO" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0" HeightRequest="40">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="#A8A8A8" Offset="0.0" />
+                                <GradientStop Color="Transparent" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Text="CONTA" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0" HeightRequest="40">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="#A8A8A8" Offset="0.0" />
+                                <GradientStop Color="Transparent" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
                 </HorizontalStackLayout>
             </VerticalStackLayout>
 
@@ -131,7 +136,7 @@
                     <Entry Placeholder="PESQUISAR" PlaceholderColor="White" BackgroundColor="#A8A8A8" TextColor="White" WidthRequest="200" HeightRequest="40" />
                 </HorizontalStackLayout>
             </VerticalStackLayout>
-                
+
         </StackLayout>
     </NavigationPage.TitleView>
 </ContentPage>
