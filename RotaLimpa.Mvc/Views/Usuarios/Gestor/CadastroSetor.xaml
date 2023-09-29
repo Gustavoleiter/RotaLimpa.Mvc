@@ -4,10 +4,9 @@
              x:Class="RotaLimpa.Mvc.Views.Usuarios.Gestor.CadastroSetor"
              xmlns:local="clr-namespace:RotaLimpa.Mvc.Views.Usuarios.Gestor"
              Title="CadastroSetor">
-    <!--<NavigationPage.TitleView>
+    <NavigationPage.TitleView>
         <local:MeuCabecalho />
-        --><!-- Use o controle personalizado aqui --><!--
-    </NavigationPage.TitleView>-->
+    </NavigationPage.TitleView>
 
     <ContentPage.Background>
         <Color>#C3C3C3</Color>
@@ -76,67 +75,5 @@
 
 
 
-    <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End" Padding="0,0,0,0" >
-            <HorizontalStackLayout>
-                <Image
-                    Source="logo.png"
-                    HeightRequest="40"
-                    HorizontalOptions="End"
-                    Margin="15,0,0,0"/>
-            </HorizontalStackLayout>
-
-            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                    <Button Text="SETORES" TextColor="Black" BackgroundColor="Gray" Margin="150,0,10,0" CornerRadius="0" HeightRequest="40">
-                        <Button.Background>
-                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                <GradientStop Color="#A8A8A8" Offset="0.0" />
-                                <GradientStop Color="Transparent" Offset="1.0" />
-                            </LinearGradientBrush>
-                        </Button.Background>
-                    </Button>
-                    <Button Text="MOTORISTAS" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0" HeightRequest="40">
-                        <Button.Background>
-                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                <GradientStop Color="#A8A8A8" Offset="0.0" />
-                                <GradientStop Color="Transparent" Offset="1.0" />
-                            </LinearGradientBrush>
-                        </Button.Background>
-                    </Button>
-                    <Button Text="VEICULOS" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0" HeightRequest="40">
-                        <Button.Background>
-                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                <GradientStop Color="#A8A8A8" Offset="0.0" />
-                                <GradientStop Color="Transparent" Offset="1.0" />
-                            </LinearGradientBrush>
-                        </Button.Background>
-                    </Button>
-                    <Button Text="CADASTRO" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0" HeightRequest="40">
-                        <Button.Background>
-                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                <GradientStop Color="#A8A8A8" Offset="0.0" />
-                                <GradientStop Color="Transparent" Offset="1.0" />
-                            </LinearGradientBrush>
-                        </Button.Background>
-                    </Button>
-                    <Button Text="CONTA" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0" HeightRequest="40">
-                        <Button.Background>
-                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                <GradientStop Color="#A8A8A8" Offset="0.0" />
-                                <GradientStop Color="Transparent" Offset="1.0" />
-                            </LinearGradientBrush>
-                        </Button.Background>
-                    </Button>
-                </HorizontalStackLayout>
-            </VerticalStackLayout>
-
-            <VerticalStackLayout Margin="0,3.5,0,0">
-                <HorizontalStackLayout HorizontalOptions="Center">
-                    <Entry Placeholder="PESQUISAR" PlaceholderColor="White" BackgroundColor="#A8A8A8" TextColor="White" WidthRequest="200" HeightRequest="40" />
-                </HorizontalStackLayout>
-            </VerticalStackLayout>
-
-        </StackLayout>
-    </NavigationPage.TitleView>
+    
 </ContentPage>
