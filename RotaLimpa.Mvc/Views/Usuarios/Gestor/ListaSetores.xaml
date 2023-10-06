@@ -4,69 +4,116 @@
              x:Class="RotaLimpa.Mvc.Views.Usuarios.Gestor.ListaSetores"
              xmlns:local="clr-namespace:RotaLimpa.Mvc.Views.Usuarios.Gestor"
              Title="ListaSetores">
+    
     <NavigationPage.TitleView>
-        <local:MeuCabecalho />
-        <!-- Usando a classe meu cabecalho -->
+        <local:MeuCabecalho/>
     </NavigationPage.TitleView>
-    <!--<NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="End" Padding="0,0,0,0" >
 
-            <Image
-                Source="logo.png"
-                HeightRequest="50"
-                HorizontalOptions="Start"
-                Margin="15,0,0,0"/>
+    <ContentPage.Background>
+        <Color>#C3C3C3</Color>
+    </ContentPage.Background>
 
-
-            <Button Text="SETORES" TextColor="Black" BackgroundColor="Gray" Margin="350,0,10,0" CornerRadius="0">
-                <Button.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                        <GradientStop Color="#A8A8A8" Offset="0.0" />
-                        <GradientStop Color="Transparent" Offset="1.0" />
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
-            <Button Text="MOTORISTAS" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0">
-                <Button.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                        <GradientStop Color="#A8A8A8" Offset="0.0" />
-                        <GradientStop Color="Transparent" Offset="1.0" />
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
-            <Button Text="VEICULOS" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0">
-                <Button.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                        <GradientStop Color="#A8A8A8" Offset="0.0" />
-                        <GradientStop Color="Transparent" Offset="1.0" />
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
-            <Picker x:Name="DropDown" Title="CADASTROS" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" SelectedIndexChanged="DropDown_SelectedIndexChanged">
-                <Picker.ItemsSource>
-                    --><!-- Defina as opções da lista suspensa aqui --><!--
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>COLABORADOR</x:String>
-                        <x:String>VEICULO</x:String>
-                        <x:String>ROTA</x:String>
-                        <x:String>SETOR</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
-
-            <Button Text="CONTA" TextColor="Black" BackgroundColor="Gray" Margin="0,0,10,0" CornerRadius="0">
-                <Button.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                        <GradientStop Color="#A8A8A8" Offset="0.0" />
-                        <GradientStop Color="Transparent" Offset="1.0" />
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
-
-
-            <Entry Placeholder="PESQUISAR" PlaceholderColor="White" BackgroundColor="#A8A8A8" TextColor="White" WidthRequest="200"  />
-
-        </StackLayout>
-    </NavigationPage.TitleView>-->
+    <ContentPage.Content>
+        <ScrollView Padding="0,20,0,0">
+            <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                    <local:frameSetor/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 
 </ContentPage>

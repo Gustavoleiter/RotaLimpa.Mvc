@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RotaLimpa.Mvc.Views.Usuarios.Gestor.ListaMotoristas"
+             xmlns:local="clr-namespace:RotaLimpa.Mvc.Views.Usuarios.Gestor"
+             Title="ListaMotoristas">
+
+    <NavigationPage.TitleView>
+        <local:MeuCabecalho/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Background>
+        <Color>#C3C3C3</Color>
+    </ContentPage.Background>
+
+    <ContentPage.Content>
+        <ScrollView Padding="0,20,0,0">
+            <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                    <local:frameMotorista/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

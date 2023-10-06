@@ -14,12 +14,19 @@
 
     <ContentPage.Content>
 
+
+
         <VerticalStackLayout  HorizontalOptions="Center" >
+            <HorizontalStackLayout>
+                <BoxView Rotation="45"  Color="#02A3C7" Margin="-5,-5,0,0" HeightRequest="10" WidthRequest="10"/>
+                <BoxView Color="#02A3C7" Margin="0,-5,0,0" HeightRequest="2" WidthRequest="1540"/>
+            </HorizontalStackLayout>
+
             <HorizontalStackLayout HorizontalOptions="Center">
                 <Label Text="CADASTRO DE SETORES" Margin="0,30,0,0" FontSize="36" FontAttributes="Bold" 
                        HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" />
             </HorizontalStackLayout>
-            <HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="Center">
                 <BoxView Color="Black" Margin="0,0,0,30" HeightRequest="2" WidthRequest="1200"/>
             </HorizontalStackLayout>
 
@@ -75,5 +82,5 @@
 
 
 
-    
+
 </ContentPage>

@@ -4,76 +4,91 @@
     {
         public MeuCabecalho()
         {
-            var stackLayout = new StackLayout
+            var stackLayout = new HorizontalStackLayout
             {
-                Orientation = StackOrientation.Horizontal,
-                HorizontalOptions = LayoutOptions.End,
-                Padding = new Thickness(0, 0, 0, 0)
+                Padding = new Thickness(0, 0, 0, 0),
+                
             };
 
             var logoImage = new Image
             {
                 Source = "logo.png",
-                HeightRequest = 50,
-                HorizontalOptions = LayoutOptions.Start,
+                HeightRequest = 48,
                 Margin = new Thickness(15, 0, 0, 0)
             };
 
             var setoresButton = new Button
             {
                 Text = "SETORES",
-                TextColor = Color.FromRgb(0, 0, 0), // Cor preta em RGB
-                BackgroundColor = Color.FromRgb(169, 169, 169), // Cinza em RGB
+                FontFamily = "Comfortaa",
+                TextColor = Color.FromRgb(0, 0, 0),
+                BackgroundColor = Color.FromRgb(169, 169, 169),
                 Margin = new Thickness(10, 0, 10, 0),
                 CornerRadius = 0
             };
+            setoresButton.Clicked += async (sender, e) =>
+            {
+                await Application.Current.MainPage.Navigation.PushAsync(new ListaSetores());
+            };
+
 
             var motoristasButton = new Button
             {
                 Text = "MOTORISTAS",
-                TextColor = Color.FromRgb(0, 0, 0), // Cor preta em RGB
-                BackgroundColor = Color.FromRgb(169, 169, 169), // Cinza em RGB
+                FontFamily = "Comfortaa",
+                TextColor = Color.FromRgb(0, 0, 0),
+                BackgroundColor = Color.FromRgb(169, 169, 169),
                 Margin = new Thickness(0, 0, 10, 0),
                 CornerRadius = 0
+            };
+            motoristasButton.Clicked += async (sender, e) =>
+            {
+                await Application.Current.MainPage.Navigation.PushAsync(new ListaMotoristas());
             };
 
             var veiculosButton = new Button
             {
                 Text = "VEICULOS",
-                TextColor = Color.FromRgb(0, 0, 0), // Cor preta em RGB
-                BackgroundColor = Color.FromRgb(169, 169, 169), // Cinza em RGB
+                FontFamily = "Comfortaa",
+                TextColor = Color.FromRgb(0, 0, 0),
+                BackgroundColor = Color.FromRgb(169, 169, 169),
                 Margin = new Thickness(0, 0, 10, 0),
                 CornerRadius = 0
             };
 
             var dropDownPicker = new Picker
             {
-                BindingContext = "CADASTROS",
-                TextColor = Color.FromRgb(0, 0, 0), // Cor preta em RGB
-                BackgroundColor = Color.FromRgb(169, 169, 169), // Cinza em RGB
+                HeightRequest = 48,
+                FontFamily = "Comfortaa",
+                TextColor = Color.FromRgb(0, 0, 0),
+                BackgroundColor = Color.FromRgb(169, 169, 169),
                 Margin = new Thickness(0, 0, 10, 0)
             };
 
-            // Defina a lista de itens para o Picker
+            // Lista de itens para o Picker
             var listaDeCadastros = new List<string>
             {
-                "COLABORADOR",
+                "CADASTRO",
+                "MOTORISTA",
                 "VEICULO",
                 "ROTA",
                 "SETOR"
             };
 
-            // Atribua a lista de itens como a origem dos itens do Picker
-            dropDownPicker.ItemsSource = listaDeCadastros;
-
+            foreach (var item in listaDeCadastros)
+            {
+                dropDownPicker.Items.Add(item);
+            }
+            dropDownPicker.SelectedIndex = 0;
 
             dropDownPicker.SelectedIndexChanged += DropDown_SelectedIndexChanged;
 
             var contaButton = new Button
             {
                 Text = "CONTA",
-                TextColor = Color.FromRgb(0, 0, 0), // Cor preta em RGB
-                BackgroundColor = Color.FromRgb(169, 169, 169), // Cinza em RGB
+                FontFamily = "Comfortaa",
+                TextColor = Color.FromRgb(0, 0, 0),
+                BackgroundColor = Color.FromRgb(169, 169, 169),
                 Margin = new Thickness(0, 0, 10, 0),
                 CornerRadius = 0
             };
@@ -81,10 +96,12 @@
             var pesquisaEntry = new Entry
             {
                 Placeholder = "PESQUISAR",
-                PlaceholderColor = Color.FromRgb(255, 255, 255), // Cor branca em RGB
-                BackgroundColor = Color.FromRgb(169, 169, 169), // Cinza em RGB
-                TextColor = Color.FromRgb(255, 255, 255), // Cor branca em RGB
-                WidthRequest = 200
+                FontFamily = "Comfortaa",
+                PlaceholderColor = Color.FromRgb(0, 0, 0),
+                BackgroundColor = Color.FromRgb(218, 218, 218),
+                TextColor = Color.FromRgb(0, 0, 0),
+                WidthRequest = 250,
+                HeightRequest = 40
             };
 
             stackLayout.Children.Add(logoImage);
@@ -100,7 +117,7 @@
 
         private async void DropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var picker = sender as Picker; // Obtenha a instância correta do Picker
+            var picker = sender as Picker;
 
             if (picker != null)
             {
@@ -108,24 +125,22 @@
 
                 switch (selectedOption)
                 {
-                    case "COLABORADOR":
-                        await Navigation.PushAsync(new CadastroColaborador()); // Substitua "Pagina1" pelo nome da sua página
+                    case "MOTORISTA":
+                        await Navigation.PushAsync(new CadastroColaborador());
                         break;
                     case "VEICULO":
-                        await Navigation.PushAsync(new CadastroVeiculo()); // Substitua "Pagina2" pelo nome da sua página
+                        await Navigation.PushAsync(new CadastroVeiculo());
                         break;
                     case "ROTA":
-                        await Navigation.PushAsync(new CadastroRota()); // Substitua "Pagina3" pelo nome da sua página
+                        await Navigation.PushAsync(new CadastroRota());
                         break;
                     case "SETOR":
-                        await Navigation.PushAsync(new CadastroSetor()); // Substitua "Pagina3" pelo nome da sua página
+                        await Navigation.PushAsync(new CadastroSetor());
                         break;
-                    // Adicione mais casos conforme necessário para outras páginas
                     default:
                         break;
                 }
             }
         }
-
     }
 }

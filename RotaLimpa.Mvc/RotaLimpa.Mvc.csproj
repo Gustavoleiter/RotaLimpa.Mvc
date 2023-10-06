@@ -84,6 +84,9 @@
 	  <MauiXaml Update="Views\Usuarios\Gestor\CadastroView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Usuarios\Gestor\ListaMotoristas.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Usuarios\Gestor\ListaSetores.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
