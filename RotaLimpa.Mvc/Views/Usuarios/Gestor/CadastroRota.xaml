@@ -8,10 +8,65 @@
         <local:MeuCabecalho />
         <!-- Use o controle personalizado aqui -->
     </NavigationPage.TitleView>
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <VerticalStackLayout  HorizontalOptions="Center" >
+        <HorizontalStackLayout>
+            <BoxView Rotation="45"  Color="#02A3C7" Margin="-5,-5,0,0" HeightRequest="10" WidthRequest="10"/>
+            <BoxView Color="#02A3C7" Margin="0,-5,0,0" HeightRequest="2" WidthRequest="1540"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Label Text="CADASTRO DE ROTAS" Margin="0,30,0,0" FontSize="36" FontAttributes="Bold" 
+                       HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <BoxView Color="Black" Margin="0,0,0,30" HeightRequest="2" WidthRequest="1200"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0,40,0,0">
+            <Label FontSize="16" TextColor="Black" Text="NOME DA RUA" WidthRequest="380"/>
+            <Label FontSize="16" TextColor="Black" Text="NÚMERO DO SETOR ASSOCIADO" WidthRequest="360"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Entry FontSize="16" Margin="0,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
+            <Entry FontSize="16" Margin="20,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0,20,0,0">
+            <Label FontSize="16" TextColor="Black" Text="MOTORISTA 1" WidthRequest="380"/>
+            <Label FontSize="16" TextColor="Black" Text="CPF 1" WidthRequest="360"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Entry FontSize="16" Margin="0,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
+            <Entry FontSize="16" Margin="20,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0,20,0,0">
+            <Label FontSize="16" TextColor="Black" Text="MOTORISTA 2" WidthRequest="380"/>
+            <Label FontSize="16" TextColor="Black" Text="CPF 2" WidthRequest="360"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Entry FontSize="16" Margin="0,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
+            <Entry FontSize="16" Margin="20,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0,20,0,0">
+            <Label FontSize="16" TextColor="Black" Text="MOTORISTA 3" WidthRequest="380"/>
+            <Label FontSize="16" TextColor="Black" Text="CPF 3" WidthRequest="360"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Entry FontSize="16" Margin="0,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
+            <Entry FontSize="16" Margin="20,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Button x:Name="btnCancelar" Text="CANCELAR" TextColor="#02A3C7" FontAttributes="Bold" FontSize="18" 
+                        Command="{Binding CancelarCommand}" Margin="0,40,0,0" WidthRequest="360" HeightRequest="55" 
+                        BackgroundColor="Transparent" BorderWidth="1.5" BorderColor="#02A3C7" CornerRadius="2"/>
+            <Button x:Name="btnSalvarSetor" Text="SALVAR" TextColor="Black" FontAttributes="Bold" FontSize="18" 
+                        Command="{Binding SalvarSetorCommand}" Margin="20,40,0,0" WidthRequest="360" HeightRequest="55" 
+                        BackgroundColor="#02A3C7" BorderWidth="1.5" BorderColor="#02A3C7" CornerRadius="2"/>
+        </HorizontalStackLayout>
+
     </VerticalStackLayout>
+
 </ContentPage>

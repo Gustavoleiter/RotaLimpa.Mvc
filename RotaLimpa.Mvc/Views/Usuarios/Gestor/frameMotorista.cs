@@ -8,7 +8,7 @@ public class frameMotorista : ContentView
         {
             MaximumHeightRequest = 190,
             WidthRequest = 250,
-            BackgroundColor = Color.FromRgb(2, 163, 199),
+            BackgroundColor = Color.FromRgb(21, 173, 207),
             Padding = 10,
             HasShadow = false,
             CornerRadius = 5,
@@ -28,7 +28,7 @@ public class frameMotorista : ContentView
                         },
                         new Frame
                         {
-                            CornerRadius = 5,
+                            CornerRadius = 2,
                             BackgroundColor = Color.FromRgb(2, 132, 199),
                             Padding = 5,
                             Content = new StackLayout
