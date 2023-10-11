@@ -7,6 +7,7 @@
             var stackLayout = new HorizontalStackLayout
             {
                 Padding = new Thickness(0, 0, 0, 0),
+                HeightRequest = 50
                 
             };
 
@@ -24,7 +25,7 @@
                 TextColor = Color.FromRgb(0, 0, 0),
                 BackgroundColor = Color.FromRgb(169, 169, 169),
                 Margin = new Thickness(10, 0, 10, 0),
-                CornerRadius = 0
+                CornerRadius = 4
             };
             setoresButton.Clicked += async (sender, e) =>
             {
@@ -39,7 +40,7 @@
                 TextColor = Color.FromRgb(0, 0, 0),
                 BackgroundColor = Color.FromRgb(169, 169, 169),
                 Margin = new Thickness(0, 0, 10, 0),
-                CornerRadius = 0
+                CornerRadius = 4
             };
             motoristasButton.Clicked += async (sender, e) =>
             {
@@ -53,7 +54,7 @@
                 TextColor = Color.FromRgb(0, 0, 0),
                 BackgroundColor = Color.FromRgb(169, 169, 169),
                 Margin = new Thickness(0, 0, 10, 0),
-                CornerRadius = 0
+                CornerRadius = 4
             };
 
             var dropDownPicker = new Picker
@@ -90,7 +91,7 @@
                 TextColor = Color.FromRgb(0, 0, 0),
                 BackgroundColor = Color.FromRgb(169, 169, 169),
                 Margin = new Thickness(0, 0, 10, 0),
-                CornerRadius = 0
+                CornerRadius = 4
             };
 
             var pesquisaEntry = new Entry
@@ -101,7 +102,9 @@
                 BackgroundColor = Color.FromRgb(218, 218, 218),
                 TextColor = Color.FromRgb(0, 0, 0),
                 WidthRequest = 250,
-                HeightRequest = 40
+                HeightRequest = 40,
+                
+                
             };
 
             stackLayout.Children.Add(logoImage);

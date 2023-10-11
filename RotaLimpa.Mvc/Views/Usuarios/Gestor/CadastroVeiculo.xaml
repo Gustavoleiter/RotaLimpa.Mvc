@@ -5,15 +5,24 @@
               xmlns:local="clr-namespace:RotaLimpa.Mvc.Views.Usuarios.Gestor"
              Title="CadastroVeiculo">
 
+
     <NavigationPage.TitleView>
         <local:MeuCabecalho />
+        <!-- Use o controle personalizado aqui -->
     </NavigationPage.TitleView>
-
     <ContentPage.Background>
         <Color>#C3C3C3</Color>
     </ContentPage.Background>
 
     <ContentPage.Content>
+        <!--<StackLayout>
+            <Frame HorizontalOptions="Center" HeightRequest="50" Padding="0">
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <local:MeuCabecalho />
+                </HorizontalStackLayout>
+            </Frame>
+        </StackLayout>-->
+       
 
 
 
