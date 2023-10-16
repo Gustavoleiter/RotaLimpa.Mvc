@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RotaLimpa.Mvc.Views.Usuarios.Colaborador.NavegacaoMapa">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <!-- Conteúdo Principal -->
+            <RowDefinition Height="Auto" />
+            <!-- Barra de Navegação -->
+        </Grid.RowDefinitions>
+
+        <!-- Conteúdo Principal (Adicione aqui seu conteúdo principal) -->
+
+        <!-- Barra de Navegação -->
+        <Grid Grid.Row="1" BackgroundColor="LightGray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <!-- Espaço à Esquerda -->
+                <ColumnDefinition Width="Auto" />
+                <!-- Item de Navegação à Esquerda -->
+                <ColumnDefinition Width="Auto" />
+                <!-- Item de Navegação à Direita -->
+                <ColumnDefinition Width="Auto" />
+                <!-- Item de Navegação à Direita -->
+                <ColumnDefinition Width="*" />
+                <!-- Espaço à Direita -->
+            </Grid.ColumnDefinitions>
+
+            <!-- Espaço à Esquerda -->
+            <BoxView Grid.Column="0" BackgroundColor="LightGray" />
+
+            <!-- Item de Navegação à Esquerda -->
+            <ImageButton Grid.Column="1"
+                         BackgroundColor="Gray"
+                         Source="icone1.png"
+                         />
+
+            <!-- Item de Navegação à Direita -->
+            <ImageButton Grid.Column="2"
+                         BackgroundColor="Gray"
+                         Source="icone2.png"
+                        />
+
+            <!-- Espaço entre os botões -->
+            <BoxView Grid.Column="3" BackgroundColor="LightGray" />
+
+            <!-- Espaço à Direita -->
+            <BoxView Grid.Column="4" BackgroundColor="LightGray" />
+        </Grid>
+    </Grid>
+</ContentView>

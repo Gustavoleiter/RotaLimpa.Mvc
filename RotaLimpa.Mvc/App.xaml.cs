@@ -6,6 +6,6 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new NavigationPage( new Views.Usuarios.Gestor.ListaSetores());
+		MainPage = new NavigationPage( new Views.Usuarios.Colaborador.MapaView());
 	}
 }
