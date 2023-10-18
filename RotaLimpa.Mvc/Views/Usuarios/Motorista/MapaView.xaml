@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RotaLimpa.Mvc.Views.Usuarios.Motorista.MapaView"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+             NavigationPage.HasNavigationBar="False"
+             Title="MapaView">
+
+    <Grid  >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <!-- 10 pixels de borda superior -->
+            <RowDefinition Height="*"/>
+            <!-- Mapa ocupando o espaço restante -->
+            <RowDefinition Height="Auto"/>
+            <!-- Altura automática para a barra de navegação -->
+        </Grid.RowDefinitions>
+
+        <!-- Mapa (substitua pelo seu controle de mapa) -->
+        <Frame Grid.Row="1"  Padding="0">
+            <maps:Map x:Name="mapa" IsShowingUser="True" IsZoomEnabled="True" IsTrafficEnabled="True"
+                  ItemsSource="{Binding MeuMapa}" >
+                <maps:Map.ItemTemplate>
+                    <DataTemplate>
+                        <maps:Pin Location="{Binding Location}"
+                              Address="{Binding Address}"
+                              Label="{Binding Label}" />
+                    </DataTemplate>
+                </maps:Map.ItemTemplate>
+            </maps:Map>
+        </Frame>
+
+        <!-- Barra de navegação -->
+        <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                     Padding="10,0,10,0" Spacing="240"  BackgroundColor="#16A34A" HeightRequest="85">
+
+            <ImageButton Source="call.png" WidthRequest="50" HeightRequest="50" Margin="65,0,0,0"/>
+
+            <ImageButton Source="alert.png" WidthRequest="40" HeightRequest="50"/>
+
+        </StackLayout>
+    </Grid>
+</ContentPage>

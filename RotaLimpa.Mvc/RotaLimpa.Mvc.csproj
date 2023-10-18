@@ -55,7 +55,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\Usuarios\Gestor\CadastroVeiculo.xaml.cs">
+	  <Compile Update="Views\Usuarios\Colaborador\CadastroVeiculo.xaml.cs">
 	    <DependentUpon>CadastroVeiculo.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Views\Usuarios\LoginView.xaml.cs">
@@ -64,37 +64,37 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\Usuarios\Colaborador\ListaTurno.xaml">
+	  <MauiXaml Update="Views\Usuarios\Motorista\ListaTurno.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Usuarios\Colaborador\MapaView.xaml">
+	  <MauiXaml Update="Views\Usuarios\Motorista\MapaView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Usuarios\Colaborador\MenuRota.xaml">
+	  <MauiXaml Update="Views\Usuarios\Motorista\MenuRota.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Usuarios\Colaborador\NavegacaoMapa.xaml">
+	  <MauiXaml Update="Views\Usuarios\Motorista\NavegacaoMapa.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Usuarios\Gestor\CadastroColaborador.xaml">
+	  <MauiXaml Update="Views\Usuarios\Colaborador\CadastroColaborador.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Usuarios\Gestor\CadastroRota.xaml">
+	  <MauiXaml Update="Views\Usuarios\Colaborador\CadastroRota.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Usuarios\Gestor\CadastroSetor.xaml">
+	  <MauiXaml Update="Views\Usuarios\Colaborador\CadastroSetor.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Usuarios\Gestor\CadastroVeiculo.xaml">
+	  <MauiXaml Update="Views\Usuarios\Colaborador\CadastroVeiculo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Usuarios\Gestor\CadastroView.xaml">
+	  <MauiXaml Update="Views\Usuarios\Colaborador\CadastroView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Usuarios\Gestor\ListaMotoristas.xaml">
+	  <MauiXaml Update="Views\Usuarios\Colaborador\ListaMotoristas.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Usuarios\Gestor\ListaSetores.xaml">
+	  <MauiXaml Update="Views\Usuarios\Colaborador\ListaSetores.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Usuarios\LoginView.xaml">
