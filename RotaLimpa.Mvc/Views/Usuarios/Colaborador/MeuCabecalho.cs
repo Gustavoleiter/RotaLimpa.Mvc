@@ -15,7 +15,9 @@ public class MeuCabecalho : ContentView
         {
             Source = "logo.png",
             HeightRequest = 48,
-            Margin = new Thickness(15, 0, 0, 0)
+            Margin = new Thickness(15, 0, 0, 0),
+            MaximumHeightRequest = 48,
+            VerticalOptions = LayoutOptions.Start,
         };
 
         var setoresButton = new Button
@@ -24,8 +26,10 @@ public class MeuCabecalho : ContentView
             FontFamily = "Comfortaa",
             TextColor = Color.FromRgb(0, 0, 0),
             BackgroundColor = Color.FromRgb(169, 169, 169),
-            Margin = new Thickness(10, 0, 10, 0),
-            CornerRadius = 4
+            Margin = new Thickness(150, 0, 10, 0),
+            CornerRadius = 4,
+            HeightRequest = 48,
+            VerticalOptions = LayoutOptions.Start,
         };
         setoresButton.Clicked += async (sender, e) =>
         {
@@ -40,7 +44,9 @@ public class MeuCabecalho : ContentView
             TextColor = Color.FromRgb(0, 0, 0),
             BackgroundColor = Color.FromRgb(169, 169, 169),
             Margin = new Thickness(0, 0, 10, 0),
-            CornerRadius = 4
+            CornerRadius = 4,
+            HeightRequest = 48,
+            VerticalOptions = LayoutOptions.Start,
         };
         motoristasButton.Clicked += async (sender, e) =>
         {
@@ -54,7 +60,9 @@ public class MeuCabecalho : ContentView
             TextColor = Color.FromRgb(0, 0, 0),
             BackgroundColor = Color.FromRgb(169, 169, 169),
             Margin = new Thickness(0, 0, 10, 0),
-            CornerRadius = 4
+            CornerRadius = 4,
+            HeightRequest = 48,
+            VerticalOptions = LayoutOptions.Start,
         };
 
         var dropDownPicker = new Picker
@@ -63,7 +71,8 @@ public class MeuCabecalho : ContentView
             FontFamily = "Comfortaa",
             TextColor = Color.FromRgb(0, 0, 0),
             BackgroundColor = Color.FromRgb(169, 169, 169),
-            Margin = new Thickness(0, 0, 10, 0)
+            Margin = new Thickness(0, 0, 10, 0),
+            VerticalOptions = LayoutOptions.Start,
         };
 
         // Lista de itens para o Picker
@@ -91,7 +100,9 @@ public class MeuCabecalho : ContentView
             TextColor = Color.FromRgb(0, 0, 0),
             BackgroundColor = Color.FromRgb(169, 169, 169),
             Margin = new Thickness(0, 0, 10, 0),
-            CornerRadius = 4
+            CornerRadius = 4,
+            HeightRequest = 48,
+            VerticalOptions = LayoutOptions.Start,
         };
 
         var pesquisaEntry = new Entry
@@ -103,8 +114,8 @@ public class MeuCabecalho : ContentView
             TextColor = Color.FromRgb(0, 0, 0),
             WidthRequest = 250,
             HeightRequest = 40,
-            
-            
+            VerticalOptions = LayoutOptions.Start,
+
         };
 
         stackLayout.Children.Add(logoImage);

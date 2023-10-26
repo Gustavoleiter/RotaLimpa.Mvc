@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RotaLimpa.Mvc.Views.Usuarios.Motorista.DetalhesMenu"
+             xmlns:local="clr-namespace:RotaLimpa.Mvc.Views.Usuarios.Motorista"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+             NavigationPage.HasNavigationBar="False"
+             Title="DetalhesMenu">
+
+    <ContentPage.BackgroundColor>
+        <Color>#DDDDDD</Color>
+    </ContentPage.BackgroundColor>
+
+    <ScrollView>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <HorizontalStackLayout Grid.Row="0" WidthRequest="350">
+                <ImageButton x:Name="MenuBtn" Source="logo2.png" HeightRequest="50" WidthRequest="50"/>
+            </HorizontalStackLayout>
+
+            <VerticalStackLayout Grid.Row="1">
+                <Frame BackgroundColor="#16A34A" HeightRequest="300" WidthRequest="350" Margin="0,30,0,0">
+                    <VerticalStackLayout>
+                        <StackLayout>
+                            <Label Text="SETOR: " FontSize="20" FontFamily="Comfortaa" TextColor="White"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="ESPAÇO: " FontSize="14" FontFamily="Comfortaa" TextColor="Transparent"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="PLACA: " FontSize="20" FontFamily="Comfortaa" TextColor="White"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="ESPAÇO: " FontSize="14" FontFamily="Comfortaa" TextColor="Transparent"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="MOTORISTA: " FontSize="20" FontFamily="Comfortaa" TextColor="White"/>
+                            <Label Text="NRO ID: " FontSize="14" FontFamily="Comfortaa" TextColor="White"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="ESPAÇO: " FontSize="14" FontFamily="Comfortaa" TextColor="Transparent"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="PROGRESSO: " FontSize="20" FontFamily="Comfortaa" TextColor="White"/>
+                            <Label Text="HORA INICIO: " FontSize="14" FontFamily="Comfortaa" TextColor="White"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="ESPAÇO: " FontSize="22" FontFamily="Comfortaa" TextColor="Transparent"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="ROTA ATUALIZADA EM: " FontSize="18" FontFamily="Comfortaa" TextColor="White"/>
+                        </StackLayout>
+                        
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+
+            <StackLayout Grid.Row="2">
+                <Frame BackgroundColor="#16A34A" WidthRequest="350" Margin="0,30,0,30">
+                    <VerticalStackLayout >
+                        <Button WidthRequest="340" HeightRequest="50" Text="001 NOME DA RUA" TextColor="#6A6A6A" FontSize="18" FontAttributes="Bold"
+                                Margin="0,40,0,0"/>
+                        <Button WidthRequest="340" HeightRequest="50" Text="002 NOME DA RUA" TextColor="#6A6A6A" FontSize="18" FontAttributes="Bold" 
+                                Margin="0,15,0,0"/>
+                        <Button WidthRequest="340" HeightRequest="50" Text="003 NOME DA RUA" TextColor="#6A6A6A" FontSize="18" FontAttributes="Bold" 
+                                Margin="0,15,0,0"/>
+                        <Button WidthRequest="340" HeightRequest="50" Text="004 NOME DA RUA" TextColor="#6A6A6A" FontSize="18" FontAttributes="Bold" 
+                                Margin="0,15,0,0"/>
+                        <Button WidthRequest="340" HeightRequest="50" Text="005 NOME DA RUA" TextColor="#6A6A6A" FontSize="18" FontAttributes="Bold" 
+                                Margin="0,15,0,0"/>
+                        <Button WidthRequest="340" HeightRequest="50" Text="006 NOME DA RUA" TextColor="#6A6A6A" FontSize="18" FontAttributes="Bold" 
+                                Margin="0,15,0,0"/>
+                        <Button WidthRequest="340" HeightRequest="50" Text="007 NOME DA RUA" TextColor="#6A6A6A" FontSize="18" FontAttributes="Bold" 
+                                Margin="0,15,0,0"/>
+                        <Button WidthRequest="340" HeightRequest="50" Text="008 NOME DA RUA" TextColor="#6A6A6A" FontSize="18" FontAttributes="Bold" 
+                                Margin="0,15,0,0"/>
+                        <Button WidthRequest="340" HeightRequest="50" Text="009 NOME DA RUA" TextColor="#6A6A6A" FontSize="18" FontAttributes="Bold" 
+                                Margin="0,15,0,0"/>
+                        <Button WidthRequest="340" HeightRequest="50" Text="010 NOME DA RUA" TextColor="#6A6A6A" FontSize="18" FontAttributes="Bold" 
+                                Margin="0,15,0,0"/>
+                        <Button WidthRequest="340" HeightRequest="50" Text="011 NOME DA RUA" TextColor="#6A6A6A" FontSize="18" FontAttributes="Bold" 
+                                Margin="0,15,0,0"/>
+                        <Button WidthRequest="340" HeightRequest="50" Text="012 NOME DA RUA" TextColor="#6A6A6A" FontSize="18" FontAttributes="Bold" 
+                                Margin="0,15,0,0"/>
+                        <Button WidthRequest="340" HeightRequest="50" Text="013 NOME DA RUA" TextColor="#6A6A6A" FontSize="18" FontAttributes="Bold" 
+                                Margin="0,15,0,0"/>
+                        <Button WidthRequest="340" HeightRequest="50" Text="014 NOME DA RUA" TextColor="#6A6A6A" FontSize="18" FontAttributes="Bold" 
+                                Margin="0,15,0,0"/>
+                        <Button WidthRequest="340" HeightRequest="50" Text="015 NOME DA RUA" TextColor="#6A6A6A" FontSize="18" FontAttributes="Bold" 
+                                Margin="0,15,0,0"/>
+                        <Button WidthRequest="340" HeightRequest="50" Text="016 NOME DA RUA" TextColor="#6A6A6A" FontSize="18" FontAttributes="Bold" 
+                                Margin="0,15,0,0"/>
+                        <Button WidthRequest="340" HeightRequest="50" Text="017 NOME DA RUA" TextColor="#6A6A6A" FontSize="18" FontAttributes="Bold" 
+                                Margin="0,15,0,0"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </StackLayout>
+            
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

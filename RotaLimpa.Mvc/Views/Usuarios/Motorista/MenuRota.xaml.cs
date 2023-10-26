@@ -2,8 +2,20 @@ namespace RotaLimpa.Mvc.Views.Usuarios.Motorista;
 
 public partial class MenuRota : ContentPage
 {
-	public MenuRota()
-	{
-		InitializeComponent();
-	}
+    public MenuRota()
+    {
+        InitializeComponent();
+        DetalhesBtn.Clicked += AbrirDetalhes;
+        IniciarBtn.Clicked += AbrirMapa;
+    }
+
+    private async void AbrirDetalhes(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new RotaLimpa.Mvc.Views.Usuarios.Motorista.DetalhesMenu());
+    }
+
+    private async void AbrirMapa(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new RotaLimpa.Mvc.Views.Usuarios.Motorista.MapaView());
+    }
 }

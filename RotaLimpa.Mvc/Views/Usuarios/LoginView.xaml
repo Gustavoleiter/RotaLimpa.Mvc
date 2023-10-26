@@ -3,42 +3,51 @@
              x:Class="RotaLimpa.Mvc.Views.Usuarios.LoginView"
              Title="LoginView"
              NavigationPage.HasNavigationBar="False">
-    
+
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#02A3C7" Offset="0"/>
             <GradientStop Color="#16A34A" Offset="1"/>
         </LinearGradientBrush>
     </ContentPage.Background>
+
+    <ContentPage.Content>
     
-    <Frame WidthRequest="540" HeightRequest="500" BackgroundColor="#0080C1" VerticalOptions="Center" >
-    <Grid >
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="10"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="10"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+    <AbsoluteLayout HorizontalOptions="Center" VerticalOptions="Center">
+            
+            <Frame WidthRequest="450" HeightRequest="500" BackgroundColor="#0080C1" AbsoluteLayout.LayoutBounds="0.5,0.5,-2,-2" AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-        <Label x:Name="informacao" Text="ENTRAR" TextColor="White" FontSize="24" FontAttributes="Bold"  HorizontalOptions="CenterAndExpand" Grid.Row="0" BackgroundColor="Transparent" Margin="0,10,0,0" />
+                <Label x:Name="informacao" Text="ENTRAR" TextColor="White" FontSize="24" FontAttributes="Bold"  HorizontalOptions="CenterAndExpand" Grid.Row="0" BackgroundColor="Transparent" Margin="0,10,0,0" />
 
-            <BoxView HeightRequest="2" WidthRequest="500" Color="White" HorizontalOptions="FillAndExpand" Margin="0,10,0,80" Grid.Row="1"/>
-
-
-            <Entry x:Name="user" Placeholder="NRO IDENTIFICAÇÃO" FontSize="16" Margin="0,10,0,0" WidthRequest="460" HeightRequest="55" Grid.Row="3" BackgroundColor="White" TextColor="#A8A8A8"/>
-            <Entry x:Name="senha" Placeholder="SENHA" FontSize="16" Text="{Binding Senha}" IsPassword="True" Margin="0,10,0,0" WidthRequest="460" HeightRequest="55" Grid.Row="5" BackgroundColor="White" TextColor="#A8A8A8"/>
+                <BoxView HeightRequest="2" WidthRequest="500" Color="White" HorizontalOptions="FillAndExpand" Margin="0,10,0,80" Grid.Row="1"/>
 
 
-        <!-- Container para os botões -->
-        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="7">
-            <!-- Botão "Entrar" -->
-                <Button x:Name="btnAutenticar" Text="ENTRAR" TextColor="#0080C1" FontAttributes="Bold" FontSize="18" Command="{Binding AutenticarCommand}" Margin="0,100,0,0" WidthRequest="460" HeightRequest="55" BackgroundColor="#32C84A" CornerRadius="2"/>
-        </StackLayout>
+                <Entry x:Name="user" Placeholder="  IDENTIFICAÇÃO" FontSize="16" Margin="0,10,0,0" WidthRequest="350" HeightRequest="55" Grid.Row="3" BackgroundColor="White" TextColor="#A8A8A8"/>
+                <Entry x:Name="senha" Placeholder="  SENHA" FontSize="16" Text="{Binding Senha}" IsPassword="True" Margin="0,10,0,0" WidthRequest="350" HeightRequest="55" Grid.Row="5" BackgroundColor="White" TextColor="#A8A8A8"/>
 
-    </Grid>
-    </Frame>
+
+                <!-- Container para os botões -->
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="7">
+                    <!-- Botão "Entrar" -->
+                    <Button x:Name="btnAutenticar" Text="ENTRAR" TextColor="#0080C1" FontAttributes="Bold" FontSize="20" 
+                            Command="{Binding AutenticarCommand}" Margin="0,100,0,0" WidthRequest="350" HeightRequest="55" 
+                            BackgroundColor="#32C84A" CornerRadius="2" Clicked="btnAutenticarClicked"/>
+                </StackLayout>
+
+            </Grid>
+        </Frame>
+    </AbsoluteLayout>
+
+    </ContentPage.Content>
 </ContentPage>

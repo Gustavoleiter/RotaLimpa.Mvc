@@ -16,11 +16,7 @@
 
 
 
-        <VerticalStackLayout  HorizontalOptions="Center" >
-            <HorizontalStackLayout>
-                <BoxView Rotation="45"  Color="#02A3C7" Margin="-5,-5,0,0" HeightRequest="10" WidthRequest="10"/>
-                <BoxView Color="#02A3C7" Margin="0,-5,0,0" HeightRequest="2" WidthRequest="1540"/>
-            </HorizontalStackLayout>
+        <VerticalStackLayout  HorizontalOptions="Center">
 
             <HorizontalStackLayout HorizontalOptions="Center">
                 <Label Text="CADASTRO DE SETORES" Margin="0,30,0,0" FontSize="36" FontAttributes="Bold" 

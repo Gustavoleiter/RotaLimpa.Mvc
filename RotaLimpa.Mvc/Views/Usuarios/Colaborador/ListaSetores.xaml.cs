@@ -5,7 +5,7 @@ public partial class ListaSetores : ContentPage
 	public ListaSetores()
 	{
 		InitializeComponent();
-	}
+    }
     
 
 }

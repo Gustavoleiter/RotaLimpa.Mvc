@@ -1,34 +1,31 @@
-﻿using System;
+﻿using RotaLimpa.Mvc.Models;
+using RotaLimpa.Mvc.Services.Motoristas;
+using RotaLimpa.Mvc.Views.Usuarios.Colaborador;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using RotaLimpa.Mvc.Models;
-using RotaLimpa.Mvc.Services.Usuarios;
-using RotaLimpa.Mvc.Views.Usuarios.Colaborador;
 
-namespace RotaLimpa.Mvc.ViewModels.Usuarios
+namespace RotaLimpa.Mvc.ViewModels.Motoristas
 {
-    public class UsuarioViewModel : BaseViewModel
+    public class MotoristaViewModel : BaseViewModel
     {
-        private UsuarioService uService;
+        private MotoristaService uService;
 
         public ICommand RegistarCommand { get; set; }
-        public ICommand AutenticarCommand { get; set; }
         public ICommand DirecionarCadastroCommand { get; set; }
 
-        public UsuarioViewModel()
+        public MotoristaViewModel()
         {
-            uService = new UsuarioService();
+            uService = new MotoristaService();
             InicializarCommands();
 
         }
-
         public void InicializarCommands()
         {
-            //RegistarCommand = new Command(async () => await RegistrarUsuario());
-            //AutenticarCommand = new Command(async () => await AutenticarUsuario());
+            RegistarCommand = new Command(async () => await RegistrarMotorista());
             DirecionarCadastroCommand = new Command(async () => await DirecionarParaCadastro());
         }
 
@@ -42,31 +39,31 @@ namespace RotaLimpa.Mvc.ViewModels.Usuarios
         { get { return senha; } set { senha = value; OnPropertyChanged(); } }
 
 
-        //public async Task RegistrarUsuario()//Método para registrar um usuário     
-        //{
-        //    try
-        //    {
-        //        Usuario u = new Usuario();
-        //        u.Username = Login;
-        //        u.PasswordString = Senha;
+        public async Task RegistrarMotorista()//Método para registrar um usuário     
+        {
+            try
+            {
+                Motorista u = new Motorista();
+                u.StMotorista = Login;
+                u.NomeMotorista = Senha;
 
-        //        Usuario uRegistrado = await uService.PostRegistrarUsuarioAsync(u);
+                Motorista uRegistrado = await uService.PostRegistrarMotoristaAsync(u);
 
-        //        if (uRegistrado.Id != 0)
-        //        {
-        //            string mensagem = $"Usuário Id {uRegistrado.Id} registrado com sucesso.";
-        //            await Application.Current.MainPage.DisplayAlert("Informação", mensagem, "Ok");
+                if (uRegistrado.IdMotorista != 0)
+                {
+                    string mensagem = $"Usuário Id {uRegistrado.IdMotorista} registrado com sucesso.";
+                    await Application.Current.MainPage.DisplayAlert("Informação", mensagem, "Ok");
 
-        //            await Application.Current.MainPage
-        //                .Navigation.PopAsync();//Remove a página da pilha de visualização
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        await Application.Current.MainPage
-        //            .DisplayAlert("Informação", ex.Message + " Detalhes: " + ex.InnerException, "Ok");
-        //    }
-        //}
+                    await Application.Current.MainPage
+                        .Navigation.PopAsync();//Remove a página da pilha de visualização
+                }
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage
+                    .DisplayAlert("Informação", ex.Message + " Detalhes: " + ex.InnerException, "Ok");
+            }
+        }
 
 
         //public async Task AutenticarUsuario()//Método para autenticar um usuário     
@@ -111,7 +108,7 @@ namespace RotaLimpa.Mvc.ViewModels.Usuarios
         {
             try
             {
-                await Application.Current.MainPage.Navigation.PushAsync(new CadastroView());
+                await Application.Current.MainPage.Navigation.PushAsync(new CadastroColaborador());
             }
             catch (Exception ex)
             {

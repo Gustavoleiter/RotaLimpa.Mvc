@@ -2,42 +2,39 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RotaLimpa.Mvc.Views.Usuarios.Motorista.MapaView"
+             xmlns:local="clr-namespace:RotaLimpa.Mvc.Views.Usuarios.Motorista"
              xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
              NavigationPage.HasNavigationBar="False"
              Title="MapaView">
 
-    <Grid  >
-        <Grid.RowDefinitions>
-            <RowDefinition Height="10" />
-            <!-- 10 pixels de borda superior -->
-            <RowDefinition Height="*"/>
-            <!-- Mapa ocupando o espaço restante -->
-            <RowDefinition Height="Auto"/>
-            <!-- Altura automática para a barra de navegação -->
-        </Grid.RowDefinitions>
+    <ContentPage.BackgroundColor>
+        <Color>#DDDDDD</Color>
+    </ContentPage.BackgroundColor>
 
-        <!-- Mapa (substitua pelo seu controle de mapa) -->
-        <Frame Grid.Row="1"  Padding="0">
-            <maps:Map x:Name="mapa" IsShowingUser="True" IsZoomEnabled="True" IsTrafficEnabled="True"
-                  ItemsSource="{Binding MeuMapa}" >
-                <maps:Map.ItemTemplate>
-                    <DataTemplate>
-                        <maps:Pin Location="{Binding Location}"
-                              Address="{Binding Address}"
-                              Label="{Binding Label}" />
-                    </DataTemplate>
-                </maps:Map.ItemTemplate>
-            </maps:Map>
-        </Frame>
+    <ContentPage.Content>
+        <Grid BackgroundColor="#DDDDDD" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="{OnPlatform Android=80, iOS=100}"/>
+            </Grid.RowDefinitions>
 
-        <!-- Barra de navegação -->
-        <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="FillAndExpand"
-                     Padding="10,0,10,0" Spacing="240"  BackgroundColor="#16A34A" HeightRequest="85">
+            <maps:Map Grid.Row="0" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" IsShowingUser="True" IsZoomEnabled="True" IsTrafficEnabled="True"/>
+            <FlexLayout Grid.Row="1" BackgroundColor="#16A34A" Direction="Row" 
+                        AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <ImageButton Style="{StaticResource MyImgBtn}" Source="call.png" WidthRequest="50" Margin="40,5,0,0" Clicked="AbrirFrame"/>
 
-            <ImageButton Source="call.png" WidthRequest="50" HeightRequest="50" Margin="65,0,0,0"/>
+                <Button BackgroundColor="Transparent" FlexLayout.Grow="1"/>
 
-            <ImageButton Source="alert.png" WidthRequest="40" HeightRequest="50"/>
+                <ImageButton Style="{StaticResource MyImgBtn}" Source="alert.png" WidthRequest="45" Margin="0,5,45,0" Clicked="AbrirFrame2"/>
+            </FlexLayout>
 
-        </StackLayout>
-    </Grid>
+            <ImageButton x:Name="MenuBtn" Source="logo2.png" HeightRequest="50" WidthRequest="50" HorizontalOptions="Start" VerticalOptions="Start"/>
+
+            <local:framePhone IsVisible="false" x:Name="framePhone"/>
+            <local:frameAlert IsVisible="false" x:Name="frameAlert"/>
+
+        </Grid>
+
+    </ContentPage.Content>
+    
 </ContentPage>

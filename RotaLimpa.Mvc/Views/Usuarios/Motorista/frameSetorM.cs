@@ -1,42 +1,30 @@
-using Microsoft.Maui;
+﻿using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 
-namespace RotaLimpa.Mvc.Views.Usuarios.Colaborador;
+namespace RotaLimpa.Mvc.Views.Usuarios.Motorista;
 
-public class frameSetor : ContentView
+public class frameSetorM : ContentView
 {
-    public frameSetor()
+    public frameSetorM()
     {
         var frame = new Frame
         {
-            MaximumHeightRequest = 250,
-            WidthRequest = 250,
-            BackgroundColor = Color.FromRgb(2, 163, 199),
+            HeightRequest = 300,
+            WidthRequest = 350,
+            BackgroundColor = Color.FromRgb(161, 219, 182),
             Padding = 10,
             HasShadow = false,
-            CornerRadius = 5,
+            CornerRadius = 2,
+            Margin = new Thickness(0, 15, 0, 0),
             Content = new StackLayout
             {
                 Spacing = 10,
                 Children = {
-                    /*new Frame
-                    {
-                        WidthRequest = 100,
-                        CornerRadius = 5,
-                        Padding = 5,
-                        Content = new Button
-                        {
-                            BackgroundColor = Color.FromRgb(2, 132, 199),
-                            Text = "Detalhes",
-                            TextColor = Color.FromRgb(0, 0, 0),
-                            FontSize = 14,
-                        }
-                    },*/
                     new Label
                     {
                         FontAttributes = FontAttributes.Bold,
                         Text = "SETOR: ",
-                        FontSize = 18,
+                        FontSize = 20,
                         FontFamily = "Comfortaa",
                         TextColor = Color.FromRgb(0, 0, 0),
                         HorizontalOptions = LayoutOptions.Start
@@ -45,7 +33,7 @@ public class frameSetor : ContentView
                     {
                         Text = "PLACA: ",
                         FontAttributes = FontAttributes.Bold,
-                        FontSize = 16,
+                        FontSize = 20,
                         FontFamily = "Comfortaa",
                         TextColor = Color.FromRgb(0, 0, 0),
                         HorizontalOptions = LayoutOptions.Start
@@ -55,29 +43,32 @@ public class frameSetor : ContentView
                         Color = Color.FromRgb(0, 0, 0),
                         HeightRequest = 2,
                         CornerRadius = 5,
-                        WidthRequest = 230
+                        WidthRequest = 400
                     },
                     new Label
                     {
                         Text = "MOTORISTAS",
-                        FontSize = 16,
+                        FontSize = 20,
                         FontFamily = "Comfortaa",
                         TextColor = Color.FromRgb(0, 0, 0),
-                        HorizontalOptions = LayoutOptions.Start
+                        HorizontalOptions = LayoutOptions.Start,
+                        Margin = new Thickness(0, 15, 0, 0)
                     },
                     new Frame
                     {
-                        CornerRadius = 5,
-                        BackgroundColor = Color.FromRgb(2, 132, 199),
+                        HeightRequest = 130,
+                        CornerRadius = 2,
+                        BackgroundColor = Color.FromRgb(22, 163, 74),
                         Padding = 5,
-                        Content = new StackLayout
+                        Content = new VerticalStackLayout
                         {
-                            Spacing = 10,
+                            VerticalOptions = LayoutOptions.Center,
+                            Spacing = 20,
                             Children =
                             {
-                                new Label { Text = "MOTORISTA 1", FontSize = 12, TextColor = Color.FromRgb(0, 0, 0), FontFamily = "Comfortaa" },
-                                new Label { Text = "MOTORISTA 2", FontSize = 12, TextColor = Color.FromRgb(0, 0, 0), FontFamily = "Comfortaa" },
-                                new Label { Text = "MOTORISTA 3", FontSize = 12, TextColor = Color.FromRgb(0, 0, 0), FontFamily = "Comfortaa" }
+                                new Label { Text = "MOTORISTA 1", FontSize = 16, TextColor = Color.FromRgb(0, 0, 0), FontFamily = "Comfortaa" },
+                                new Label { Text = "MOTORISTA 2", FontSize = 16, TextColor = Color.FromRgb(0, 0, 0), FontFamily = "Comfortaa" },
+                                new Label { Text = "MOTORISTA 3", FontSize = 16, TextColor = Color.FromRgb(0, 0, 0), FontFamily = "Comfortaa" }
                             }
                         }
                     }

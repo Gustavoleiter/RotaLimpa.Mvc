@@ -2,12 +2,53 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RotaLimpa.Mvc.Views.Usuarios.Motorista.MenuRota"
-             
+             xmlns:local="clr-namespace:RotaLimpa.Mvc.Views.Usuarios.Motorista"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+             NavigationPage.HasNavigationBar="False"
              Title="MenuRota">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+    <ContentPage.BackgroundColor>
+        <Color>#DDDDDD</Color>
+    </ContentPage.BackgroundColor>
+
+    <StackLayout>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <VerticalStackLayout Grid.Row="0">
+                <Frame BackgroundColor="#A0DDB7" HeightRequest="200" WidthRequest="350" Margin="0,30,0,0">
+                    <VerticalStackLayout>
+                        <StackLayout>
+                            <Label Text="SETOR: " FontSize="22" FontFamily="Comfortaa" TextColor="Black"/>
+                            <Label Text="PLACA: " FontSize="22" FontFamily="Comfortaa" TextColor="Black"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="ESPAÇO: " FontSize="28" FontFamily="Comfortaa" TextColor="Transparent"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="MOTORISTA: " FontSize="22" FontFamily="Comfortaa" TextColor="Black"/>
+                            <Label Text="Rota atualizada em: " FontSize="22" FontFamily="Comfortaa" TextColor="Black"/>
+                        </StackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="1" >
+                <Frame Margin="0,50,0,0" HeightRequest="250" WidthRequest="350" BackgroundColor="#16A34A">
+                    <maps:Map HeightRequest="235" WidthRequest="335" IsShowingUser="True" IsZoomEnabled="True" IsTrafficEnabled="True"/>
+                </Frame>
+            </VerticalStackLayout>
+
+            <HorizontalStackLayout Grid.Row="2" WidthRequest="350" >
+                <Button x:Name="IniciarBtn" Text="INICIAR" FontSize="18" TextColor="Black" BackgroundColor="#16A34A" WidthRequest="150" HeightRequest="50" CornerRadius="0" Margin="0,50,0,0"/>
+                <Button Text="INICIAR" FontSize="18" TextColor="Transparent" BackgroundColor="Transparent" WidthRequest="50"/>
+                <Button x:Name="DetalhesBtn" Text="DETALHES" FontSize="18" TextColor="#16A34A" BackgroundColor="Transparent" WidthRequest="150" HeightRequest="50" CornerRadius="0" BorderWidth="2" BorderColor="#16A34A" Margin="0,50,0,0"/>
+            </HorizontalStackLayout>
+        </Grid>
+    </StackLayout>
+    
 </ContentPage>
