@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace RotaLimpa.Mvc.Models.Enum
 {
-    internal class TiposOcorrencia
+    public enum OcorrenciaEnum
     {
+        Colisão = 1,
+        Feita = 2,
+        ArvoreCaida = 3,
+        SemSaida = 4
     }
 }

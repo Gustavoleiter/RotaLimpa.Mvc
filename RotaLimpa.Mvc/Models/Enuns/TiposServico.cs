@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RotaLimpa.Mvc.Models.Enum
+namespace RotaLimpa.Mvc.Models.Enuns
 {
-    internal class TiposServico
+    public enum ServicoEnum
     {
+        ColetarVarricao = 1,
+        ColetarLixo = 2,
+        Coleta = 3
     }
 }

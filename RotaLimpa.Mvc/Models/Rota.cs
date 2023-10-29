@@ -8,8 +8,6 @@ namespace RotaLimpa.Mvc.Models
 {
     public class Rota
     {
-        
-
         public int IdRota { get; set; }
 
         public int ColaboradorId { get; set; }
