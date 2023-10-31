@@ -105,8 +105,4 @@
 	  </MauiXaml>
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Services\Colaboradores\" />
-	</ItemGroup>
-
 </Project>
