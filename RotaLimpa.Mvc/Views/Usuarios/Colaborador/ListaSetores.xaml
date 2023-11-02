@@ -9,12 +9,18 @@
         <local:MeuCabecalho/>
     </NavigationPage.TitleView>
 
-    <ContentPage.Background>
+    <!--<ContentPage.Background>
         <Color>#C3C3C3</Color>
-    </ContentPage.Background>
+    </ContentPage.Background>-->
 
     <ContentPage.Content>
-        <ScrollView Padding="0,20,0,0">
+        <StackLayout>
+            <Label Text="{Binding Id}" />
+            <Label Text="oi"/>
+            <Label Text="{Binding ColaboradorId}" />
+            <!-- Adicione outras propriedades que deseja exibir -->
+        </StackLayout>
+        <!--<ScrollView Padding="0,20,0,0">
             <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
                 <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
                     <local:frameSetor/>
@@ -113,7 +119,7 @@
                     <local:frameSetor/>
                 </HorizontalStackLayout>
             </VerticalStackLayout>
-        </ScrollView>
+        </ScrollView>-->
     </ContentPage.Content>
 
 </ContentPage>
