@@ -15,7 +15,16 @@
 
     <ContentPage.Content>
         <ScrollView Padding="0,20,0,0">
-            <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
+            <ListView x:Name="listaSetores">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Nome}" />
+                        <!-- Substitua "Nome" pelo nome da propriedade que você deseja exibir na lista -->
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!--<VerticalStackLayout HorizontalOptions="Center" Spacing="10">
                 <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
                     <local:frameSetor/>
                     <local:frameSetor/>
@@ -112,7 +121,7 @@
                     <local:frameSetor/>
                     <local:frameSetor/>
                 </HorizontalStackLayout>
-            </VerticalStackLayout>
+            </VerticalStackLayout>-->
         </ScrollView>
     </ContentPage.Content>
 

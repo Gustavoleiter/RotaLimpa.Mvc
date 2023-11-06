@@ -17,7 +17,7 @@
         <ScrollView Padding="0,20,0,0">
             <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
                 <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameMotorista/>
+                    <local:frameMotorista/> 
                     <local:frameMotorista/>
                     <local:frameMotorista/>
                     <local:frameMotorista/>
