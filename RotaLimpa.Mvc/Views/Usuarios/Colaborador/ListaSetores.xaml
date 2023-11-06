@@ -9,11 +9,12 @@
         <local:MeuCabecalho/>
     </NavigationPage.TitleView>
 
-    <ContentPage.Background>
+    <!--<ContentPage.Background>
         <Color>#C3C3C3</Color>
-    </ContentPage.Background>
+    </ContentPage.Background>-->
 
     <ContentPage.Content>
+<<<<<<< HEAD
         <ScrollView Padding="0,20,0,0">
             <ListView x:Name="listaSetores">
                 <ListView.ItemTemplate>
@@ -25,6 +26,16 @@
             </ListView>
 
             <!--<VerticalStackLayout HorizontalOptions="Center" Spacing="10">
+=======
+        <StackLayout>
+            <Label Text="{Binding Id}" />
+            <Label Text="oi"/>
+            <Label Text="{Binding ColaboradorId}" />
+            <!-- Adicione outras propriedades que deseja exibir -->
+        </StackLayout>
+        <!--<ScrollView Padding="0,20,0,0">
+            <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
+>>>>>>> 84eb21e8e13be8d463f8a5c17d114d97f1b362c8
                 <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
                     <local:frameSetor/>
                     <local:frameSetor/>
@@ -121,8 +132,13 @@
                     <local:frameSetor/>
                     <local:frameSetor/>
                 </HorizontalStackLayout>
+<<<<<<< HEAD
             </VerticalStackLayout>-->
         </ScrollView>
+=======
+            </VerticalStackLayout>
+        </ScrollView>-->
+>>>>>>> 84eb21e8e13be8d463f8a5c17d114d97f1b362c8
     </ContentPage.Content>
 
 </ContentPage>
