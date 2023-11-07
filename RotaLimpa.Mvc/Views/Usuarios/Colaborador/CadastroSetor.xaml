@@ -8,7 +8,15 @@
         <local:MeuCabecalho />
     </NavigationPage.TitleView>
 
-    <ContentPage.Background>
+
+    <StackLayout Padding="20">
+        <Entry Placeholder="ColaboradorId" Text="{Binding Setor.ColaboradorId}" />
+        <Entry Placeholder="EmpresaId" Text="{Binding Setor.EmpresaId}" />
+        <!-- Outros campos do setor, se houver -->
+
+        <Button Text="Cadastrar" Clicked="OnCadastrarClicked" />
+    </StackLayout>
+    <!--<ContentPage.Background>
         <Color>#C3C3C3</Color>
     </ContentPage.Background>
 
@@ -73,7 +81,7 @@
 
         </VerticalStackLayout>
 
-    </ContentPage.Content>
+    </ContentPage.Content>-->
 
 
 

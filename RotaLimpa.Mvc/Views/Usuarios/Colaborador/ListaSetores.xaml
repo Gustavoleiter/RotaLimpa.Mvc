@@ -5,33 +5,25 @@
              x:Class="RotaLimpa.Mvc.Views.Usuarios.Colaborador.ListaSetores"
              BindingContext="{x:Static viewModel:ListagemSetorViewModel.Instance}">
 
-
     <ContentPage.Content>
-
-        <ListView ItemsSource="{Binding Setores}">
-            <ListView.ItemTemplate>
+        <CollectionView x:Name="listasetores" ItemsSource="{Binding Setores}">
+            <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
+                    <Grid Padding="10">
                         <Frame CornerRadius="10"
                                BorderColor="Black"
                                HasShadow="True"
-                               BackgroundColor="White"
-                               Padding="10"
-                               Margin="10">
-
-   
+                               BackgroundColor="White">
 
                             <StackLayout Spacing="10">
                                 <Label Text="{Binding Id}"
                                        FontAttributes="Bold"
                                        FontSize="18"
-                                       FontFamily="Comfortaa"
                                        TextColor="Black" />
 
                                 <Label Text="{Binding TipoServico}"
                                        FontAttributes="Bold"
                                        FontSize="16"
-                                       FontFamily="Comfortaa"
                                        TextColor="Black" />
 
                                 <BoxView Color="Black"
@@ -41,7 +33,6 @@
 
                                 <Label Text="MOTORISTAS"
                                        FontSize="16"
-                                       FontFamily="Comfortaa"
                                        TextColor="Black" />
 
                                 <Frame CornerRadius="5"
@@ -51,24 +42,20 @@
                                     <StackLayout Spacing="10">
                                         <Label Text="{Binding Colaborador}"
                                                FontSize="12"
-                                               TextColor="Black"
-                                               FontFamily="Comfortaa" />
+                                               TextColor="Black" />
                                         <Label Text="{Binding Colaborador}"
                                                FontSize="12"
-                                               TextColor="Black"
-                                               FontFamily="Comfortaa" />
+                                               TextColor="Black" />
                                         <Label Text="{Binding Colaborador}"
                                                FontSize="12"
-                                               TextColor="Black"
-                                               FontFamily="Comfortaa" />
+                                               TextColor="Black" />
                                     </StackLayout>
                                 </Frame>
                             </StackLayout>
                         </Frame>
-                    </ViewCell>
+                    </Grid>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </ContentPage.Content>
 </ContentPage>
-        

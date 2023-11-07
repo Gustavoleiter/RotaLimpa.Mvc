@@ -40,35 +40,17 @@ namespace AppRpgEtec.ViewModels.Setores
         {
             try
             {
-                if (setorService != null)
-                {
-                    Setores = await setorService.GetSetoresAsync();
-                    OnPropertyChanged(nameof(Setores));
-                }
-                else
-                {
-                    // Trate o caso em que setorService é null
-                    // Por exemplo, exiba uma mensagem de erro ou inicialize setorService novamente.
-                }
+                Setores = await setorService.GetSetoresAsync();
+                OnPropertyChanged(nameof(Setores));
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Ops", ex.Message, "Ok");
+                // Trate erros aqui, como exibir uma mensagem de erro para o usuário
+                Console.WriteLine($"Erro ao obter setores: {ex.Message}");
             }
-        }
+       }
+    
 
-        //public async Task ObterSetores()
-        //{
-        //    try
-        //    {
-        //        Setores = await setorService.GetSetoresAsync();
-        //        OnPropertyChanged(nameof(Setores));
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        await Application.Current.MainPage.DisplayAlert("Ops", ex.Message + "Detalhes: " + ex.InnerException, "ok");
-        //    }
-        //}
 
         public async Task ExibirCadastroSetor()
         {
@@ -102,6 +84,7 @@ namespace AppRpgEtec.ViewModels.Setores
                 await Application.Current.MainPage.DisplayAlert("Ops", ex.Message + "Detalhes: " + ex.InnerException, "Ok");
             }
         }
+
         private static ListagemSetorViewModel _instance;
 
         public static ListagemSetorViewModel Instance
@@ -115,6 +98,7 @@ namespace AppRpgEtec.ViewModels.Setores
                 return _instance;
             }
         }
+
     }
 }
 

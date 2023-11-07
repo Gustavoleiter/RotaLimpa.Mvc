@@ -19,6 +19,6 @@ public partial class ListaSetores : ContentPage
     {
         await viewModel.ObterSetores();
         // Atribuir a lista de setores à propriedade ItemsSource do seu controle de lista (ListView)
-        listaSetores.ItemsSource = viewModel.Setores;
+        listasetores.ItemsSource = viewModel.Setores;
     }
 }
