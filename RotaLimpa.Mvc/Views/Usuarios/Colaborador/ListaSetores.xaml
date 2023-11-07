@@ -1,125 +1,71 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:AppRpgEtec.ViewModels.Setores"
              x:Class="RotaLimpa.Mvc.Views.Usuarios.Colaborador.ListaSetores"
-             xmlns:local="clr-namespace:RotaLimpa.Mvc.Views.Usuarios.Colaborador"
-             Title="ListaSetores">
-    
-    <NavigationPage.TitleView>
-        <local:MeuCabecalho/>
-    </NavigationPage.TitleView>
+             BindingContext="{x:Static viewModel:ListagemSetorViewModel.Instance}">
 
-    <!--<ContentPage.Background>
-        <Color>#C3C3C3</Color>
-    </ContentPage.Background>-->
 
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="{Binding Id}" />
-            <Label Text="oi"/>
-            <Label Text="{Binding ColaboradorId}" />
-            <!-- Adicione outras propriedades que deseja exibir -->
-        </StackLayout>
-        <!--<ScrollView Padding="0,20,0,0">
-            <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                    <local:frameSetor/>
-                </HorizontalStackLayout>
-            </VerticalStackLayout>
-        </ScrollView>-->
-    </ContentPage.Content>
+        <ListView ItemsSource="{Binding Setores}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame CornerRadius="10"
+                               BorderColor="Black"
+                               HasShadow="True"
+                               BackgroundColor="White"
+                               Padding="10"
+                               Margin="10">
 
+                            <StackLayout Spacing="10">
+                                <Label Text="{Binding Id}"
+                                       FontAttributes="Bold"
+                                       FontSize="18"
+                                       FontFamily="Comfortaa"
+                                       TextColor="Black" />
+
+                                <Label Text="{Binding TipoServico}"
+                                       FontAttributes="Bold"
+                                       FontSize="16"
+                                       FontFamily="Comfortaa"
+                                       TextColor="Black" />
+
+                                <BoxView Color="Black"
+                                         HeightRequest="2"
+                                         CornerRadius="5"
+                                         WidthRequest="230" />
+
+                                <Label Text="MOTORISTAS"
+                                       FontSize="16"
+                                       FontFamily="Comfortaa"
+                                       TextColor="Black" />
+
+                                <Frame CornerRadius="5"
+                                       BackgroundColor="#0284C7"
+                                       Padding="5">
+
+                                    <StackLayout Spacing="10">
+                                        <Label Text="{Binding Colaborador}"
+                                               FontSize="12"
+                                               TextColor="Black"
+                                               FontFamily="Comfortaa" />
+                                        <Label Text="{Binding Colaborador}"
+                                               FontSize="12"
+                                               TextColor="Black"
+                                               FontFamily="Comfortaa" />
+                                        <Label Text="{Binding Colaborador}"
+                                               FontSize="12"
+                                               TextColor="Black"
+                                               FontFamily="Comfortaa" />
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
 </ContentPage>
+        

@@ -1,5 +1,6 @@
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
+using RotaLimpa.Mvc.Services.Setores;
 
 namespace RotaLimpa.Mvc.Views.Usuarios.Colaborador;
 
@@ -75,7 +76,7 @@ public class frameSetor : ContentView
                             Spacing = 10,
                             Children =
                             {
-                                new Label { Text = "MOTORISTA 1", FontSize = 12, TextColor = Color.FromRgb(0, 0, 0), FontFamily = "Comfortaa" },
+                                new Label { Text = {}, FontSize = 12, TextColor = Color.FromRgb(0, 0, 0), FontFamily = "Comfortaa" },
                                 new Label { Text = "MOTORISTA 2", FontSize = 12, TextColor = Color.FromRgb(0, 0, 0), FontFamily = "Comfortaa" },
                                 new Label { Text = "MOTORISTA 3", FontSize = 12, TextColor = Color.FromRgb(0, 0, 0), FontFamily = "Comfortaa" }
                             }
