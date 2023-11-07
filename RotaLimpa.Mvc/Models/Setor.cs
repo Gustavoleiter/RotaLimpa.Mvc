@@ -20,5 +20,6 @@ namespace RotaLimpa.Mvc.Models
         public string StSetor { get; set; }
         public Colaborador Colaborador { get; set; }
         public Empresa Empresa { get; set; }
+        public List<Rota> Rotas { get; set; }
     }
 }
