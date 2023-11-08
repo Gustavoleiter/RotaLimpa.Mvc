@@ -1,6 +1,6 @@
 ﻿using RotaLimpa.Mvc.Models;
 using RotaLimpa.Mvc.Services.Setores;
-
+   
 
 namespace RotaLimpa.Mvc.ViewModels.Setores
 {

@@ -9,7 +9,25 @@
         <local:MeuCabecalho />
     </NavigationPage.TitleView>
 
-    <ContentPage.Background>
+    <ContentPage.Content>
+        <CollectionView ItemsSource="{Binding Setores}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" Margin="5" BackgroundColor="#EDEDED" CornerRadius="10">
+                        <StackLayout>
+                            <Label Text="{Binding Nome}" FontAttributes="Bold" FontSize="18"/>
+                            <Label Text="{Binding TipoServico}" FontSize="16"/>
+                            <Label Text="{Binding DataInicio, StringFormat='Data de Início: {0:dd/MM/yyyy}'}" FontSize="14"/>
+                            <Label Text="{Binding DataFim, StringFormat='Data de Fim: {0:dd/MM/yyyy}'}" FontSize="14"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>
+
+<!--<ContentPage.Background>
         <Color>#C3C3C3</Color>
     </ContentPage.Background>
 
@@ -69,4 +87,4 @@
 
     </ContentPage.Content>
 
-</ContentPage>
+</ContentPage>-->

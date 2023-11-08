@@ -11,29 +11,30 @@ namespace RotaLimpa.Mvc.ViewModels.Colaboradores
 { 
     public class ListagemColaboradorViewModel : BaseViewModel
     {
-        private ColaboradorService pService;
-        
+        private readonly ColaboradorService colaboradorService;
+
         public ObservableCollection<Colaborador> Colaboradores { get; set; }
 
-        public ListagemColaboradorViewModel() 
+        public ListagemColaboradorViewModel()
         {
-            pService = new ColaboradorService();
+            colaboradorService = new ColaboradorService();
             Colaboradores = new ObservableCollection<Colaborador>();
-            _= ObterColaboradores();
+            _ = ObterColaboradores();
         }
+
         public async Task ObterColaboradores()
         {
             try
             {
-                Colaboradores = await pService.GetColaboradoresAsync();
+                Colaboradores = await colaboradorService.GetColaboradoresAsync();
                 OnPropertyChanged(nameof(Colaboradores));
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Ops", ex.Message + "Detalhes: " + ex.InnerException, "ok");
+                await Application.Current.MainPage.DisplayAlert("Ops", "Erro ao obter a lista de colaboradores: " + ex.Message, "OK");
             }
         }
 
-       
+
     }
 }
