@@ -1,61 +1,32 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModel="clr-namespace:AppRpgEtec.ViewModels.Setores"
-             x:Class="RotaLimpa.Mvc.Views.Usuarios.Colaborador.ListaSetores"
-             BindingContext="{x:Static viewModel:ListagemSetorViewModel.Instance}">
+             xmlns:local="clr-namespace:RotaLimpa.Mvc.Views.Usuarios.Colaborador"
+             x:Class="RotaLimpa.Mvc.Views.Usuarios.Colaborador.ListaSetores">
+    <NavigationPage.TitleView>
+        <local:MeuCabecalho />
+        <!-- Use o controle personalizado aqui -->
+    </NavigationPage.TitleView>
 
     <ContentPage.Content>
-        <CollectionView x:Name="listasetores" ItemsSource="{Binding Setores}">
+        <CollectionView ItemsSource="{Binding Setores}" VerticalOptions="FillAndExpand">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+            </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Padding="10">
-                        <Frame CornerRadius="10"
-                               BorderColor="Black"
-                               HasShadow="True"
-                               BackgroundColor="White">
-
-                            <StackLayout Spacing="10">
-                                <Label Text="{Binding Id}"
-                                       FontAttributes="Bold"
-                                       FontSize="18"
-                                       TextColor="Black" />
-
-                                <Label Text="{Binding TipoServico}"
-                                       FontAttributes="Bold"
-                                       FontSize="16"
-                                       TextColor="Black" />
-
-                                <BoxView Color="Black"
-                                         HeightRequest="2"
-                                         CornerRadius="5"
-                                         WidthRequest="230" />
-
-                                <Label Text="MOTORISTAS"
-                                       FontSize="16"
-                                       TextColor="Black" />
-
-                                <Frame CornerRadius="5"
-                                       BackgroundColor="#0284C7"
-                                       Padding="5">
-
-                                    <StackLayout Spacing="10">
-                                        <Label Text="{Binding Colaborador}"
-                                               FontSize="12"
-                                               TextColor="Black" />
-                                        <Label Text="{Binding Colaborador}"
-                                               FontSize="12"
-                                               TextColor="Black" />
-                                        <Label Text="{Binding Colaborador}"
-                                               FontSize="12"
-                                               TextColor="Black" />
-                                    </StackLayout>
-                                </Frame>
-                            </StackLayout>
-                        </Frame>
-                    </Grid>
+                    <Frame Padding="10" Margin="10" BackgroundColor="#EDEDED" CornerRadius="10">
+                        <StackLayout>
+                            <Label Text="{Binding Nome}" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center"/>
+                            <Label Text="{Binding TipoServico}" FontSize="18" HorizontalOptions="Center"/>
+                            <Label Text="{Binding DiSetor, StringFormat='Data Inicial: {0:dd/MM/yyyy}'}" FontSize="16" HorizontalOptions="Center"/>
+                            <Label Text="{Binding DaSetor, StringFormat='Data Final: {0:dd/MM/yyyy}'}" FontSize="16" HorizontalOptions="Center"/>
+                            <!-- Adicione mais labels conforme necessário para outras propriedades do setor -->
+                        </StackLayout>
+                    </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
     </ContentPage.Content>
+
 </ContentPage>

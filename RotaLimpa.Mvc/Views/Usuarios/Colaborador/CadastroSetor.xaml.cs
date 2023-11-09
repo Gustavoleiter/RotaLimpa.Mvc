@@ -1,18 +1,21 @@
 using RotaLimpa.Mvc.ViewModels.Setores;
 
-namespace RotaLimpa.Mvc.Views.Usuarios.Colaborador;
-
-public partial class CadastroSetor : ContentPage
+namespace RotaLimpa.Mvc.Views.Usuarios.Colaborador
 {
-	private CadastroSetorViewModel viewModel;
-	public CadastroSetor()
-	{
-		InitializeComponent();
-		viewModel = new CadastroSetorViewModel();
-		BindingContext = viewModel;
-	}
-    private async void OnCadastrarClicked(object sender, EventArgs e)
+    public partial class CadastroSetor : ContentPage
     {
-        await viewModel.CadastrarSetor();
+        private CadastroSetorViewModel viewModel;
+
+        public CadastroSetor()
+        {
+            InitializeComponent();
+            viewModel = new CadastroSetorViewModel();
+            BindingContext = viewModel; // Atribuir a instância de viewModel ao BindingContext
+        }
+
+        private async void OnCadastrarClicked(object sender, EventArgs e)
+        {
+            await viewModel.CadastrarSetor();
+        }
     }
 }

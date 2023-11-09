@@ -140,7 +140,7 @@ public class MeuCabecalho : ContentView
             switch (selectedOption)
             {
                 case "MOTORISTA":
-                    await Navigation.PushAsync(new CadastroColaborador());
+                    await Navigation.PushAsync(new CadastroMotorista());
                     break;
                 case "VEICULO":
                     await Navigation.PushAsync(new CadastroVeiculo());

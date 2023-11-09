@@ -1,24 +1,19 @@
-using AppRpgEtec.ViewModels.Setores;
+
 using RotaLimpa.Mvc.ViewModels;
+using RotaLimpa.Mvc.ViewModels.Setores;
 
 namespace RotaLimpa.Mvc.Views.Usuarios.Colaborador;
 
 public partial class ListaSetores : ContentPage
 {
-    private ListagemSetorViewModel viewModel;
+    
 
     public ListaSetores()
     {
         InitializeComponent();
-        viewModel = new ListagemSetorViewModel();
-        BindingContext = viewModel;
-        CarregarSetores();
+         BindingContext = new ListagemSetorViewModel();
+       
     }
 
-    private async void CarregarSetores()
-    {
-        await viewModel.ObterSetores();
-        // Atribuir a lista de setores à propriedade ItemsSource do seu controle de lista (ListView)
-        listasetores.ItemsSource = viewModel.Setores;
-    }
+    
 }

@@ -10,6 +10,7 @@ namespace RotaLimpa.Mvc.Services
 {
     public class Request
     {
+
         public async Task<int> PostReturnIntAsync<TResult>(string uri, TResult data)
         {
             HttpClient httpClient = new HttpClient();
@@ -25,16 +26,34 @@ namespace RotaLimpa.Mvc.Services
 
         public async Task<TResult> PostAsync<TResult>(string uri, TResult data)
         {
-            HttpClient httpClient = new HttpClient();
-            var content = new StringContent(JsonConvert.SerializeObject(data));
-            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            HttpResponseMessage response = await httpClient.PostAsync(uri, content);
-            string serialized = await response.Content.ReadAsStringAsync();
-            TResult result = data;
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                result = await Task.Run(() => JsonConvert.DeserializeObject<TResult>(serialized));
-            return result;
+            try
+            {
+                using (HttpClient httpClient = new HttpClient())
+                {
+                    var content = new StringContent(JsonConvert.SerializeObject(data));
+                    content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                    HttpResponseMessage response = await httpClient.PostAsync(uri, content);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string serialized = await response.Content.ReadAsStringAsync();
+                        return JsonConvert.DeserializeObject<TResult>(serialized);
+                    }
+                    else
+                    {
+                        // Tratar códigos de erro específicos aqui e lançar exceções apropriadas se necessário
+                        throw new HttpRequestException($"Erro ao chamar a API: {response.StatusCode}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Trate exceções aqui, registre ou lance para cima conforme necessário
+                throw ex;
+            }
         }
+
 
         public async Task<int> PutAsync<TResult>(string uri, TResult data)
         {

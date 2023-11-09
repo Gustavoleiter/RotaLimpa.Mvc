@@ -4,19 +4,38 @@
              x:Class="RotaLimpa.Mvc.Views.Usuarios.Colaborador.CadastroSetor"
              xmlns:local="clr-namespace:RotaLimpa.Mvc.Views.Usuarios.Colaborador"
              Title="CadastroSetor">
+    
     <NavigationPage.TitleView>
         <local:MeuCabecalho />
     </NavigationPage.TitleView>
 
 
-    <StackLayout Padding="20">
-        <Entry Placeholder="ColaboradorId" Text="{Binding Setor.ColaboradorId}" />
-        <Entry Placeholder="EmpresaId" Text="{Binding Setor.EmpresaId}" />
-        <!-- Outros campos do setor, se houver -->
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Entry Placeholder="Nome do Setor" Text="{Binding Nome}" />
+            <Picker Title="Tipo de Serviço" SelectedItem="{Binding TipoServico}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Opção 1</x:String>
+                        <x:String>Opção 2</x:String>
+                        <!-- Adicione outras opções conforme necessário -->
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Label Text="Data Inicial: " />
+            <Label Text="{Binding DiSetor, StringFormat='{0:dd/MM/yyyy}'}" FontSize="16" />
+            <Label Text="Data Final: " />
+            <DatePicker Format="dd/MM/yyyy" Date="{Binding DaSetor}" />
 
-        <Button Text="Cadastrar" Clicked="OnCadastrarClicked" />
-    </StackLayout>
-    <!--<ContentPage.Background>
+            <Button Text="Cadastrar" Command="{Binding CadastrarSetorCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
+
+
+
+<!--<ContentPage.Background>
         <Color>#C3C3C3</Color>
     </ContentPage.Background>
 
@@ -87,4 +106,3 @@
 
 
 
-</ContentPage>

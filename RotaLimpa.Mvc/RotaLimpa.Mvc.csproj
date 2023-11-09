@@ -64,6 +64,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\Usuarios\Colaborador\CadastroMotorista.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Usuarios\Motorista\ListaTurno.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

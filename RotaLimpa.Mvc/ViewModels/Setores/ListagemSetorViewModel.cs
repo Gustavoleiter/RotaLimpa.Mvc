@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace AppRpgEtec.ViewModels.Setores
+namespace RotaLimpa.Mvc.ViewModels.Setores
 {
     public class ListagemSetorViewModel : BaseViewModel
     {

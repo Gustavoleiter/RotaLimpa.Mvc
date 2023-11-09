@@ -1,6 +1,6 @@
 ﻿using RotaLimpa.Mvc.Models;
 using RotaLimpa.Mvc.Services.Setores;
-   
+using System.Windows.Input;
 
 namespace RotaLimpa.Mvc.ViewModels.Setores
 {
@@ -10,11 +10,20 @@ namespace RotaLimpa.Mvc.ViewModels.Setores
 
         public Setor Setor { get; set; }
 
+
+        public ICommand CadastrarSetorCommand { get; private set; }
+
+
         public CadastroSetorViewModel()
         {
             setorService = new SetorService();
             Setor = new Setor();
+            DiSetor = DateTime.Now;
+
+            CadastrarSetorCommand = new Command(async () => await CadastrarSetor());
         }
+
+        public DateTime DiSetor { get; set; }
 
         public async Task CadastrarSetor()
         {

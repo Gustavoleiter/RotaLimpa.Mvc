@@ -8,7 +8,20 @@
         <local:MeuCabecalho />
         <!-- Use o controle personalizado aqui -->
     </NavigationPage.TitleView>
-    <VerticalStackLayout  HorizontalOptions="Center" >
+
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Entry Placeholder="Colaborador ID" Text="{Binding Rota.ColaboradorId}" Keyboard="Numeric" />
+            <Entry Placeholder="Setor ID" Text="{Binding Rota.SetorId}" Keyboard="Numeric" />
+            <!--<DatePicker Placeholder="Data da Rota" Date="{Binding Rota.DtRota}" />
+            <TimePicker Placeholder="Hora da Rota" Time="{Binding Rota.TmRota}" />-->
+
+            <Button Text="Cadastrar Rota" Command="{Binding CadastrarRotaCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
+<!--<VerticalStackLayout  HorizontalOptions="Center" >
         <HorizontalStackLayout>
             <BoxView Rotation="45"  Color="#02A3C7" Margin="-5,-5,0,0" HeightRequest="10" WidthRequest="10"/>
             <BoxView Color="#02A3C7" Margin="0,-5,0,0" HeightRequest="2" WidthRequest="1540"/>
@@ -69,4 +82,4 @@
 
     </VerticalStackLayout>
 
-</ContentPage>
+</ContentPage>-->
