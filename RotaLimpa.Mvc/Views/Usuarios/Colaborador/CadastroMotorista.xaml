@@ -2,7 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RotaLimpa.Mvc.Views.Usuarios.Colaborador.CadastroMotorista"
+               xmlns:local="clr-namespace:RotaLimpa.Mvc.Views.Usuarios.Colaborador"
              Title="Cadastro de Motorista">
+
+    <NavigationPage.TitleView>
+        <local:MeuCabecalho />
+        <!-- Use o controle personalizado aqui -->
+    </NavigationPage.TitleView>
     
     <StackLayout Padding="20">
         <Entry Placeholder="Nome do Motorista" Text="{Binding NomeMotorista}" />

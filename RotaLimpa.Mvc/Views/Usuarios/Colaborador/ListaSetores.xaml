@@ -7,15 +7,14 @@
         <local:MeuCabecalho />
         <!-- Use o controle personalizado aqui -->
     </NavigationPage.TitleView>
-
     <ContentPage.Content>
         <CollectionView ItemsSource="{Binding Setores}" VerticalOptions="FillAndExpand">
             <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+                <GridItemsLayout Orientation="Horizontal" Span="2" />
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Padding="10" Margin="10" BackgroundColor="#EDEDED" CornerRadius="10">
+                    <Frame Padding="10" Margin="10" BackgroundColor="#EDEDED" CornerRadius="10" WidthRequest="150">
                         <StackLayout>
                             <Label Text="{Binding Nome}" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center"/>
                             <Label Text="{Binding TipoServico}" FontSize="18" HorizontalOptions="Center"/>
@@ -28,5 +27,6 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
     </ContentPage.Content>
+
 
 </ContentPage>
