@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RotaLimpa.Mvc.Views.Usuarios.Colaborador.ListaMotoristas"
-             xmlns:local="clr-namespace:RotaLimpa.Mvc.Views.Usuarios.Colaborador"
-             Title="ListaMotoristas">
+             xmlns:local="clr-namespace:RotaLimpa.Mvc.Views.Usuarios.Colaborador">
 
     <NavigationPage.TitleView>
         <local:MeuCabecalho/>
@@ -14,118 +13,27 @@
     </ContentPage.Background>
 
     <ContentPage.Content>
-        <ScrollView Padding="0,20,0,0">
-            <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameMotorista/> 
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                    <local:frameMotorista/>
-                </HorizontalStackLayout>
-            </VerticalStackLayout>
-        </ScrollView>
+        <CollectionView ItemsSource="{Binding Motoristas}" VerticalOptions="FillAndExpand">
+            <CollectionView.ItemsLayout>
+                <!-- Use o GridItemsLayout com duas colunas -->
+                <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="20" VerticalItemSpacing="20"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" BackgroundColor="#EDEDED" CornerRadius="10">
+                        <StackLayout>
+                            <Label Text="{Binding NomeMotorista}" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center"/>
+                            <Label Text="{Binding StMotorista}" FontSize="18" HorizontalOptions="Center"/>
+                            <Label Text="{Binding Dc_Motorista, StringFormat='Data de Cadastro: {0:dd/MM/yyyy}'}" FontSize="16" HorizontalOptions="Center"/>
+                            <!-- Adicione mais labels conforme necessário para outras propriedades do motorista -->
+
+                            <!-- Adicione um botão para detalhes -->
+                            <Button Text="Detalhes" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </ContentPage.Content>
 
 </ContentPage>

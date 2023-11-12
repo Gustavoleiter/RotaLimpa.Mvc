@@ -56,7 +56,12 @@ namespace RotaLimpa.Mvc.Services.Colaboradores
             u.Id = await _request.PostReturnIntAsync(apiUrlBase + urlComplementar, u);
             return u;
         }
-
+        public async Task<Colaborador> ObterColaboradorLogadoAsync()
+        {
+            // Implemente a lógica real para obter o colaborador logado de maneira assíncrona
+            // Substitua o retorno e adicione tratamento de exceções conforme necessário
+            return await _request.GetAsync<Colaborador>(apiUrlBase + "/ObterColaboradorLogado");
+        }
     }
 }
 

@@ -7,26 +7,28 @@
         <local:MeuCabecalho />
         <!-- Use o controle personalizado aqui -->
     </NavigationPage.TitleView>
-    <ContentPage.Content>
-        <CollectionView ItemsSource="{Binding Setores}" VerticalOptions="FillAndExpand">
-            <CollectionView.ItemsLayout>
-                <GridItemsLayout Orientation="Horizontal" Span="2" />
-            </CollectionView.ItemsLayout>
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Frame Padding="10" Margin="10" BackgroundColor="#EDEDED" CornerRadius="10" WidthRequest="150">
-                        <StackLayout>
-                            <Label Text="{Binding Nome}" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center"/>
-                            <Label Text="{Binding TipoServico}" FontSize="18" HorizontalOptions="Center"/>
-                            <Label Text="{Binding DiSetor, StringFormat='Data Inicial: {0:dd/MM/yyyy}'}" FontSize="16" HorizontalOptions="Center"/>
-                            <Label Text="{Binding DaSetor, StringFormat='Data Final: {0:dd/MM/yyyy}'}" FontSize="16" HorizontalOptions="Center"/>
-                            <!-- Adicione mais labels conforme necessário para outras propriedades do setor -->
-                        </StackLayout>
-                    </Frame>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </ContentPage.Content>
+
+    <ContentPage.Background>
+        <Color>#C3C3C3</Color>
+    </ContentPage.Background>
 
 
+    <CollectionView ItemsSource="{Binding Setores}" VerticalOptions="StartAndExpand" Margin="20">
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10" />
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Frame Padding="10" BackgroundColor="#EDEDED" CornerRadius="10" WidthRequest="150">
+                    <StackLayout>
+                        <Label Text="{Binding Nome}" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center"/>
+                        <Label Text="{Binding TipoServico}" FontSize="18" HorizontalOptions="Center"/>
+                        <Label Text="{Binding DiSetor, StringFormat='Data Inicial: {0:dd/MM/yyyy}'}" FontSize="16" HorizontalOptions="Center"/>
+                        <Label Text="{Binding DaSetor, StringFormat='Data Final: {0:dd/MM/yyyy}'}" FontSize="16" HorizontalOptions="Center"/>
+                        <!-- Adicione mais labels conforme necessário para outras propriedades do setor -->
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 </ContentPage>
