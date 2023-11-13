@@ -9,27 +9,31 @@
         <local:MeuCabecalho />
     </NavigationPage.TitleView>
 
+    <ScrollView>
+        <VerticalStackLayout Spacing="3" Padding="15">
+            
+            <Label Text="Colaborador Id" FontSize="Medium" />
+            <Entry Text="{Binding ColaboradorId}" FontSize="Medium" Keyboard="Numeric" />
+            <Label Text="Empresa Id" FontSize="Medium" />
+            <Entry Text="{Binding EmpresaId}" FontSize="Medium" Keyboard="Numeric" />
+            <Label Text="Tipo de Serviço" FontSize="Medium" />
+            <Picker Title="---Selecione---" ItemsSource="{Binding ListaTiposServico}" ItemDisplayBinding="{Binding}" SelectedItem="{Binding TipoServicoSelecionado}" />
+            <Label Text="Data Inicial" FontSize="Medium" />
+            <DatePicker Date="{Binding DiSetor}" />
+            <Label Text="Data Final" FontSize="Medium" />
+            <DatePicker Date="{Binding DaSetor}" />
+            <Label Text="Status do Setor" FontSize="Medium" />
+            <Entry Text="{Binding StSetor}" FontSize="Medium" />
+            <Label Text="Colaborador " FontSize="Medium" />
+            <Entry Text="{Binding Rotas}" FontSize="Medium" />
+            <HorizontalStackLayout Spacing="20">
+                <Button Text="Salvar" Command="{Binding SalvarCommand}"></Button>
+                <Button Text="Cancelar" Command="{Binding CancelarCommand}"></Button>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 
-    <ContentPage.Content>
-        <StackLayout Padding="20">
-            <Entry Placeholder="Nome do Setor" Text="{Binding Nome}" />
-            <Picker Title="Tipo de Serviço" SelectedItem="{Binding TipoServico}">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Opção 1</x:String>
-                        <x:String>Opção 2</x:String>
-                        <!-- Adicione outras opções conforme necessário -->
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
-            <Label Text="Data Inicial: " />
-            <Label Text="{Binding DiSetor, StringFormat='{0:dd/MM/yyyy}'}" FontSize="16" />
-            <Label Text="Data Final: " />
-            <DatePicker Format="dd/MM/yyyy" Date="{Binding DaSetor}" />
 
-            <Button Text="Cadastrar" Command="{Binding CadastrarSetorCommand}" />
-        </StackLayout>
-    </ContentPage.Content>
 
 </ContentPage>
 

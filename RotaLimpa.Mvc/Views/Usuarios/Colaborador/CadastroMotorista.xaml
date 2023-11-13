@@ -9,13 +9,30 @@
         <local:MeuCabecalho />
         <!-- Use o controle personalizado aqui -->
     </NavigationPage.TitleView>
-    
-    <StackLayout Padding="20">
-        <Entry Placeholder="Nome do Motorista" Text="{Binding NomeMotorista}" />
-        <Label Text="Data de Criação" />
-        <DatePicker Date="{Binding Dc_Motorista}" />
-        <Entry Placeholder="Status do Motorista" Text="{Binding StMotorista}" />
-        <Button Text="Cadastrar" Command="{Binding CadastrarMotoristaCommand}" />
-    </StackLayout>
-    
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="3" Padding="15">
+            <Label Text="Nome do Motorista" FontSize="Medium" />
+            <Entry Placeholder="Nome do Motorista" Text="{Binding NomeMotorista}" FontSize="Medium" />
+
+            <Label Text="Data de Criação" FontSize="Medium" />
+            <DatePicker Date="{Binding Dc_Motorista}" />
+
+            <Label Text="Status do Motorista" FontSize="Medium" />
+            <Entry Placeholder="Status do Motorista" Text="{Binding StMotorista}" FontSize="Medium" />
+
+            <Label Text="ID da Empresa" FontSize="Medium" />
+            <Entry Placeholder="ID da Empresa" Keyboard="Numeric" Text="{Binding EmpresaId}" FontSize="Medium" />
+
+            <Label Text="Número do Documento do Colaborador" FontSize="Medium" />
+            <Entry Placeholder="Número do Documento do Colaborador" Text="{Binding DcColaborador}" FontSize="Medium" />
+
+            <Label Text="Status do Colaborador" FontSize="Medium" />
+            <Entry Placeholder="Status do Colaborador" Text="{Binding StColaborador}" FontSize="Medium" />
+
+            <Button Text="Cadastrar" Command="{Binding SalvarCommand}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+
 </ContentPage>

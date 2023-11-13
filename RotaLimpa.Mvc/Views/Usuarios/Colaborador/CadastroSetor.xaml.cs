@@ -1,21 +1,20 @@
+using AppRpgEtec.ViewModels.Setores;
 using RotaLimpa.Mvc.ViewModels.Setores;
 
 namespace RotaLimpa.Mvc.Views.Usuarios.Colaborador
 {
     public partial class CadastroSetor : ContentPage
     {
-        private CadastroSetorViewModel viewModel;
+        private CadastroSetorViewModel cadViewModel;
 
         public CadastroSetor()
         {
             InitializeComponent();
-            viewModel = new CadastroSetorViewModel();
-            BindingContext = viewModel; // Atribuir a instância de viewModel ao BindingContext
-        }
+            cadViewModel = new CadastroSetorViewModel();
+            BindingContext = cadViewModel; // Atribuir a instância de viewModel ao BindingContext
 
-        private async void OnCadastrarClicked(object sender, EventArgs e)
-        {
-            await viewModel.CadastrarSetor();
+            Title = "Novo Setor";
+
         }
     }
 }

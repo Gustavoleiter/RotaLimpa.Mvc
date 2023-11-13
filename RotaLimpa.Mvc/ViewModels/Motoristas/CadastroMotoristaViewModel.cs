@@ -1,111 +1,143 @@
-﻿using RotaLimpa.Mvc.Models;
+﻿
+using RotaLimpa.Mvc.Models;
 using RotaLimpa.Mvc.Services.Motoristas;
+using RotaLimpa.Mvc.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace RotaLimpa.Mvc.ViewModels.Motoristas
+
+namespace AppRpgEtec.ViewModels.Motoristas
 {
-    public class CadastroMotoristaViewModel : INotifyPropertyChanged
+    [QueryProperty("MotoristaSelecionadoId", "mId")]
+
+    public class CadastroMotoristaViewModel : BaseViewModel
     {
-        private readonly MotoristaService motoristaService;
-        private string _nomeMotorista;
-        private DateTime _dc_Motorista = DateTime.Now;
-        private string _stMotorista;
+        private MotoristaService motoristaService;
 
-        private Motorista _novoMotorista;
-        public Motorista NovoMotorista
+        public ICommand SalvarCommand { get; }
+        public ICommand CancelarCommand { get; }
+
+        private string motoristaSelecionadoId;
+
+        public string MotoristaSelecionadoId
         {
-            get { return _novoMotorista; }
             set
             {
-                if (_novoMotorista != value)
+                if (value != null)
                 {
-                    _novoMotorista = value;
-                    OnPropertyChanged(nameof(NovoMotorista));
+                    motoristaSelecionadoId = Uri.UnescapeDataString(value);
+                    CarregarMotorista();
                 }
             }
         }
 
-        public string NomeMotorista
+        private int id;
+        private string nome;
+        private string dcColaborador;
+        private string stColaborador;
+
+        public int Id
         {
-            get => _nomeMotorista;
+            get => id;
             set
             {
-                if (_nomeMotorista != value)
-                {
-                    _nomeMotorista = value;
-                    OnPropertyChanged(nameof(NomeMotorista));
-                }
+                id = value;
+                OnPropertyChanged();
             }
         }
 
-        public DateTime Dc_Motorista
+        public string Nome
         {
-            get => _dc_Motorista;
+            get => nome;
             set
             {
-                if (_dc_Motorista != value)
-                {
-                    _dc_Motorista = value;
-                    OnPropertyChanged(nameof(Dc_Motorista));
-                }
+                nome = value;
+                OnPropertyChanged();
             }
         }
 
-        public string StMotorista
+        public string DcColaborador
         {
-            get => _stMotorista;
+            get => dcColaborador;
             set
             {
-                if (_stMotorista != value)
-                {
-                    _stMotorista = value;
-                    OnPropertyChanged(nameof(StMotorista));
-                }
+                dcColaborador = value;
+                OnPropertyChanged();
             }
         }
 
-        public ICommand CadastrarMotoristaCommand { get; private set; }
+        public string StColaborador
+        {
+            get => stColaborador;
+            set
+            {
+                stColaborador = value;
+                OnPropertyChanged();
+            }
+        }
 
         public CadastroMotoristaViewModel()
         {
             motoristaService = new MotoristaService();
-            NovoMotorista = new Motorista();
-            CadastrarMotoristaCommand = new Command(async () => await CadastrarMotoristaAsync());
+
+            SalvarCommand = new Command(async () => await SalvarMotorista());
+            CancelarCommand = new Command(CancelarCadastro);
         }
 
-        private async Task CadastrarMotoristaAsync()
+        public string MotoristaSelecionado { get => motoristaSelecionadoId; set => motoristaSelecionadoId = value; }
+
+        public async Task SalvarMotorista()
         {
             try
             {
-                // Validar os dados do motorista, se necessário
+                
+               
 
-                // Chamar o serviço para cadastrar o motorista
-                await motoristaService.PostMotoristaAsync(NovoMotorista);
+                Motorista model = new Motorista()
+                {
+                    NomeMotorista = this.nome,
+                    Dc_Motorista = DateTime.Now, // ou ajuste conforme necessário
+                    StMotorista = this.stColaborador,
+                    IdMotorista = this.id
+                };
 
-                // Limpar os campos após o cadastro bem-sucedido
-                NovoMotorista = new Motorista();
+                if (model.IdMotorista == 0)
+                    await motoristaService.PostMotoristaAsync(model);
+                else
+                    await motoristaService.PutMotoristaAsync(model);
 
-                await Application.Current.MainPage.DisplayAlert("Sucesso", "Motorista cadastrado com sucesso!", "OK");
+                await Application.Current.MainPage.DisplayAlert("Mensagem", "Dados salvos com sucesso!", "Ok");
+
+                await Shell.Current.GoToAsync(".");
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Ops", "Erro ao cadastrar o motorista: " + ex.Message, "OK");
+                await Application.Current.MainPage.DisplayAlert("Ops", ex.Message + "Detalhes: " + ex.InnerException, "Ok");
             }
         }
 
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
+        private async void CancelarCadastro()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            await Shell.Current.GoToAsync("..");
         }
 
+        public async void CarregarMotorista()
+        {
+            try
+            {
+                Motorista motorista = await motoristaService.GetMotoristaAsync(int.Parse(motoristaSelecionadoId));
+
+                this.Nome = motorista.NomeMotorista ;
+                this.DcColaborador = motorista.Dc_Motorista.ToString("dd/MM/yyyy"); ;
+                this.StColaborador = motorista.StMotorista;
+                this.Id = motorista.IdMotorista;
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Ops", ex.Message + "Detalhes: " + ex.InnerException, "Ok");
+            }
+        }
     }
 }
