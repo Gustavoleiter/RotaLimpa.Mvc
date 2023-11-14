@@ -7,30 +7,69 @@
 
     <NavigationPage.TitleView>
         <local:MeuCabecalho />
-        <!-- Use o controle personalizado aqui -->
     </NavigationPage.TitleView>
 
+    <ContentPage.Background>
+        <Color>#E7E7E7</Color>
+    </ContentPage.Background>
+
     <ScrollView>
-        <VerticalStackLayout Spacing="3" Padding="15">
-            <Label Text="Nome do Motorista" FontSize="Medium" />
-            <Entry Placeholder="Nome do Motorista" Text="{Binding NomeMotorista}" FontSize="Medium" />
+        <VerticalStackLayout Spacing="3" Padding="15" HorizontalOptions="Center">
 
-            <Label Text="Data de Criação" FontSize="Medium" />
-            <DatePicker Date="{Binding Dc_Motorista}" />
+            <Label Text="CADASTRO DE MOTORISTAS" HorizontalOptions="Center" FontSize="24" FontAttributes="Bold" Margin="0,15,0,5"/>
+            <BoxView BackgroundColor="Black" HeightRequest="2" WidthRequest="1200" Margin="0,0,0,65"/>
 
-            <Label Text="Status do Motorista" FontSize="Medium" />
-            <Entry Placeholder="Status do Motorista" Text="{Binding StMotorista}" FontSize="Medium" />
+            <Grid WidthRequest="700">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-            <Label Text="ID da Empresa" FontSize="Medium" />
-            <Entry Placeholder="ID da Empresa" Keyboard="Numeric" Text="{Binding EmpresaId}" FontSize="Medium" />
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-            <Label Text="Número do Documento do Colaborador" FontSize="Medium" />
-            <Entry Placeholder="Número do Documento do Colaborador" Text="{Binding DcColaborador}" FontSize="Medium" />
+                <Label Grid.Column="0" Grid.Row="0" Text="NOME" FontSize="16" Margin="0,15,0,0"/>
+                <Entry Grid.Column="0" Grid.Row="1" TextColor="#A8A8A8" Text="{Binding NomeMotorista}" FontSize="16"/>
 
-            <Label Text="Status do Colaborador" FontSize="Medium" />
-            <Entry Placeholder="Status do Colaborador" Text="{Binding StColaborador}" FontSize="Medium" />
+                <Label Grid.Column="2" Grid.Row="0" Text="DATA DE CRIAÇÃO" FontSize="16" Margin="0,15,0,0"/>
+                <DatePicker Grid.Column="2" Grid.Row="1" WidthRequest="350" TextColor="#A8A8A8" Date="{Binding Dc_Motorista}"/>
 
-            <Button Text="Cadastrar" Command="{Binding SalvarCommand}"/>
+                <Label Grid.Column="0" Grid.Row="2" Text="STATUS" FontSize="16" Margin="0,15,0,0"/>
+                <Entry Grid.Column="0" Grid.Row="3" WidthRequest="350" TextColor="#A8A8A8" Text="{Binding StMotorista}"/>
+
+                <!--<Label Grid.Column="2" Grid.Row="2" Text="ID DA EMPRESA" FontSize="16" Margin="0,15,0,0"/>
+                <Entry Grid.Column="2" Grid.Row="3" WidthRequest="350" TextColor="#A8A8A8" Keyboard="Numeric" Text="{Binding EmpresaId}"/>
+                
+                <Label Grid.Column="0" Grid.Row="4" Text="DATA FINAL" FontSize="16" Margin="0,15,0,0"/>
+                <DatePicker Grid.Column="0" Grid.Row="5" WidthRequest="350" TextColor="#A8A8A8" Date="{Binding DaSetor}"/>
+                
+                <Label Grid.Column="2" Grid.Row="4" Text="STATUS DO SETOR" FontSize="16" Margin="0,15,0,0"/>
+                <Entry Grid.Column="2" Grid.Row="5" TextColor="#A8A8A8" Text="{Binding StSetor}" FontSize="16"/>-->
+            </Grid>
+
+
+            <Grid WidthRequest="700">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="2" BackgroundColor="#02A3C7" BorderWidth="1" BorderColor="#02A3C7" TextColor="#1F1F1F" FontAttributes="Bold" Text="SALVAR" 
+                        Command="{Binding SalvarCommand}" Margin="0,15,0,0"></Button>
+                <Button Grid.Column="0" BackgroundColor="Transparent" BorderWidth="1" BorderColor="#02A3C7" TextColor="#02A3C7" FontAttributes="Bold" Text="CANCELAR" 
+                        CornerRadius="2" Command="{Binding CancelarCommand}" Margin="0,15,0,0"></Button>
+
+            </Grid>
         </VerticalStackLayout>
     </ScrollView>
 

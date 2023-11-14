@@ -18,5 +18,6 @@ namespace RotaLimpa.Mvc.Models
         public DateTime Dc_Motorista { get; set; } = DateTime.Now;
         
         public string StMotorista { get; set; }
+
     }
 }

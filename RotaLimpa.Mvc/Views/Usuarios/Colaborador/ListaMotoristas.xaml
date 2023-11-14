@@ -12,10 +12,32 @@
         <Color>#C3C3C3</Color>
     </ContentPage.Background>
 
+
     <ContentPage.Content>
-        <CollectionView ItemsSource="{Binding Motoristas}" VerticalOptions="FillAndExpand">
+        <CollectionView ItemsSource="{Binding Motoristas}" >
             <CollectionView.ItemsLayout>
-                <!-- Use o GridItemsLayout com duas colunas -->
+                <GridItemsLayout Orientation="Vertical" Span="5" HorizontalItemSpacing="5" VerticalItemSpacing="5"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="#94D9E9" Padding="10,20,10,10" CornerRadius="2" WidthRequest="230" HeightRequest="200">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding NomeMotorista, StringFormat='NOME: {0}'}" FontAttributes="Bold" FontSize="16" Margin="0,0,0,0"/>
+                            <Frame BackgroundColor="#0284C7" CornerRadius="2" WidthRequest="210" HeightRequest="80" Margin="0,10,0,0" Padding="5">
+                                <Label Text="{Binding StMotorista, StringFormat='STATUS: {0}'}" FontSize="13" Margin="0,0,0,0"/>
+                            </Frame>
+                            <BoxView HeightRequest="2" WidthRequest="220" HorizontalOptions="Center" BackgroundColor="Black" Margin="0,10,0,0"/>
+
+                            <!--<Button Text="Detalhes" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand"
+                                    Command="{Binding BindingContext.NavigateToDetailsCommand, Source={x:Reference Name=collectionView}}"
+                                    CommandParameter="{Binding}" />-->
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <!--<CollectionView ItemsSource="{Binding Motoristas}" VerticalOptions="FillAndExpand">
+            <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="20" VerticalItemSpacing="20"/>
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
@@ -25,15 +47,12 @@
                             <Label Text="{Binding NomeMotorista}" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center"/>
                             <Label Text="{Binding StMotorista}" FontSize="18" HorizontalOptions="Center"/>
                             <Label Text="{Binding Dc_Motorista, StringFormat='Data de Cadastro: {0:dd/MM/yyyy}'}" FontSize="16" HorizontalOptions="Center"/>
-                            <!-- Adicione mais labels conforme necessário para outras propriedades do motorista -->
-
-                            <!-- Adicione um botão para detalhes -->
                             <Button Text="Detalhes" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" />
                         </StackLayout>
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
-        </CollectionView>
+        </CollectionView>-->
     </ContentPage.Content>
 
 </ContentPage>

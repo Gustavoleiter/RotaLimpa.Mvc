@@ -34,10 +34,10 @@ namespace AppRpgEtec.ViewModels.Motoristas
 
         private int id;
         private string nome;
-        private string dcColaborador;
-        private string stColaborador;
+        private string dcMotorista;
+        private string stMotorista;
 
-        public int Id
+        public int IdMotorista
         {
             get => id;
             set
@@ -47,7 +47,7 @@ namespace AppRpgEtec.ViewModels.Motoristas
             }
         }
 
-        public string Nome
+        public string NomeMotorista
         {
             get => nome;
             set
@@ -57,22 +57,22 @@ namespace AppRpgEtec.ViewModels.Motoristas
             }
         }
 
-        public string DcColaborador
+        public string Dc_Motorista
         {
-            get => dcColaborador;
+            get => dcMotorista;
             set
             {
-                dcColaborador = value;
+                dcMotorista = value;
                 OnPropertyChanged();
             }
         }
 
-        public string StColaborador
+        public string StMotorista
         {
-            get => stColaborador;
+            get => stMotorista;
             set
             {
-                stColaborador = value;
+                stMotorista = value;
                 OnPropertyChanged();
             }
         }
@@ -98,7 +98,7 @@ namespace AppRpgEtec.ViewModels.Motoristas
                 {
                     NomeMotorista = this.nome,
                     Dc_Motorista = DateTime.Now, // ou ajuste conforme necessário
-                    StMotorista = this.stColaborador,
+                    StMotorista = this.stMotorista,
                     IdMotorista = this.id
                 };
 
@@ -129,10 +129,10 @@ namespace AppRpgEtec.ViewModels.Motoristas
             {
                 Motorista motorista = await motoristaService.GetMotoristaAsync(int.Parse(motoristaSelecionadoId));
 
-                this.Nome = motorista.NomeMotorista ;
-                this.DcColaborador = motorista.Dc_Motorista.ToString("dd/MM/yyyy"); ;
-                this.StColaborador = motorista.StMotorista;
-                this.Id = motorista.IdMotorista;
+                this.NomeMotorista = motorista.NomeMotorista ;
+                this.Dc_Motorista = motorista.Dc_Motorista.ToString("dd/MM/yyyy"); ;
+                this.StMotorista = motorista.StMotorista;
+                this.IdMotorista = motorista.IdMotorista;
             }
             catch (Exception ex)
             {
