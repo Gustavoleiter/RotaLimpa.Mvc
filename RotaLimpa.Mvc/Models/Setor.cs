@@ -12,14 +12,15 @@ namespace RotaLimpa.Mvc.Models
     public class Setor
     {
         public int Id { get; set; }
-        public int ColaboradorId { get; set; }
-        public int EmpresaId { get; set; }
+        public int IdColaborador { get; set; }
+        public int IdEmpresa { get; set; }
         public ServicoEnum TipoServico { get; set; }
-        public DateTime DiSetor { get; set; }
-        public DateTime DaSetor { get; set; }
+        public DateTime Di_Setor { get; set; }
+        public DateTime Da_Setor { get; set; }
         public string StSetor { get; set; }
-        public Colaborador Colaborador { get; set; }
-        public Empresa Empresa { get; set; }
-        public List<Rota> Rotas { get; set; }
+        public Empresa? Empresa { get; set; }
+        public ICollection<Rota>? Rotas { get; set; }
+        public ICollection<RelatorioFinal>? RelatoriosFinais { get; set; }
+        public ICollection<SetorVeiculo>? SetorVeiculos { get; set; }
     }
 }

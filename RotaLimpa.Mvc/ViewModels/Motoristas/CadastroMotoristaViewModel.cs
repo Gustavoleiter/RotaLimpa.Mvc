@@ -1,5 +1,4 @@
-﻿
-using RotaLimpa.Mvc.Models;
+﻿using RotaLimpa.Mvc.Models;
 using RotaLimpa.Mvc.Services.Motoristas;
 using RotaLimpa.Mvc.ViewModels;
 using System;
@@ -33,9 +32,14 @@ namespace AppRpgEtec.ViewModels.Motoristas
         }
 
         private int id;
-        private string nome;
-        private string dcMotorista;
+        private string primeiroNome;
+        private string sobreNome;
+        private DateTime diMotorista;
         private string stMotorista;
+        private int cpf;
+        private int rg;
+        private string login;
+        private string senha;
 
         public int IdMotorista
         {
@@ -47,22 +51,32 @@ namespace AppRpgEtec.ViewModels.Motoristas
             }
         }
 
-        public string NomeMotorista
+        public string PrimeiroNomeMotorista
         {
-            get => nome;
+            get => primeiroNome;
             set
             {
-                nome = value;
+                primeiroNome = value;
                 OnPropertyChanged();
             }
         }
 
-        public string Dc_Motorista
+        public string SobreNomeMotorista
         {
-            get => dcMotorista;
+            get => sobreNome;
             set
             {
-                dcMotorista = value;
+                sobreNome = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public DateTime DiMotorista
+        {
+            get => diMotorista;
+            set
+            {
+                diMotorista = value;
                 OnPropertyChanged();
             }
         }
@@ -73,6 +87,46 @@ namespace AppRpgEtec.ViewModels.Motoristas
             set
             {
                 stMotorista = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int CPF
+        {
+            get => cpf;
+            set
+            {
+                cpf = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int RG
+        {
+            get => rg;
+            set
+            {
+                rg = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Login
+        {
+            get => login;
+            set
+            {
+                login = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Senha
+        {
+            get => senha;
+            set
+            {
+                senha = value;
                 OnPropertyChanged();
             }
         }
@@ -91,18 +145,20 @@ namespace AppRpgEtec.ViewModels.Motoristas
         {
             try
             {
-                
-               
-
                 Motorista model = new Motorista()
                 {
-                    NomeMotorista = this.nome,
-                    Dc_Motorista = DateTime.Now, // ou ajuste conforme necessário
+                    Primeiro_Nome = this.primeiroNome,
+                    Sobre_Nome = this.sobreNome,
+                    Di_Motorista = DateTime.Now, // ou ajuste conforme necessário
                     StMotorista = this.stMotorista,
-                    IdMotorista = this.id
+                    CPF = this.cpf,
+                    RG = this.rg,
+                    Login = this.login,
+                    Senha = this.senha,
+                    Id = this.id
                 };
 
-                if (model.IdMotorista == 0)
+                if (model.Id == 0)
                     await motoristaService.PostMotoristaAsync(model);
                 else
                     await motoristaService.PutMotoristaAsync(model);
@@ -117,7 +173,6 @@ namespace AppRpgEtec.ViewModels.Motoristas
             }
         }
 
-
         private async void CancelarCadastro()
         {
             await Shell.Current.GoToAsync("..");
@@ -129,10 +184,15 @@ namespace AppRpgEtec.ViewModels.Motoristas
             {
                 Motorista motorista = await motoristaService.GetMotoristaAsync(int.Parse(motoristaSelecionadoId));
 
-                this.NomeMotorista = motorista.NomeMotorista ;
-                this.Dc_Motorista = motorista.Dc_Motorista.ToString("dd/MM/yyyy"); ;
+                this.PrimeiroNomeMotorista = motorista.Primeiro_Nome;
+                this.SobreNomeMotorista = motorista.Sobre_Nome;
+                this.DiMotorista = motorista.Di_Motorista;
                 this.StMotorista = motorista.StMotorista;
-                this.IdMotorista = motorista.IdMotorista;
+                this.CPF = motorista.CPF;
+                this.RG = motorista.RG;
+                this.Login = motorista.Login;
+                this.Senha = motorista.Senha;
+                this.IdMotorista = motorista.Id;
             }
             catch (Exception ex)
             {

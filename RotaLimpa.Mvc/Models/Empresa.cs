@@ -10,15 +10,12 @@ namespace RotaLimpa.Mvc.Models
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public string DcEmpresa { get; set; }
-        public int StEmpresa { get; set; }
-        public DateTime DiEmpresa { get; set; }
-        public DateTime DaEmpresa { get; set; }
+        public string Dc_Empresa { get; set; }
+        public int St_Empresa { get; set; }
+        public DateTime Di_Empresa { get; private set; } = DateTime.Now;
+        public DateTime? Da_Empresa { get; private set; } = DateTime.Now;
+        public ICollection<Colaborador> Colaboradores { get; set; }
+        public ICollection<Setor> Setores { get; set; }
 
-        // Coleção de colaboradores (se necessário)
-        public List<Colaborador> Colaboradores { get; set; }
-
-        // Coleção de setores (se necessário)
-        public List<Setor> Setores { get; set; }
     }
 }

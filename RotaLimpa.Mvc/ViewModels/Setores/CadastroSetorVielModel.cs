@@ -1,5 +1,4 @@
-﻿// Importe o serviço de Setores
-using RotaLimpa.Mvc.Models;
+﻿using RotaLimpa.Mvc.Models;
 using RotaLimpa.Mvc.Models.Enuns;
 using RotaLimpa.Mvc.Services.Setores;
 using RotaLimpa.Mvc.ViewModels;
@@ -11,9 +10,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace AppRpgEtec.ViewModels.Setores // Altere o namespace para Setores
+
+namespace AppRpgEtec.ViewModels.Setores
 {
-    [QueryProperty("SetorSelecionadoId", "sId")] // Altere para SetorSelecionadoId
+    [QueryProperty("SetorSelecionadoId", "sId")]
 
     public class CadastroSetorViewModel : BaseViewModel
     {
@@ -61,8 +61,8 @@ namespace AppRpgEtec.ViewModels.Setores // Altere o namespace para Setores
         }
 
         private int id;
-        private int colaboradorId;
-        private int empresaId;
+        private int idColaborador;
+        private int idEmpresa;
         private DateTime diSetor;
         private DateTime daSetor;
         private string stSetor;
@@ -78,22 +78,22 @@ namespace AppRpgEtec.ViewModels.Setores // Altere o namespace para Setores
             }
         }
 
-        public int ColaboradorId
+        public int IdColaborador
         {
-            get => colaboradorId;
+            get => idColaborador;
             set
             {
-                colaboradorId = value;
+                idColaborador = value;
                 OnPropertyChanged();
             }
         }
 
-        public int EmpresaId
+        public int IdEmpresa
         {
-            get => empresaId;
+            get => idEmpresa;
             set
             {
-                empresaId = value;
+                idEmpresa = value;
                 OnPropertyChanged();
             }
         }
@@ -182,11 +182,10 @@ namespace AppRpgEtec.ViewModels.Setores // Altere o namespace para Setores
             {
                 Setor model = new Setor()
                 {
-                  
-                    ColaboradorId = this.colaboradorId,
-                    EmpresaId = this.empresaId,
-                    DiSetor = this.diSetor,
-                    DaSetor = DateTime.Now,
+                    IdColaborador = this.idColaborador,
+                    IdEmpresa = this.idEmpresa,
+                    Di_Setor = this.diSetor,
+                    Da_Setor = DateTime.Now,
                     StSetor = this.stSetor,
                     Id = this.id,
                     TipoServico = this.tipoServicoSelecionado,
@@ -222,13 +221,13 @@ namespace AppRpgEtec.ViewModels.Setores // Altere o namespace para Setores
             {
                 Setor s = await sService.GetSetorAsync(int.Parse(setorSelecionadoId));
 
-                this.ColaboradorId = s.ColaboradorId;
-                this.EmpresaId = s.EmpresaId;
-                this.DiSetor = s.DiSetor;
-                this.DaSetor = s.DaSetor;
+                this.IdColaborador = s.IdColaborador;
+                this.IdEmpresa = s.IdEmpresa;
+                this.DiSetor = s.Di_Setor;
+                this.DaSetor = s.Da_Setor;
                 this.StSetor = s.StSetor;
                 this.Id = s.Id;
-                this.Rotas = s.Rotas;
+                this.Rotas = (List<Rota>)s.Rotas;
 
                 TipoServicoSelecionado = this.ListaTiposServico
                     .FirstOrDefault(tipoServico => tipoServico == s.TipoServico);

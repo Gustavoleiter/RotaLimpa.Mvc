@@ -5,22 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using RotaLimpa.Mvc.Models;
-using RotaLimpa.Mvc.Services.Usuarios;
+using RotaLimpa.Mvc.Services.Motoristas;
 using RotaLimpa.Mvc.Views.Usuarios.Colaborador;
 
 namespace RotaLimpa.Mvc.ViewModels.Usuarios
 {
-    public class UsuarioViewModel : BaseViewModel
+    public class MotoristaViewModel : BaseViewModel
     {
-        private UsuarioService uService;
+        private MotoristaService uService;
 
         public ICommand RegistarCommand { get; set; }
         public ICommand AutenticarCommand { get; set; }
         public ICommand DirecionarCadastroCommand { get; set; }
 
-        public UsuarioViewModel()
+        public MotoristaViewModel()
         {
-            uService = new UsuarioService();
+            uService = new MotoristaService();
             InicializarCommands();
 
         }

@@ -55,7 +55,7 @@ namespace RotaLimpa.Mvc.Services.Motoristas
         {
             // Registrar: Rota para o método na API que registra o motorista
             string urlComplementar = "/Registrar";
-            m.IdMotorista = await _request.PostReturnIntAsync(apiUrlBase + urlComplementar, m);
+            m.Id = await _request.PostReturnIntAsync(apiUrlBase + urlComplementar, m);
             return m;
         }
     }

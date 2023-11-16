@@ -68,9 +68,9 @@ namespace RotaLimpa.Mvc.ViewModels.Motoristas
             try
             {
                 if (await Application.Current.MainPage
-                    .DisplayAlert("Confirmação", $"Confirma a remoção do motorista {motorista.IdMotorista}?", "Sim", "Não"))
+                    .DisplayAlert("Confirmação", $"Confirma a remoção do motorista {motorista.Id}?", "Sim", "Não"))
                 {
-                    await motoristaService.DeleteMotoristaAsync(motorista.IdMotorista);
+                    await motoristaService.DeleteMotoristaAsync(motorista.Id);
 
                     await Application.Current.MainPage.DisplayAlert("Mensagem",
                         "Motorista removido com sucesso!", "Ok");

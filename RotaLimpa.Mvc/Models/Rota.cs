@@ -8,17 +8,18 @@ namespace RotaLimpa.Mvc.Models
 {
     public class Rota
     {
-        public int IdRota { get; set; }
+        public int Id { get; set; }
 
-        public int ColaboradorId { get; set; }
-        public Colaborador Colaborador { get; set; }
+        public int IdColaborador { get; set; }
       
-        public int SetorId { get; set; }
+        public int IdSetor { get; set; }
 
-        public Setor Setor { get; set; }
+        public int Dt_Rota { get; set; }
 
-        public int DtRota { get; set; }
+        public int Tm_Rota { get; set; }
+        public Colaborador? Colaborador { get; set; }
+        public ICollection<Rua>? Ruas { get; set; }
 
-        public int TmRota { get; set; }
+        public ICollection<Trajeto>? Trajetos { get; set; }
     }
 }

@@ -55,7 +55,7 @@ namespace RotaLimpa.Mvc.Services.Rotas
         {
             // Registrar: Rota para o método na API que registra a rota
             string urlComplementar = "/Registrar";
-            r.IdRota = await _request.PostReturnIntAsync(apiUrlBase + urlComplementar, r);
+            r.Id = await _request.PostReturnIntAsync(apiUrlBase + urlComplementar, r);
             return r;
         }
     }

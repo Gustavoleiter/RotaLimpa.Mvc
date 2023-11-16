@@ -11,13 +11,22 @@ namespace RotaLimpa.Mvc.Models
     public class Motorista
     {
 
-        public int IdMotorista { get; set; }
+        public int Id { get; set; }
         
-        public string NomeMotorista { get; set; }
-     
-        public DateTime Dc_Motorista { get; set; } = DateTime.Now;
+        public string Primeiro_Nome{ get; set; }
+        public string Sobre_Nome { get; set; }
+
+        public DateTime Di_Motorista { get; set; } = DateTime.Now;
         
         public string StMotorista { get; set; }
+        public int CPF { get; set; }
+        public int RG { get; set; }
+        public string Login { get; set; }
+        public string Senha { get; set; }
+        private string Chave { get; set; }
+        private string IV { get; set; }
+        public ICollection<HisLoginM>? HisLoginMs { get; set; }
+        public ICollection<Trajeto>? Trajetos { get; set; }
 
     }
 }
