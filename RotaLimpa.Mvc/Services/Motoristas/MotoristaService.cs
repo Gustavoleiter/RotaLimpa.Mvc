@@ -1,9 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿
 using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using RotaLimpa.Mvc.Models;
-using Newtonsoft.Json.Linq;
+
 
 namespace RotaLimpa.Mvc.Services.Motoristas
 {

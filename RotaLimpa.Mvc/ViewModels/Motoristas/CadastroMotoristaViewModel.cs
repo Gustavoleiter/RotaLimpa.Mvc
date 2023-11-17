@@ -36,8 +36,8 @@ namespace AppRpgEtec.ViewModels.Motoristas
         private string sobreNome;
         private DateTime diMotorista;
         private string stMotorista;
-        private int cpf;
-        private int rg;
+        private string cpf;
+        private string rg;
         private string login;
         private string senha;
 
@@ -91,7 +91,7 @@ namespace AppRpgEtec.ViewModels.Motoristas
             }
         }
 
-        public int CPF
+        public string CPF
         {
             get => cpf;
             set
@@ -101,7 +101,7 @@ namespace AppRpgEtec.ViewModels.Motoristas
             }
         }
 
-        public int RG
+        public string RG
         {
             get => rg;
             set

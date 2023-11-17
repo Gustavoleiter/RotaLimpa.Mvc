@@ -19,8 +19,8 @@ namespace RotaLimpa.Mvc.Models
         public DateTime Di_Motorista { get; set; } = DateTime.Now;
         
         public string StMotorista { get; set; }
-        public int CPF { get; set; }
-        public int RG { get; set; }
+        public string CPF { get; set; }
+        public string RG { get; set; }
         public string Login { get; set; }
         public string Senha { get; set; }
         private string Chave { get; set; }
