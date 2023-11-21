@@ -11,7 +11,7 @@ namespace RotaLimpa.Mvc.Services.Colaboradores
     public class ColaboradorService : Request
     {
         private readonly Request _request;
-        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rota/Colaboradores";
+        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rotalimpa/Colaboradores";
 
         public ColaboradorService()
         {

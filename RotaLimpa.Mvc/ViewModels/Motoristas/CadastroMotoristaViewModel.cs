@@ -36,8 +36,8 @@ namespace AppRpgEtec.ViewModels.Motoristas
         private string sobreNome;
         private DateTime diMotorista;
         private string stMotorista;
-        private int cpf;
-        private int rg;
+        private string cpf;
+        private string rg;
         private string login;
         private string senha;
 
@@ -91,7 +91,7 @@ namespace AppRpgEtec.ViewModels.Motoristas
             }
         }
 
-        public int CPF
+        public string CPF
         {
             get => cpf;
             set
@@ -101,7 +101,7 @@ namespace AppRpgEtec.ViewModels.Motoristas
             }
         }
 
-        public int RG
+        public string RG
         {
             get => rg;
             set
@@ -136,7 +136,7 @@ namespace AppRpgEtec.ViewModels.Motoristas
             motoristaService = new MotoristaService();
 
             SalvarCommand = new Command(async () => await SalvarMotorista());
-            CancelarCommand = new Command(CancelarCadastro);
+            
         }
 
         public string MotoristaSelecionado { get => motoristaSelecionadoId; set => motoristaSelecionadoId = value; }
@@ -147,8 +147,8 @@ namespace AppRpgEtec.ViewModels.Motoristas
             {
                 Motorista model = new Motorista()
                 {
-                    Primeiro_Nome = this.primeiroNome,
-                    Sobre_Nome = this.sobreNome,
+                    PNome = this.primeiroNome,
+                    SNome = this.sobreNome,
                     Di_Motorista = DateTime.Now, // ou ajuste conforme necessário
                     StMotorista = this.stMotorista,
                     CPF = this.cpf,
@@ -165,7 +165,19 @@ namespace AppRpgEtec.ViewModels.Motoristas
 
                 await Application.Current.MainPage.DisplayAlert("Mensagem", "Dados salvos com sucesso!", "Ok");
 
-                await Shell.Current.GoToAsync(".");
+                // Limpar os campos
+                this.primeiroNome = string.Empty;
+                this.sobreNome = string.Empty;
+                this.stMotorista = string.Empty;
+                this.cpf = string.Empty;
+                this.rg = string.Empty;
+                this.login = string.Empty;
+                this.senha = string.Empty;
+
+                if (Application.Current.MainPage is NavigationPage navigationPage)
+                {
+                    await navigationPage.PopAsync(); // Isso remove a página atual (CadastroMotorista)
+                }
             }
             catch (Exception ex)
             {
@@ -173,10 +185,6 @@ namespace AppRpgEtec.ViewModels.Motoristas
             }
         }
 
-        private async void CancelarCadastro()
-        {
-            await Shell.Current.GoToAsync("..");
-        }
 
         public async void CarregarMotorista()
         {
@@ -184,8 +192,8 @@ namespace AppRpgEtec.ViewModels.Motoristas
             {
                 Motorista motorista = await motoristaService.GetMotoristaAsync(int.Parse(motoristaSelecionadoId));
 
-                this.PrimeiroNomeMotorista = motorista.Primeiro_Nome;
-                this.SobreNomeMotorista = motorista.Sobre_Nome;
+                this.PrimeiroNomeMotorista = motorista.PNome;
+                this.SobreNomeMotorista = motorista.SNome;
                 this.DiMotorista = motorista.Di_Motorista;
                 this.StMotorista = motorista.StMotorista;
                 this.CPF = motorista.CPF;

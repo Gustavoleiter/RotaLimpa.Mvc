@@ -10,7 +10,7 @@ namespace RotaLimpa.Mvc.Services.Motoristas
     public class MotoristaService : Request
     {
         private readonly Request _request;
-        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rota";
+        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rotalimpa/Motoristas";
 
         public MotoristaService()
         {

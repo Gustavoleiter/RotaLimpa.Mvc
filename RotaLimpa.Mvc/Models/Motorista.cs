@@ -13,14 +13,14 @@ namespace RotaLimpa.Mvc.Models
 
         public int Id { get; set; }
         
-        public string Primeiro_Nome{ get; set; }
-        public string Sobre_Nome { get; set; }
+        public string PNome{ get; set; }
+        public string SNome { get; set; }
 
         public DateTime Di_Motorista { get; set; } = DateTime.Now;
         
         public string StMotorista { get; set; }
-        public int CPF { get; set; }
-        public int RG { get; set; }
+        public string CPF { get; set; }
+        public string RG { get; set; }
         public string Login { get; set; }
         public string Senha { get; set; }
         private string Chave { get; set; }

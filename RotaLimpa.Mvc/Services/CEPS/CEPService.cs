@@ -7,7 +7,7 @@ namespace RotaLimpa.Mvc.Services.CEPs
     public class CEPService : Request
     {
         private readonly Request _request;
-        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rota/CEPs";
+        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rotalimpa/CEPs";
 
         public CEPService()
         {

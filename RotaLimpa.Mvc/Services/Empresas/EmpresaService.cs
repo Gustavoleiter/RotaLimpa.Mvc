@@ -7,7 +7,7 @@ namespace RotaLimpa.Mvc.Services.Empresas
     public class EmpresaService : Request
     {
         private readonly Request _request;
-        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rota/Empresas";
+        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rotalimpa/Empresas";
 
         public EmpresaService()
         {

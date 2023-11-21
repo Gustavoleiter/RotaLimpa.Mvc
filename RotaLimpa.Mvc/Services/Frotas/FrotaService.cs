@@ -7,7 +7,7 @@ namespace RotaLimpa.Mvc.Services.Frotas
     public class FrotaService : Request
     {
         private readonly Request _request;
-        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rota/Frotas";
+        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rotalimpa/Frotas";
 
         public FrotaService()
         {
