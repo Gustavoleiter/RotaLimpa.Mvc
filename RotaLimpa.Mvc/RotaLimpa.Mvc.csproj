@@ -111,11 +111,4 @@
 	  </MauiXaml>
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Services\Kilometragens\" />
-	  <Folder Include="Services\RelatoriosFinais\" />
-	  <Folder Include="Services\Ocorrencias\" />
-	  <Folder Include="Services\Periodos\" />
-	</ItemGroup>
-
 </Project>
