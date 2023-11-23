@@ -15,7 +15,7 @@ namespace RotaLimpa.Mvc.Views.Usuarios
 
         private void btnAutenticarClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Usuarios.Colaborador.ListaSetores());
+            Navigation.PushAsync(new Usuarios.Colaborador.Conta());
         }
     }
 }

@@ -7,7 +7,7 @@ namespace RotaLimpa.Mvc.Services.Ruas
     public class RuaService : Request
     {
         private readonly Request _request;
-        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rota/Ruas";
+        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rotalimpa/Ruas";
 
         public RuaService()
         {

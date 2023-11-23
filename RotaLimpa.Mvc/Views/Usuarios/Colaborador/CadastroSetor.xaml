@@ -38,18 +38,18 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Label Grid.Column="0" Grid.Row="0" Text="COLABORADOR" FontSize="16" Margin="0,15,0,0"/>
-                <Entry Grid.Column="0" Grid.Row="1" TextColor="#A8A8A8" Text="{Binding ColaboradorId}" FontSize="16" Keyboard="Numeric"/>
+                <Label Grid.Column="0" Grid.Row="0" Text="COLABORADOR" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
+                <Entry Grid.Column="0" Grid.Row="1" TextColor="#000000" Text="{Binding ColaboradorId}" FontFamily="Comfortaa" FontSize="16" Keyboard="Numeric"/>
                 <Label Grid.Column="2" Grid.Row="0" Text="EMPRESA" FontSize="16" Margin="0,15,0,0"/>
-                <Entry Grid.Column="2" Grid.Row="1" TextColor="#A8A8A8" Text="{Binding EmpresaId}" FontSize="16" Keyboard="Numeric"/>
-                <Label Grid.Column="0" Grid.Row="2" Text="TIPO DE SERVIÇO" FontSize="16" Margin="0,15,0,0"/>
-                <Picker Grid.Column="0" Grid.Row="3" WidthRequest="350" TextColor="#A8A8A8" ItemsSource="{Binding ListaTiposServico}" ItemDisplayBinding="{Binding}" SelectedItem="{Binding TipoServicoSelecionado}"/>
-                <Label Grid.Column="2" Grid.Row="2" Text="DATA INICIAL" FontSize="16" Margin="0,15,0,0"/>
-                <DatePicker Grid.Column="2" Grid.Row="3" WidthRequest="350" TextColor="#A8A8A8" Date="{Binding DiSetor}"/>
-                <Label Grid.Column="0" Grid.Row="4" Text="DATA FINAL" FontSize="16" Margin="0,15,0,0"/>
-                <DatePicker Grid.Column="0" Grid.Row="5" WidthRequest="350" TextColor="#A8A8A8" Date="{Binding DaSetor}"/>
-                <Label Grid.Column="2" Grid.Row="4" Text="STATUS DO SETOR" FontSize="16" Margin="0,15,0,0"/>
-                <Entry Grid.Column="2" Grid.Row="5" TextColor="#A8A8A8" Text="{Binding StSetor}" FontSize="16"/>
+                <Entry Grid.Column="2" Grid.Row="1" TextColor="#000000" Text="{Binding EmpresaId}" FontFamily="Comfortaa" FontSize="16" Keyboard="Numeric"/>
+                <Label Grid.Column="0" Grid.Row="2" Text="TIPO DE SERVIÇO" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
+                <Picker Grid.Column="0" Grid.Row="3" WidthRequest="350" FontFamily="Comfortaa" TextColor="#000000" ItemsSource="{Binding ListaTiposServico}" ItemDisplayBinding="{Binding}" SelectedItem="{Binding TipoServicoSelecionado}"/>
+                <Label Grid.Column="2" Grid.Row="2" Text="DATA INICIAL" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
+                <DatePicker Grid.Column="2" Grid.Row="3" WidthRequest="350" TextColor="#000000" FontFamily="Comfortaa" Date="{Binding DiSetor}"/>
+                <Label Grid.Column="0" Grid.Row="4" Text="DATA FINAL" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
+                <DatePicker Grid.Column="0" Grid.Row="5" WidthRequest="350" TextColor="#000000" FontFamily="Comfortaa" Date="{Binding DaSetor}"/>
+                <Label Grid.Column="2" Grid.Row="4" Text="STATUS DO SETOR" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
+                <Entry Grid.Column="2" Grid.Row="5" TextColor="#000000" Text="{Binding StSetor}" FontFamily="Comfortaa" FontSize="16"/>
             </Grid>
 
 

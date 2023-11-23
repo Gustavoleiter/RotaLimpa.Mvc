@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RotaLimpa.Mvc.Views.Usuarios.Colaborador.Conta"
+             xmlns:local="clr-namespace:RotaLimpa.Mvc.Views.Usuarios.Colaborador"
+             Title="Conta">
+
+    <NavigationPage.TitleView>
+        <local:MeuCabecalho />
+    </NavigationPage.TitleView>
+
+    <ContentPage.Background>
+        <Color>#E7E7E7</Color>
+    </ContentPage.Background>
+
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="18"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="18"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+            <Frame Grid.ColumnSpan="2" Grid.Row="0" BackgroundColor="#7ACFE2" Margin="18,18,0,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+
+
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label HorizontalOptions="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="COLABORADOR" 
+                           FontSize="32" FontFamily="Comfortaa" FontAttributes="Bold"/>
+
+                    <HorizontalStackLayout Grid.Column="0" Grid.ColumnSpan="6" Grid.Row="3">
+                        <Label Text="BRENO" FontSize="24" FontFamily="Comfortaa" TextColor="Black"/>
+                        <!--{Binding Primeiro_Nome, StringFormat='NOME: {0}'}-->
+                        <Label Text=" LISBOA SOUZA" FontSize="24" FontFamily="Comfortaa" TextColor="Black"/>
+                        <!--{Binding Sobre_Nome}-->
+                    </HorizontalStackLayout>
+
+                    <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" Text="999.999.999.-00" FontSize="24" 
+                           FontFamily="Comfortaa" TextColor="Black"/>
+                    <!--{Binding DcColaborador, StringFormat='DOCUMENTO: {0}'}-->
+
+                    <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" Text="ATIVO" FontSize="24" 
+                           FontFamily="Comfortaa" TextColor="Black"/>
+                    <!--{Binding StColaborador, StringFormat='STATUS: {0}'}-->
+
+                    <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" Text="ROTA LIMPA" FontSize="24" 
+                           FontFamily="Comfortaa" TextColor="Black"/>
+                    <!--{Binding NomeEmpresa, StringFormat='EMPRESA: {0}'}-->
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" BackgroundColor="#7ACFE2" Margin="18,0,0,18">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label HorizontalOptions="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="EMPRESA" 
+                           FontSize="32" FontFamily="Comfortaa" FontAttributes="Bold"/>
+
+
+                    <Label Grid.Column="0" Grid.ColumnSpan="6" Grid.Row="3" Text="ROTA LIMPA" FontSize="24" 
+                               FontFamily="Comfortaa" TextColor="Black"/>
+                    <!--{Binding Nome, StringFormat='NOME: {0}'}-->
+
+                    <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" Text="999.999.999.-00" FontSize="24" 
+                           FontFamily="Comfortaa" TextColor="Black"/>
+                    <!--{Binding Dc_Empresa, StringFormat='DOCUMENTO: {0}'}-->
+
+                    <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" Text="ATIVO" FontSize="24" 
+                           FontFamily="Comfortaa" TextColor="Black"/>
+                    <!--{Binding St_Empresa, StringFormat='STATUS: {0}'}-->
+
+                    <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" Text="BRENO LISBOA SOUZA" FontSize="24" 
+                           FontFamily="Comfortaa" TextColor="Black"/>
+                    <!--{Binding Colaboradores, StringFormat='EMPRESA: {0}'}-->
+
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Column="3" Grid.Row="0" Grid.RowSpan="3" BackgroundColor="#7ACFE2" Margin="0,18,18,18">
+                <ScrollView>
+
+                </ScrollView>
+            </Frame>
+        </Grid>
+        
+    </ContentPage.Content>
+    
+</ContentPage>

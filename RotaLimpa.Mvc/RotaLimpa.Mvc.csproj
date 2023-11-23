@@ -70,6 +70,9 @@
 	  <MauiXaml Update="Views\Usuarios\Colaborador\DetalhesSetor.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Usuarios\Colaborador\ListaFrota.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Usuarios\Motorista\ListaTurno.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

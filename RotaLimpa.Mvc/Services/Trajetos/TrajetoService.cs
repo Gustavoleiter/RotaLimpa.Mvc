@@ -7,7 +7,7 @@ namespace RotaLimpa.Mvc.Services.Trajeto
     public class TrajetoService
     {
         private readonly Request _request;
-        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rota/Trajetos";
+        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rotalimpa/Trajetos";
 
         public TrajetoService()
         {

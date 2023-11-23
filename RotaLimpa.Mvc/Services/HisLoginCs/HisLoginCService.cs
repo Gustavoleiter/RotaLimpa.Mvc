@@ -7,7 +7,7 @@ namespace RotaLimpa.Mvc.Services.HisLoginCs
     public class HisLoginCService : Request
     {
         private readonly Request _request;
-        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rota/HisLoginC";
+        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rotalimpa/HisLoginC";
 
         public HisLoginCService()
         {

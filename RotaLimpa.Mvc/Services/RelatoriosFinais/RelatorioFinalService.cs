@@ -7,7 +7,7 @@ namespace RotaLimpa.Mvc.Services.Relatorios
     public class RelatorioFinalService : Request
     {
         private readonly Request _request;
-        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rota/RelatorioFinal";
+        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rotalimpa/RelatorioFinal";
 
         public RelatorioFinalService()
         {

@@ -7,7 +7,7 @@ namespace RotaLimpa.Mvc.Services.SetoresVeiculos
     public class SetorVeiculoService : Request
     {
         private readonly Request _request;
-        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rota/SetorVeiculo";
+        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rotalimpa/SetorVeiculo";
 
         public SetorVeiculoService()
         {

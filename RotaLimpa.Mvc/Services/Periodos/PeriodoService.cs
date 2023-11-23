@@ -7,7 +7,7 @@ namespace RotaLimpa.Mvc.Services.Periodos
     public class PeriodoService : Request
     {
         private readonly Request _request;
-        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rota/Periodo";
+        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rotalimpa/Periodo";
 
         public PeriodoService()
         {

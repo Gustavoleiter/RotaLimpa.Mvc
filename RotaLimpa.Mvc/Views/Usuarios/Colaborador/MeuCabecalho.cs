@@ -64,6 +64,10 @@ public class MeuCabecalho : ContentView
             HeightRequest = 48,
             VerticalOptions = LayoutOptions.Start,
         };
+        veiculosButton.Clicked += async (sender, e) =>
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new ListaFrota());
+        };
 
         var dropDownPicker = new Picker
         {
@@ -103,6 +107,10 @@ public class MeuCabecalho : ContentView
             CornerRadius = 4,
             HeightRequest = 48,
             VerticalOptions = LayoutOptions.Start,
+        };
+        contaButton.Clicked += async (sender, e) =>
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new Conta());
         };
 
         var pesquisaEntry = new Entry

@@ -14,7 +14,7 @@ namespace RotaLimpa.Mvc.Services.Setores
     public class SetorService : Request
     {
         private readonly Request _request;
-        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rota/Setores";
+        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rotalimpa/Setores";
 
         public SetorService()
         {

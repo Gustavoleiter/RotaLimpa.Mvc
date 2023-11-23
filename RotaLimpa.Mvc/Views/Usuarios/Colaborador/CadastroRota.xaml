@@ -11,12 +11,12 @@
 
     <ContentPage.Content>
         <StackLayout Padding="20">
-            <Entry Placeholder="Colaborador ID" Text="{Binding Rota.ColaboradorId}" Keyboard="Numeric" />
-            <Entry Placeholder="Setor ID" Text="{Binding Rota.SetorId}" Keyboard="Numeric" />
+            <Entry Placeholder="Colaborador ID" FontFamily="Comfortaa" Text="{Binding Rota.ColaboradorId}" Keyboard="Numeric" />
+            <Entry Placeholder="Setor ID" FontFamily="Comfortaa" Text="{Binding Rota.SetorId}" Keyboard="Numeric" />
             <!--<DatePicker Placeholder="Data da Rota" Date="{Binding Rota.DtRota}" />
             <TimePicker Placeholder="Hora da Rota" Time="{Binding Rota.TmRota}" />-->
 
-            <Button Text="Cadastrar Rota" Command="{Binding CadastrarRotaCommand}" />
+            <Button FontFamily="Comfortaa" Text="Cadastrar Rota" Command="{Binding CadastrarRotaCommand}" />
         </StackLayout>
     </ContentPage.Content>
 

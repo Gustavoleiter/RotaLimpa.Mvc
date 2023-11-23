@@ -19,17 +19,19 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame BackgroundColor="#94D9E9" Padding="10,20,10,10" CornerRadius="2" WidthRequest="230" HeightRequest="200">
-                        <VerticalStackLayout>
+                        
+                        
+                        <!--<VerticalStackLayout>
                             <Label Text="{Binding Id, StringFormat='SETOR: {0}'}" FontAttributes="Bold" FontSize="16" Margin="0,0,0,0"/>
                             <Label Text="{Binding TipoServico, StringFormat='SERVIÇOS: {0}'}" FontSize="13" Margin="0,5,0,0"/>
                             <BoxView HeightRequest="2" WidthRequest="220" HorizontalOptions="Center" BackgroundColor="Black" Margin="0,10,0,0"/>
                             <Label Text="MOTORISTAS" FontSize="14" Margin="0,10,0,0"/>
                             <Frame BackgroundColor="#0284C7" CornerRadius="2" WidthRequest="210" HeightRequest="80" Margin="0,10,0,0"/>
 
-                            <!--<Button Text="Detalhes" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand"
+                            <Button Text="Detalhes" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand"
                                     Command="{Binding BindingContext.NavigateToDetailsCommand, Source={x:Reference Name=collectionView}}"
-                                    CommandParameter="{Binding}" />-->
-                        </VerticalStackLayout>
+                                    CommandParameter="{Binding}" />
+                        </VerticalStackLayout>-->
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

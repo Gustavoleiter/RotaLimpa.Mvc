@@ -7,7 +7,7 @@ namespace RotaLimpa.Mvc.Services.Kilometragens
     public class KilometragemService : Request
     {
         private readonly Request _request;
-        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rota/Kilometragem";
+        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rotalimpa/Kilometragem";
 
         public KilometragemService()
         {

@@ -7,7 +7,7 @@ namespace RotaLimpa.Mvc.Services.Ocorrencias
     public class OcorrenciaService : Request
     {
         private readonly Request _request;
-        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rota/Ocorrencia";
+        private const string apiUrlBase = "http://rotalimpabanco.somee.com/rotalimpa/Ocorrencia";
 
         public OcorrenciaService()
         {

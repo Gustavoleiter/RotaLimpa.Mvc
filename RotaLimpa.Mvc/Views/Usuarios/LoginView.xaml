@@ -12,42 +12,63 @@
     </ContentPage.Background>
 
     <ContentPage.Content>
-    
-    <AbsoluteLayout HorizontalOptions="Center" VerticalOptions="Center">
-            
-            <Frame WidthRequest="450" HeightRequest="500" BackgroundColor="#0080C1" AbsoluteLayout.LayoutBounds="0.5,0.5,-2,-2" AbsoluteLayout.LayoutFlags="PositionProportional">
-            <Grid >
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="10"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="10"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
 
-                <Label x:Name="informacao" Text="ENTRAR" TextColor="White" FontSize="24" FontAttributes="Bold"  HorizontalOptions="CenterAndExpand" Grid.Row="0" BackgroundColor="Transparent" Margin="0,10,0,0" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="450"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="380"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-                <BoxView HeightRequest="2" WidthRequest="500" Color="White" HorizontalOptions="FillAndExpand" Margin="0,10,0,80" Grid.Row="1"/>
+            <Frame Grid.Column="1" Grid.Row="1" BackgroundColor="#0080C1" CornerRadius="3">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="2"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" Text="ENTRAR" FontFamily="Comfortaa" 
+                           FontSize="22" TextColor="White" FontAttributes="Bold"/>
+
+                    <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Color="White" BackgroundColor="White" />
+
+                    <Entry Grid.Row="5" Grid.Column="1" BackgroundColor="WhiteSmoke" FontSize="16" FontFamily="Comfortaa" 
+                           Placeholder="NRO IDENTIFICAÇÃO" PlaceholderColor="Gray" x:Name="user"/>
+
+                    <Entry Grid.Row="7" Grid.Column="1" BackgroundColor="WhiteSmoke" FontSize="16" FontFamily="Comfortaa" 
+                           Placeholder="SENHA" PlaceholderColor="Gray" IsPassword="True" x:Name="senha" Text="{Binding Senha}"/>
+
+                    <Button Grid.Row="10" Grid.Column="1" Text="ACESSAR" FontSize="18" FontAttributes="Bold" TextColor="#0080C1" 
+                            BackgroundColor="#32C84A" x:Name="btnAutenticar" Command="{Binding AutenticarCommand}" Clicked="btnAutenticarClicked"/>
 
 
-                <Entry x:Name="user" Placeholder="  IDENTIFICAÇÃO" FontSize="16" Margin="0,10,0,0" WidthRequest="350" HeightRequest="55" Grid.Row="3" BackgroundColor="White" TextColor="#A8A8A8"/>
-                <Entry x:Name="senha" Placeholder="  SENHA" FontSize="16" Text="{Binding Senha}" IsPassword="True" Margin="0,10,0,0" WidthRequest="350" HeightRequest="55" Grid.Row="5" BackgroundColor="White" TextColor="#A8A8A8"/>
+                </Grid>
+
+            </Frame>
 
 
-                <!-- Container para os botões -->
-                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="7">
-                    <!-- Botão "Entrar" -->
-                    <Button x:Name="btnAutenticar" Text="ENTRAR" TextColor="#0080C1" FontAttributes="Bold" FontSize="20" 
-                            Command="{Binding AutenticarCommand}" Margin="0,100,0,0" WidthRequest="350" HeightRequest="55" 
-                            BackgroundColor="#32C84A" CornerRadius="2" Clicked="btnAutenticarClicked"/>
-                </StackLayout>
 
-            </Grid>
-        </Frame>
-    </AbsoluteLayout>
+        </Grid>
 
     </ContentPage.Content>
 </ContentPage>

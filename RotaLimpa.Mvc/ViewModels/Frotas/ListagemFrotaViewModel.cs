@@ -1,38 +1,83 @@
-﻿using RotaLimpa.Mvc.Models;
-using RotaLimpa.Mvc.Services.Frotas;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using RotaLimpa.Mvc.Models;
+using RotaLimpa.Mvc.Services.Frotas;
+
 
 namespace RotaLimpa.Mvc.ViewModels.Frotas
 {
-    public class ListaFrotaViewModel : BaseViewModel
+    public class ListagemFrotaViewModel : BaseViewModel
     {
-        private readonly FrotaService frotaService;
+        private FrotaService frotaService;
 
-        public ObservableCollection<Frota> Frotas { get; set; }
+        private ObservableCollection<Frota> _frotas;
+        public ObservableCollection<Frota> Frotas
+        {
+            get { return _frotas; }
+            set
+            {
+                _frotas = value;
+                OnPropertyChanged(nameof(Frotas));
+            }
+        }
 
-        public ListaFrotaViewModel()
+        public ListagemFrotaViewModel()
         {
             frotaService = new FrotaService();
             Frotas = new ObservableCollection<Frota>();
+
+            _ = ObterFrotas();
+            NovaFrotaCommand = new Command(async () => { await ExibirCadastroFrota(); });
+            RemoverFrotaCommand = new Command<Frota>(async (frota) => { await RemoverFrota(frota); });
         }
 
-        public async Task CarregarFrotas()
+        public ICommand RemoverFrotaCommand { get; }
+        public ICommand NovaFrotaCommand { get; }
+
+        public async Task ObterFrotas()
         {
             try
             {
-                var listaFrotas = await frotaService.GetFrotasAsync();
-                Frotas.Clear();
+                Frotas = await frotaService.GetFrotasAsync();
+                OnPropertyChanged(nameof(Frotas));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao obter frotas: {ex.Message}");
+            }
+        }
 
-                foreach (var frota in listaFrotas)
+        public async Task ExibirCadastroFrota()
+        {
+            try
+            {
+                await Shell.Current.GoToAsync("cadFrotaView");
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Ops", ex.Message + "Detalhes: " + ex.InnerException, "Ok");
+            }
+        }
+
+        public async Task RemoverFrota(Frota frota)
+        {
+            try
+            {
+                if (await Application.Current.MainPage
+                    .DisplayAlert("Confirmação", $"Confirma a remoção da frota {frota.Id}?", "Sim", "Não"))
                 {
-                    Frotas.Add(frota);
+                    await frotaService.DeleteFrotaAsync(frota.Id);
+
+                    await Application.Current.MainPage.DisplayAlert("Mensagem",
+                        "Frota removida com sucesso!", "Ok");
+                    _ = ObterFrotas();
                 }
             }
             catch (Exception ex)
             {
-                // Trate a exceção conforme necessário
-                Console.WriteLine($"Erro ao carregar frotas: {ex.Message}");
+                await Application.Current.MainPage.DisplayAlert("Ops", ex.Message + "Detalhes: " + ex.InnerException, "Ok");
             }
         }
     }

@@ -13,7 +13,7 @@ namespace RotaLimpa.Mvc.Models
         public double Tmn_Veiculo { get; set; }
         public DateTime Di_Veiculo { get; set; }
         public string St_Veiculo { get; set; }
-        public Kilometragem Kilometragem { get; set;}
+        public Kilometragem? Kilometragem { get; set;}
         public ICollection<SetorVeiculo>? SetorVeiculos { get; set; }
         public ICollection<Trajeto>? Trajetos { get; set; }
     }
