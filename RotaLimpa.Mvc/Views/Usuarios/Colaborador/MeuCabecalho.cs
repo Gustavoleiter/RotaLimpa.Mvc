@@ -7,8 +7,8 @@ public class MeuCabecalho : ContentView
         var stackLayout = new HorizontalStackLayout
         {
             Padding = new Thickness(0, 0, 0, 0),
-            HeightRequest = 50
-            
+            HeightRequest = 48
+
         };
 
         var logoImage = new Image
@@ -122,7 +122,7 @@ public class MeuCabecalho : ContentView
             TextColor = Color.FromRgb(0, 0, 0),
             WidthRequest = 250,
             HeightRequest = 40,
-            VerticalOptions = LayoutOptions.Start,
+            VerticalOptions = LayoutOptions.Center,
 
         };
 
