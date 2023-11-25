@@ -23,9 +23,37 @@ namespace RotaLimpa.Mvc.Services.Setores
 
         public async Task<int> PostSetorAsync(Setor s)
         {
-            // Chama a versão do método que não exige um token
-            return await _request.PostReturnIntAsync(apiUrlBase, s);
+            try
+            {
+                // Chama a versão do método que não exige um token
+                return await _request.PostReturnIntAsync(apiUrlBase, s);
+            }
+            catch (Exception ex)
+            {
+                // Adicione tratamento de erro apropriado
+                Console.WriteLine($"Erro ao postar setor: {ex.Message}");
+                throw;
+            }
         }
+
+        public async Task<int> PutSetorAsync(Setor s)
+        {
+            try
+            {
+                var result = await _request.PutAsync(apiUrlBase, s);
+
+                // Adicione tratamento apropriado para lidar com a resposta da API, se necessário
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                // Adicione tratamento de erro apropriado
+                Console.WriteLine($"Erro ao atualizar setor: {ex.Message}");
+                throw;
+            }
+        }
+
 
         public async Task<ObservableCollection<Setor>> GetSetoresAsync()
         {
@@ -42,11 +70,6 @@ namespace RotaLimpa.Mvc.Services.Setores
             return setor;
         }
 
-        public async Task<int> PutSetorAsync(Setor s)
-        {
-            var result = await _request.PutAsync(apiUrlBase, s);
-            return result;
-        }
 
         public async Task<int> DeleteSetorAsync(int setorId)
         {

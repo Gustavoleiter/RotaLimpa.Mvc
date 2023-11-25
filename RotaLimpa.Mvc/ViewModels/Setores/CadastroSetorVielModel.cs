@@ -138,7 +138,19 @@ namespace AppRpgEtec.ViewModels.Setores
             }
         }
 
+
+        public int TiposServico
+        {
+            get => tiposServico;
+            set
+            {
+                TiposServico = value;
+                OnPropertyChanged();
+            }
+        }
+
         private ObservableCollection<ServicoEnum> listaTiposServico;
+        private int tiposServico;
 
         public ObservableCollection<ServicoEnum> ListaTiposServico
         {
@@ -184,30 +196,38 @@ namespace AppRpgEtec.ViewModels.Setores
                 {
                     IdColaborador = this.idColaborador,
                     IdEmpresa = this.idEmpresa,
-                    Di_Setor = this.diSetor,
+                    Di_Setor = DateTime.Now,
                     Da_Setor = DateTime.Now,
                     StSetor = this.stSetor,
                     Id = this.id,
-                    TipoServico = this.tipoServicoSelecionado,
-                    Rotas = this.rotas
+                    TipoServico = (ServicoEnum)TiposServico,
                 };
 
                 if (model.Id == 0)
-                    await sService.PostSetorAsync(model);
+                {
+                    // Use a função PostSetorAsync para criar um novo setor
+                    int newSetorId = await sService.PostSetorAsync(model);
+                    model.Id = newSetorId; // Atualiza o ID com o valor retornado pela API
+                }
                 else
+                {
+                    // Use a função PutSetorAsync para atualizar um setor existente
                     await sService.PutSetorAsync(model);
+                }
 
-                await Application.Current.MainPage
-                    .DisplayAlert("Mensagem", "Dados salvos com sucesso!", "Ok");
+                await Application.Current.MainPage.DisplayAlert("Mensagem", "Dados salvos com sucesso!", "Ok");
 
-                await Shell.Current.GoToAsync("..");
+                // Limpar os campos ou executar outras ações após o salvamento
+
+                if (Application.Current.MainPage is NavigationPage navigationPage)
+                {
+                    await navigationPage.PopAsync(); // Isso remove a página atual
+                }
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage
-                    .DisplayAlert("Ops", ex.Message + "Detalhes: " + ex.InnerException, "Ok");
+                await Application.Current.MainPage.DisplayAlert("Ops", ex.Message, "Ok");
             }
-
         }
 
         private async void CancelarCadastro()
