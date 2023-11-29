@@ -38,7 +38,6 @@ namespace AppRpgEtec.ViewModels.Motoristas
         private string stMotorista;
         private string cpf;
         private string rg;
-        private string login;
         private string senha;
 
         public int IdMotorista
@@ -111,15 +110,7 @@ namespace AppRpgEtec.ViewModels.Motoristas
             }
         }
 
-        public string Login
-        {
-            get => login;
-            set
-            {
-                login = value;
-                OnPropertyChanged();
-            }
-        }
+      
 
         public string Senha
         {
@@ -153,7 +144,6 @@ namespace AppRpgEtec.ViewModels.Motoristas
                     StMotorista = this.stMotorista,
                     CPF = this.cpf,
                     RG = this.rg,
-                    Login = this.login,
                     Senha = this.senha,
                     Id = this.id
                 };
@@ -171,7 +161,6 @@ namespace AppRpgEtec.ViewModels.Motoristas
                 this.stMotorista = string.Empty;
                 this.cpf = string.Empty;
                 this.rg = string.Empty;
-                this.login = string.Empty;
                 this.senha = string.Empty;
 
                 if (Application.Current.MainPage is NavigationPage navigationPage)
@@ -198,7 +187,6 @@ namespace AppRpgEtec.ViewModels.Motoristas
                 this.StMotorista = motorista.StMotorista;
                 this.CPF = motorista.CPF;
                 this.RG = motorista.RG;
-                this.Login = motorista.Login;
                 this.Senha = motorista.Senha;
                 this.IdMotorista = motorista.Id;
             }

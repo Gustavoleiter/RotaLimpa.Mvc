@@ -49,8 +49,8 @@
                 <Label Grid.Column="0" Grid.Row="2" Text="STATUS" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
                 <Entry Grid.Column="0" Grid.Row="3" WidthRequest="350" TextColor="#000000" FontFamily="Comfortaa" Text="{Binding StMotorista}"/>
 
-                <Label Grid.Column="0" Grid.Row="4" Text="LOGIN" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
-                <Entry Grid.Column="0" Grid.Row="5" WidthRequest="350" TextColor="#000000" FontFamily="Comfortaa" Text="{Binding Login}"/>
+                <Label Grid.Column="0" Grid.Row="4" Text="SOBRENOME" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
+                <Entry Grid.Column="0" Grid.Row="5" WidthRequest="350" TextColor="#000000" FontFamily="Comfortaa" Text="{Binding SNome}"/>
 
                 <Label Grid.Column="2" Grid.Row="4" Text="SENHA" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
                 <Entry Grid.Column="2" Grid.Row="5" WidthRequest="350" TextColor="#000000" FontFamily="Comfortaa" Text="{Binding Senha}"/>

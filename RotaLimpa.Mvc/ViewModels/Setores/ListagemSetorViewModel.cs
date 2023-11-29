@@ -89,6 +89,21 @@ namespace RotaLimpa.Mvc.ViewModels.Setores
             }
         }
 
+        private Setor setorSelecionado;
+
+        public Setor SetorSelecionado
+        {
+            get {  return setorSelecionado; }
+            set 
+            {
+                if(value != null);
+                {
+                    setorSelecionado = value;
+                    Shell.Current.GoToAsync($"cadSetorView?pId={setorSelecionado.Id}");
+                }
+            }
+        }
+
         public async Task ObterInformacoes()
         {
             await informacoesViewModel.ObterInformacoes();

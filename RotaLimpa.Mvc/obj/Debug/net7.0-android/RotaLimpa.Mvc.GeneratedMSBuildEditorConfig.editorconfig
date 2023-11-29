@@ -1,0 +1,153 @@
+is_global = true
+build_property.TargetFramework = net7.0-android
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = true
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.RootNamespace = RotaLimpa.Mvc
+build_property.ProjectDir = C:\Users\User\OneDrive\Área de Trabalho\exq\RotaLimpa.Mvc\RotaLimpa.Mvc\
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/Views/Usuarios/Colaborador/CadastroColaborador.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.Views.Usuarios.Colaborador.CadastroColaborador.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios\Colaborador\CadastroColaborador.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios\Colaborador\CadastroColaborador.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/Views/Usuarios/Colaborador/CadastroMotorista.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.Views.Usuarios.Colaborador.CadastroMotorista.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios\Colaborador\CadastroMotorista.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios\Colaborador\CadastroMotorista.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/Views/Usuarios/Colaborador/CadastroRota.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.Views.Usuarios.Colaborador.CadastroRota.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios\Colaborador\CadastroRota.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios\Colaborador\CadastroRota.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/Views/Usuarios/Colaborador/CadastroSetor.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.Views.Usuarios.Colaborador.CadastroSetor.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios\Colaborador\CadastroSetor.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios\Colaborador\CadastroSetor.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/Views/Usuarios/Colaborador/CadastroVeiculo.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.Views.Usuarios.Colaborador.CadastroVeiculo.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios\Colaborador\CadastroVeiculo.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios\Colaborador\CadastroVeiculo.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/Views/Usuarios/Colaborador/CadastroView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.Views.Usuarios.Colaborador.CadastroView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios\Colaborador\CadastroView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios\Colaborador\CadastroView.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/Views/Usuarios/Colaborador/Conta.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.Views.Usuarios.Colaborador.Conta.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios\Colaborador\Conta.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios\Colaborador\Conta.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/Views/Usuarios/Colaborador/DetalhesSetor.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.Views.Usuarios.Colaborador.DetalhesSetor.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios\Colaborador\DetalhesSetor.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios\Colaborador\DetalhesSetor.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/Views/Usuarios/Colaborador/ListaFrota.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.Views.Usuarios.Colaborador.ListaFrota.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios\Colaborador\ListaFrota.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios\Colaborador\ListaFrota.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/Views/Usuarios/Colaborador/ListaMotoristas.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.Views.Usuarios.Colaborador.ListaMotoristas.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios\Colaborador\ListaMotoristas.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios\Colaborador\ListaMotoristas.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/Views/Usuarios/Colaborador/ListaSetores.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.Views.Usuarios.Colaborador.ListaSetores.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios\Colaborador\ListaSetores.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios\Colaborador\ListaSetores.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/Views/Usuarios/LoginView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.Views.Usuarios.LoginView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios\LoginView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios\LoginView.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/Views/Usuarios/Motorista/DetalhesMenu.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.Views.Usuarios.Motorista.DetalhesMenu.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios\Motorista\DetalhesMenu.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios\Motorista\DetalhesMenu.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/Views/Usuarios/Motorista/ListaTurno.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.Views.Usuarios.Motorista.ListaTurno.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios\Motorista\ListaTurno.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios\Motorista\ListaTurno.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/Views/Usuarios/Motorista/MapaView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.Views.Usuarios.Motorista.MapaView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios\Motorista\MapaView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios\Motorista\MapaView.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/Views/Usuarios/Motorista/MenuRota.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.Views.Usuarios.Motorista.MenuRota.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios\Motorista\MenuRota.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios\Motorista\MenuRota.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/Views/Usuarios/Motorista/NavegacaoMapa.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.Views.Usuarios.Motorista.NavegacaoMapa.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios\Motorista\NavegacaoMapa.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios\Motorista\NavegacaoMapa.xaml
+
+[C:/Users/User/OneDrive/Área de Trabalho/exq/RotaLimpa.Mvc/RotaLimpa.Mvc/Views/Usuarios/Motorista/Setores.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RotaLimpa.Mvc.Views.Usuarios.Motorista.Setores.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios\Motorista\Setores.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios\Motorista\Setores.xaml

@@ -1,0 +1,1 @@
+C:\Users\User\OneDrive\Área de Trabalho\exq\RotaLimpa.Mvc\RotaLimpa.Mvc\RotaLimpa.Mvc.csproj;x64

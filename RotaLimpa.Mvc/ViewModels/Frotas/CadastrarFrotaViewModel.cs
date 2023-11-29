@@ -9,100 +9,85 @@ namespace RotaLimpa.Mvc.ViewModels.Frotas
 {
     public class CadastroFrotaViewModel : BaseViewModel
     {
-        private readonly FrotaService frotaService;
+        private string P_Veiculo;
+        private int Tmn_Veiculo;
+        private double? Kilometragem;
 
-        public ICommand SalvarCommand { get; }
-        public ICommand CancelarCommand { get; }
-
-        private string pVeiculo;
-        private double tmnVeiculo;
-        private DateTime diVeiculo;
-        private string stVeiculo;
-
-        public string PVeiculo
+        public string p_Veiculo
         {
-            get => pVeiculo;
+            get => P_Veiculo;
             set
             {
-                pVeiculo = value;
+                P_Veiculo = value;
                 OnPropertyChanged();
             }
         }
 
-        public double TmnVeiculo
+        public int tmn_Veiculo
         {
-            get => tmnVeiculo;
+            get => Tmn_Veiculo;
             set
             {
-                tmnVeiculo = value;
+                Tmn_Veiculo = value;
                 OnPropertyChanged();
             }
         }
 
-        public DateTime DiVeiculo
+        public double? kilometragem
         {
-            get => diVeiculo;
+            get => Kilometragem;
             set
             {
-                diVeiculo = value;
+                Kilometragem = value;
                 OnPropertyChanged();
             }
         }
 
-        public string StVeiculo
-        {
-            get => stVeiculo;
-            set
-            {
-                stVeiculo = value;
-                OnPropertyChanged();
-            }
-        }
+        public ICommand SalvarVeiculoCommand { get; }
+
+        // Evento para notificar quando as informações foram salvas
+        public event EventHandler<string> VeiculoSalvo;
 
         public CadastroFrotaViewModel()
         {
-            frotaService = new FrotaService();
+            SalvarVeiculoCommand = new Command(async () => await SalvarVeiculo());
 
-            SalvarCommand = new Command(async () => await SalvarFrota());
-            CancelarCommand = new Command(CancelarCadastro);
+            // Inicialize os valores padrão ou faça outras configurações necessárias
+            P_Veiculo = "";
+            Tmn_Veiculo = 0;
+            Kilometragem = null;
         }
 
-        public async Task SalvarFrota()
+        private async Task SalvarVeiculo()
         {
             try
             {
-                Frota frota = new Frota
+                // Valide os dados, se necessário
+
+                // Crie o objeto de veículo
+                Frota frota = new Frota();
                 {
-                    P_Veiculo = PVeiculo,
-                    Tmn_Veiculo = TmnVeiculo,
-                    Di_Veiculo = DiVeiculo,
-                    St_Veiculo = StVeiculo
-                    // Adicione outras propriedades conforme necessário
+                    P_Veiculo = P_Veiculo;
+                    Tmn_Veiculo = Tmn_Veiculo;
+                    Kilometragem = Kilometragem;
                 };
 
-                await frotaService.PostFrotaAsync(frota);
+                // Chame o serviço para salvar o veículo
+                // Exemplo: await veiculoService.SalvarVeiculoAsync(veiculo);
 
-                await Application.Current.MainPage.DisplayAlert("Mensagem", "Frota cadastrada com sucesso!", "Ok");
-
-                // Limpe os campos ou faça qualquer outra ação necessária após o cadastro bem-sucedido
-
-                // Exemplo: Limpar campos
-                PVeiculo = string.Empty;
-                TmnVeiculo = 0;
-                DiVeiculo = DateTime.Now;
-                StVeiculo = string.Empty;
-
-                // Navegar para a página de listagem de frotas ou realizar outra ação
+                // Notifique que o veículo foi salvo
+                OnVeiculoSalvo("Veículo salvo com sucesso!");
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Ops", "Erro ao cadastrar a frota: " + ex.Message, "Ok");
+                // Lide com erros ou exiba mensagens de erro
+                OnVeiculoSalvo($"Erro ao salvar o veículo: {ex.Message}");
             }
         }
 
-        private void CancelarCadastro()
+        private void OnVeiculoSalvo(string mensagem)
         {
-            // Implemente a lógica para cancelar o cadastro, se necessário
+            VeiculoSalvo?.Invoke(this, mensagem);
         }
     }
 }

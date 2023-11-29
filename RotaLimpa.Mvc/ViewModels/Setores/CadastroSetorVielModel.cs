@@ -10,7 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-
 namespace AppRpgEtec.ViewModels.Setores
 {
     [QueryProperty("SetorSelecionadoId", "sId")]
@@ -45,18 +44,15 @@ namespace AppRpgEtec.ViewModels.Setores
             CancelarCommand = new Command(async () => CancelarCadastro());
         }
 
-        private ServicoEnum tipoServicoSelecionado;
+        private int tipoServicoSelecionado;
 
-        public ServicoEnum TipoServicoSelecionado
+        public int TipoServicoSelecionado
         {
             get { return tipoServicoSelecionado; }
             set
             {
-                if (value != null)
-                {
-                    tipoServicoSelecionado = value;
-                    OnPropertyChanged();
-                }
+                tipoServicoSelecionado = value;
+                OnPropertyChanged();
             }
         }
 
@@ -138,21 +134,10 @@ namespace AppRpgEtec.ViewModels.Setores
             }
         }
 
-
-        public int TiposServico
-        {
-            get => tiposServico;
-            set
-            {
-                TiposServico = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private ObservableCollection<ServicoEnum> listaTiposServico;
+        private ObservableCollection<DescricaoOcorrencia> listaTiposServico;
         private int tiposServico;
 
-        public ObservableCollection<ServicoEnum> ListaTiposServico
+        public ObservableCollection<DescricaoOcorrencia> ListaTiposServico
         {
             get { return listaTiposServico; }
             set
@@ -169,13 +154,10 @@ namespace AppRpgEtec.ViewModels.Setores
         {
             try
             {
-                ListaTiposServico = new ObservableCollection<ServicoEnum>
-                {
-                    ServicoEnum.ColetarLixo,
-                    ServicoEnum.ColetarVarricao,
-                    ServicoEnum.Coleta
-                    // Adicione mais tipos conforme necessário
-                };
+                ListaTiposServico = new ObservableCollection<DescricaoOcorrencia>();
+                ListaTiposServico.Add(new DescricaoOcorrencia() { Id = 1, Descricao = "ColetaVarricao" });
+                ListaTiposServico.Add(new DescricaoOcorrencia() { Id = 2, Descricao = "ColetaLixo" });
+                ListaTiposServico.Add(new DescricaoOcorrencia() { Id = 3, Descricao = "Coleta" });
 
                 OnPropertyChanged(nameof(ListaTiposServico));
             }
@@ -185,22 +167,19 @@ namespace AppRpgEtec.ViewModels.Setores
                     .DisplayAlert("Ops", ex.Message + "Detalhes: " + ex.InnerException, "Ok");
             }
         }
-
-        public string SetorSelecionado { get => setorSelecionadoId; set => setorSelecionadoId = value; }
-
         public async Task SalvarSetor()
         {
             try
             {
                 Setor model = new Setor()
                 {
-                    IdColaborador = this.idColaborador,
-                    IdEmpresa = this.idEmpresa,
-                    Di_Setor = DateTime.Now,
-                    Da_Setor = DateTime.Now,
-                    StSetor = this.stSetor,
                     Id = this.id,
-                    TipoServico = (ServicoEnum)TiposServico,
+                    idColaborador = this.IdColaborador,
+                    idEmpresa = this.IdEmpresa,
+                    diSetor = DateTime.Now,
+                    daSetor = DateTime.Now,
+                    stSetor = this.stSetor,
+                    tipoServico = (ServicoEnum)TipoServicoSelecionado
                 };
 
                 if (model.Id == 0)
@@ -241,16 +220,12 @@ namespace AppRpgEtec.ViewModels.Setores
             {
                 Setor s = await sService.GetSetorAsync(int.Parse(setorSelecionadoId));
 
-                this.IdColaborador = s.IdColaborador;
-                this.IdEmpresa = s.IdEmpresa;
-                this.DiSetor = s.Di_Setor;
-                this.DaSetor = s.Da_Setor;
-                this.StSetor = s.StSetor;
+                this.IdColaborador = s.idColaborador;
+                this.IdEmpresa = s.idEmpresa;
+                this.DiSetor = s.diSetor;
+                this.DaSetor = s.daSetor;
+                this.StSetor = s.stSetor;
                 this.Id = s.Id;
-                this.Rotas = (List<Rota>)s.Rotas;
-
-                TipoServicoSelecionado = this.ListaTiposServico
-                    .FirstOrDefault(tipoServico => tipoServico == s.TipoServico);
             }
             catch (Exception ex)
             {
@@ -260,3 +235,171 @@ namespace AppRpgEtec.ViewModels.Setores
         }
     }
 }
+//using System;
+//using System.Collections.ObjectModel;
+//using System.Threading.Tasks;
+//using System.Windows.Input;
+//using RotaLimpa.Mvc.Models;
+//using RotaLimpa.Mvc.Models.Enuns;
+//using RotaLimpa.Mvc.Services.Setores;
+//using RotaLimpa.Mvc.ViewModels;
+
+
+//namespace AppRpgEtec.ViewModels.Setores
+//{
+//    [QueryProperty("SetorSelecionadoId", "sId")]
+
+//    public class CadastroSetorViewModel : BaseViewModel
+//    {
+//        private SetorService setorService;
+
+//        public ICommand SalvarCommand { get; }
+//        public ICommand CancelarCommand { get; set; }
+
+//        private string setorSelecionadoId;
+
+//        public string SetorSelecionadoId
+//        {
+//            set
+//            {
+//                if (value != null)
+//                {
+//                    setorSelecionadoId = Uri.UnescapeDataString(value);
+//                    CarregarSetor();
+//                }
+//            }
+//        }
+
+//        public CadastroSetorViewModel()
+//        {
+//            setorService = new SetorService();
+//            _ = ObterTiposServico();
+
+//            SalvarCommand = new Command(async () => { await SalvarSetor(); });
+//            CancelarCommand = new Command(async () => CancelarCadastro());
+//        }
+
+//        private string tipoServicoSelecionadoDescricao;
+
+//        public string TipoServicoSelecionadoDescricao
+//        {
+//            get { return tipoServicoSelecionadoDescricao; }
+//            set
+//            {
+//                if (value != null)
+//                {
+//                    tipoServicoSelecionadoDescricao = value;
+//                    OnPropertyChanged();
+//                }
+//            }
+//        }
+
+//        private int id;
+//        private int idColaborador;
+//        private int idEmpresa;
+//        private DateTime diSetor;
+//        private DateTime daSetor;
+//        private string stSetor;
+//        private List<Rota> rotas;
+
+//        public int Id
+//        {
+//            get => id;
+//            set
+//            {
+//                id = value;
+//                OnPropertyChanged();
+//            }
+//        }
+
+//        public ObservableCollection<DescricaoOcorrencia> ListaTiposServico { get; private set; }
+
+//        public async Task ObterTiposServico()
+//       {
+//            try
+//            {
+//                ListaTiposServico = new ObservableCollection<DescricaoOcorrencia>();
+//                ListaTiposServico.Add(new DescricaoOcorrencia() { Id = 1, Descricao = "ColetaVarricao" });
+//                ListaTiposServico.Add(new DescricaoOcorrencia() { Id = 2, Descricao = "ColetaLixo" });
+//                ListaTiposServico.Add(new DescricaoOcorrencia() { Id = 3, Descricao = "Coleta" });
+
+//                OnPropertyChanged(nameof(ListaTiposServico));
+//            }
+//            catch (Exception ex)
+//            {
+//                await Application.Current.MainPage
+//                    .DisplayAlert("Ops", ex.Message + "Detalhes: " + ex.InnerException, "Ok");
+//            }
+//        }
+
+//        public async Task SalvarSetor()
+//        {
+//            try
+//            {
+//                Setor model = new Setor()
+//                {
+//                    idColaborador = this.idColaborador,
+//                    idEmpresa = this.idEmpresa,
+//                    diSetor = DateTime.Now,
+//                    daSetor = DateTime.Now,
+//                    stSetor = this.stSetor,
+//                    Id = this.id,
+//                    tipoServico = (ServicoEnum)Enum.Parse(typeof(ServicoEnum), TipoServicoSelecionadoDescricao)
+//                };
+
+//                if (model.Id == 0)
+//                {
+//                    // Use a função PostSetorAsync para criar um novo setor
+//                    int newSetorId = await setorService.PostSetorAsync(model);
+//                    model.Id = newSetorId; // Atualiza o ID com o valor retornado pela API
+//                }
+//                else
+//                {
+//                    // Use a função PutSetorAsync para atualizar um setor existente
+//                    await setorService.PutSetorAsync(model);
+//                }
+
+//                await Application.Current.MainPage.DisplayAlert("Mensagem", "Dados salvos com sucesso!", "Ok");
+
+//                // Limpar os campos ou executar outras ações após o salvamento
+
+//                if (Application.Current.MainPage is NavigationPage navigationPage)
+//                {
+//                    await navigationPage.PopAsync(); // Isso remove a página atual
+//                }
+//            }
+//            catch (Exception ex)
+//            {
+//                await Application.Current.MainPage.DisplayAlert("Ops", ex.Message, "Ok");
+//            }
+//        }
+
+//        private async void CancelarCadastro()
+//        {
+//            await Shell.Current.GoToAsync("..");
+//        }
+
+//        public async void CarregarSetor()
+//        {
+//            try
+//            {
+//                Setor s = await setorService.GetSetorAsync(int.Parse(setorSelecionadoId));
+
+//                this.idColaborador = s.idColaborador;
+//                this.idEmpresa = s.idEmpresa;
+//                this.diSetor = s.diSetor;
+//                this.daSetor = s.daSetor;
+//                this.stSetor = s.stSetor;
+//                this.Id = s.Id;
+
+//                // Restante do código permanece inalterado
+
+//            }
+//            catch (Exception ex)
+//            {
+//                await Application.Current.MainPage
+//                    .DisplayAlert("Ops", ex.Message + "Detalhes: " + ex.InnerException, "Ok");
+//            }
+//        }
+//    }
+//}
