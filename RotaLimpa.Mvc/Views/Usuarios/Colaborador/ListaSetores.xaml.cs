@@ -7,14 +7,23 @@ namespace RotaLimpa.Mvc.Views.Usuarios.Colaborador;
 
 public partial class ListaSetores : ContentPage
 {
-    
+
+    ListagemSetorViewModel viewModel;
 
     public ListaSetores()
     {
+
         InitializeComponent();
-         BindingContext = new ListagemSetorViewModel();
-       
+        viewModel = new ListagemSetorViewModel();
+        BindingContext = viewModel;       
     }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        _ = viewModel.ObterSetores();
+    }
+
     private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         if (e.CurrentSelection.FirstOrDefault() is Setor selectedItem)

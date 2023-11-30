@@ -11,7 +11,7 @@ namespace RotaLimpa.Mvc.Models
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Dc_Empresa { get; set; }
-        public int St_Empresa { get; set; }
+        public string St_Empresa { get; set; }
         public DateTime Di_Empresa { get; private set; } = DateTime.Now;
         public DateTime? Da_Empresa { get; private set; } = DateTime.Now;
         public ICollection<Colaborador> Colaboradores { get; set; }

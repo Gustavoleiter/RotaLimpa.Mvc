@@ -14,9 +14,20 @@ namespace RotaLimpa.Mvc.Services.Ocorrencias
             _request = new Request();
         }
 
-        public async Task<int> PostOcorrenciaAsync(Ocorrencia ocorrencia)
+        public async Task<Ocorrencia> PostOcorrenciaAsync(Ocorrencia ocorrencia)
         {
-            return await _request.PostReturnIntAsync(apiUrlBase, ocorrencia);
+
+            try
+            {
+                // Chama a versão do método que não exige um token
+                return await _request.PostAsync(apiUrlBase, ocorrencia);
+            }
+            catch (Exception ex)
+            {
+                // Adicione tratamento de erro apropriado
+                Console.WriteLine($"Erro ao postar setor: {ex.Message}");
+                throw;
+            }
         }
 
         public async Task<ObservableCollection<Ocorrencia>> GetOcorrenciasAsync()

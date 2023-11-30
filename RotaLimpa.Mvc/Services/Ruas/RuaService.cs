@@ -14,9 +14,19 @@ namespace RotaLimpa.Mvc.Services.Ruas
             _request = new Request();
         }
 
-        public async Task<int> PostRuaAsync(Rua rua)
+        public async Task<Rua> PostRuaAsync(Rua rua)
         {
-            return await _request.PostReturnIntAsync(apiUrlBase, rua);
+            try
+            {
+                // Chama a versão do método que não exige um token
+                return await _request.PostAsync(apiUrlBase, rua);
+            }
+            catch (Exception ex)
+            {
+                // Adicione tratamento de erro apropriado
+                Console.WriteLine($"Erro ao postar setor: {ex.Message}");
+                throw;
+            }
         }
 
         public async Task<ObservableCollection<Rua>> GetRuasAsync()

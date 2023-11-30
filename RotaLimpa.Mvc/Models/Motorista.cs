@@ -17,10 +17,10 @@ namespace RotaLimpa.Mvc.Models
         public string SNome { get; set; }
 
         public DateTime Di_Motorista { get; set; } = DateTime.Now;
-        
-        public string StMotorista { get; set; }
-        public string CPF { get; set; }
-        public string RG { get; set; }
+
+        public string StMotorista { get; set; } = "1";
+        public string Cpf { get; set; }
+        public string Rg { get; set; }
         public string Login { get; set; }
         public string Senha { get; set; }
         private string Chave { get; set; }

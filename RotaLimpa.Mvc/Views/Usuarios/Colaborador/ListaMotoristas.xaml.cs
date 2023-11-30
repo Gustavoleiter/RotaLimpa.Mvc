@@ -5,9 +5,16 @@ namespace RotaLimpa.Mvc.Views.Usuarios.Colaborador;
 
 public partial class ListaMotoristas : ContentPage
 {
+    ListagemMotoristaViewModel viewModel;
 	public ListaMotoristas()
 	{
+        viewModel = new ListagemMotoristaViewModel();
 		InitializeComponent();
-        BindingContext = new ListagemMotoristaViewModel();
+        BindingContext = viewModel;
+    }
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        _ = viewModel.ObterMotoristas();
     }
 }

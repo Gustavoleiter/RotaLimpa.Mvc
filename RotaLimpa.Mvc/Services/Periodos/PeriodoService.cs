@@ -14,9 +14,19 @@ namespace RotaLimpa.Mvc.Services.Periodos
             _request = new Request();
         }
 
-        public async Task<int> PostPeriodoAsync(Periodo periodo)
+        public async Task<Periodo> PostPeriodoAsync(Periodo periodo)
         {
-            return await _request.PostReturnIntAsync(apiUrlBase, periodo);
+            try
+            {
+                // Chama a versão do método que não exige um token
+                return await _request.PostAsync(apiUrlBase, periodo);
+            }
+            catch (Exception ex)
+            {
+                // Adicione tratamento de erro apropriado
+                Console.WriteLine($"Erro ao postar setor: {ex.Message}");
+                throw;
+            }
         }
 
         public async Task<ObservableCollection<Periodo>> GetPeriodosAsync()

@@ -21,7 +21,8 @@ namespace RotaLimpa.Mvc.Services
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 return int.Parse(serialized);
             else
-                return 0;
+                throw new Exception(serialized);
+                
         }
 
         public async Task<TResult> PostAsync<TResult>(string uri, TResult data)
@@ -35,22 +36,24 @@ namespace RotaLimpa.Mvc.Services
 
                     HttpResponseMessage response = await httpClient.PostAsync(uri, content);
 
+                    string serialized = await response.Content.ReadAsStringAsync();
+
                     if (response.IsSuccessStatusCode)
                     {
-                        string serialized = await response.Content.ReadAsStringAsync();
+                        
                         return JsonConvert.DeserializeObject<TResult>(serialized);
                     }
                     else
                     {
                         // Tratar códigos de erro específicos aqui e lançar exceções apropriadas se necessário
-                        throw new HttpRequestException($"Erro ao chamar a API: {response.StatusCode}");
+                        throw new HttpRequestException($"Erro ao chamar a API: {response.StatusCode} - {serialized}");
                     }
                 }
             }
             catch (Exception ex)
             {
                 // Trate exceções aqui, registre ou lance para cima conforme necessário
-                throw ex;
+                throw new Exception(ex.Message);
             }
         }
 

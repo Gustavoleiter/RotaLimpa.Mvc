@@ -32,8 +32,8 @@ namespace AppRpgEtec.ViewModels.Motoristas
         }
 
         private int id;
-        private string primeiroNome;
-        private string sobreNome;
+        private string pNome;
+        private string sNome;
         private DateTime diMotorista;
         private string stMotorista;
         private string cpf;
@@ -41,7 +41,7 @@ namespace AppRpgEtec.ViewModels.Motoristas
         private string login;
         private string senha;
 
-        public int IdMotorista
+        public int Id
         {
             get => id;
             set
@@ -51,27 +51,27 @@ namespace AppRpgEtec.ViewModels.Motoristas
             }
         }
 
-        public string PrimeiroNomeMotorista
+        public string PNome
         {
-            get => primeiroNome;
+            get => pNome;
             set
             {
-                primeiroNome = value;
+                pNome = value;
                 OnPropertyChanged();
             }
         }
 
-        public string SobreNomeMotorista
+        public string SNome
         {
-            get => sobreNome;
+            get => sNome;
             set
             {
-                sobreNome = value;
+                sNome = value;
                 OnPropertyChanged();
             }
         }
 
-        public DateTime DiMotorista
+        public DateTime Di_Motorista
         {
             get => diMotorista;
             set
@@ -91,7 +91,7 @@ namespace AppRpgEtec.ViewModels.Motoristas
             }
         }
 
-        public string CPF
+        public string Cpf
         {
             get => cpf;
             set
@@ -101,7 +101,7 @@ namespace AppRpgEtec.ViewModels.Motoristas
             }
         }
 
-        public string RG
+        public string Rg
         {
             get => rg;
             set
@@ -147,33 +147,29 @@ namespace AppRpgEtec.ViewModels.Motoristas
             {
                 Motorista model = new Motorista()
                 {
-                    PNome = this.primeiroNome,
-                    SNome = this.sobreNome,
-                    Di_Motorista = DateTime.Now, // ou ajuste conforme necessário
-                    StMotorista = this.stMotorista,
-                    CPF = this.cpf,
-                    RG = this.rg,
-                    Login = this.login,
+                    PNome = this.pNome,
+                    SNome = this.sNome,
+                    Di_Motorista = DateTime.Now,
+                    Cpf = this.cpf,
+                    Rg = this.rg,
                     Senha = this.senha,
                     Id = this.id
                 };
 
                 if (model.Id == 0)
-                    await motoristaService.PostMotoristaAsync(model);
+                {
+                    Motorista MotoristaCadastrado = await motoristaService.PostMotoristaAsync(model);
+                    model.Id = MotoristaCadastrado.Id;
+                }
                 else
+                {
                     await motoristaService.PutMotoristaAsync(model);
+                }
+                    
 
                 await Application.Current.MainPage.DisplayAlert("Mensagem", "Dados salvos com sucesso!", "Ok");
 
-                // Limpar os campos
-                this.primeiroNome = string.Empty;
-                this.sobreNome = string.Empty;
-                this.stMotorista = string.Empty;
-                this.cpf = string.Empty;
-                this.rg = string.Empty;
-                this.login = string.Empty;
-                this.senha = string.Empty;
-
+               
                 if (Application.Current.MainPage is NavigationPage navigationPage)
                 {
                     await navigationPage.PopAsync(); // Isso remove a página atual (CadastroMotorista)
@@ -192,15 +188,15 @@ namespace AppRpgEtec.ViewModels.Motoristas
             {
                 Motorista motorista = await motoristaService.GetMotoristaAsync(int.Parse(motoristaSelecionadoId));
 
-                this.PrimeiroNomeMotorista = motorista.PNome;
-                this.SobreNomeMotorista = motorista.SNome;
-                this.DiMotorista = motorista.Di_Motorista;
+                this.PNome = motorista.PNome;
+                this.SNome = motorista.SNome;
+                this.Di_Motorista = motorista.Di_Motorista;
                 this.StMotorista = motorista.StMotorista;
-                this.CPF = motorista.CPF;
-                this.RG = motorista.RG;
+                this.Cpf = motorista.Cpf;
+                this.Rg = motorista.Rg;
                 this.Login = motorista.Login;
                 this.Senha = motorista.Senha;
-                this.IdMotorista = motorista.Id;
+                this.Id = motorista.Id;
             }
             catch (Exception ex)
             {

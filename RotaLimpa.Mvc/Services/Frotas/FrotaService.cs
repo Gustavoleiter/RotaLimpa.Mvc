@@ -14,9 +14,19 @@ namespace RotaLimpa.Mvc.Services.Frotas
             _request = new Request();
         }
 
-        public async Task<int> PostFrotaAsync(Frota frota)
+        public async Task<Frota> PostFrotaAsync(Frota frota)
         {
-            return await _request.PostReturnIntAsync(apiUrlBase, frota);
+            try
+            {
+                // Chama a versão do método que não exige um token
+                return await _request.PostAsync(apiUrlBase, frota);
+            }
+            catch (Exception ex)
+            {
+                // Adicione tratamento de erro apropriado
+                Console.WriteLine($"Erro ao postar setor: {ex.Message}");
+                throw;
+            }
         }
 
         public async Task<ObservableCollection<Frota>> GetFrotasAsync()

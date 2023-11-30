@@ -21,12 +21,12 @@ namespace RotaLimpa.Mvc.Services.Setores
             _request = new Request();
         }
 
-        public async Task<int> PostSetorAsync(Setor s)
+        public async Task<Setor> PostSetorAsync(Setor s)
         {
             try
             {
                 // Chama a versão do método que não exige um token
-                return await _request.PostReturnIntAsync(apiUrlBase, s);
+                return await _request.PostAsync(apiUrlBase, s);
             }
             catch (Exception ex)
             {

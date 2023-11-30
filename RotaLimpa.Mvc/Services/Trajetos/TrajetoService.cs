@@ -1,10 +1,11 @@
-﻿using RotaLimpa.Mvc.Models;
+﻿
+using RotaLimpa.Mvc.Models;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
-namespace RotaLimpa.Mvc.Services.Trajeto
+namespace RotaLimpa.Mvc.Services.Trajetos
 {
-    public class TrajetoService
+    public class TrajetoService : Request
     {
         private readonly Request _request;
         private const string apiUrlBase = "http://rotalimpabanco.somee.com/rotalimpa/Trajetos";
@@ -14,9 +15,19 @@ namespace RotaLimpa.Mvc.Services.Trajeto
             _request = new Request();
         }
 
-        public async Task<int> PostTrajetoAsync(Models.Trajeto trajeto)
+        public async Task<Trajeto> PostSetorVeiculoAsync(Trajeto trajeto)
         {
-            return await _request.PostReturnIntAsync(apiUrlBase, trajeto);
+            try
+            {
+                // Chama a versão do método que não exige um token
+                return await _request.PostAsync(apiUrlBase, trajeto);
+            }
+            catch (Exception ex)
+            {
+                // Adicione tratamento de erro apropriado
+                Console.WriteLine($"Erro ao postar setor: {ex.Message}");
+                throw;
+            }
         }
 
         public async Task<ObservableCollection<Models.Trajeto>> GetTrajetosAsync()

@@ -6,6 +6,9 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new NavigationPage( new Views.Usuarios.Colaborador.Conta());
+		MainPage = new NavigationPage( new Views.Usuarios.LoginView()
+		{
+
+		});
 	}
 }

@@ -14,9 +14,19 @@ namespace RotaLimpa.Mvc.Services.SetoresVeiculos
             _request = new Request();
         }
 
-        public async Task<int> PostSetorVeiculoAsync(SetorVeiculo setorVeiculo)
+        public async Task<SetorVeiculo> PostSetorVeiculoAsync(SetorVeiculo setorVeiculo)
         {
-            return await _request.PostReturnIntAsync(apiUrlBase, setorVeiculo);
+            try
+            {
+                // Chama a versão do método que não exige um token
+                return await _request.PostAsync(apiUrlBase, setorVeiculo);
+            }
+            catch (Exception ex)
+            {
+                // Adicione tratamento de erro apropriado
+                Console.WriteLine($"Erro ao postar setor: {ex.Message}");
+                throw;
+            }
         }
 
         public async Task<ObservableCollection<SetorVeiculo>> GetSetoresVeiculosAsync()

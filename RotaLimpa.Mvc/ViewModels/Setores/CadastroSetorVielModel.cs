@@ -49,16 +49,14 @@ namespace AppRpgEtec.ViewModels.Setores
 
         public ServicoEnum TipoServicoSelecionado
         {
-            get { return tipoServicoSelecionado; }
+            get => tipoServicoSelecionado;
             set
             {
-                if (value != null)
-                {
-                    tipoServicoSelecionado = value;
-                    OnPropertyChanged();
-                }
+                tipoServicoSelecionado = value;
+                OnPropertyChanged();
             }
         }
+
 
         private int id;
         private int idColaborador;
@@ -144,7 +142,7 @@ namespace AppRpgEtec.ViewModels.Setores
             get => tiposServico;
             set
             {
-                TiposServico = value;
+                tiposServico = value;
                 OnPropertyChanged();
             }
         }
@@ -196,18 +194,19 @@ namespace AppRpgEtec.ViewModels.Setores
                 {
                     IdColaborador = this.idColaborador,
                     IdEmpresa = this.idEmpresa,
-                    Di_Setor = DateTime.Now,
-                    Da_Setor = DateTime.Now,
-                    StSetor = this.stSetor,
+                    DiSetor = DateTime.Now,
+                    DaSetor = DateTime.Now,                   
                     Id = this.id,
                     TipoServico = (ServicoEnum)TiposServico,
                 };
 
+                //StSetor = string.Empty;
+
                 if (model.Id == 0)
                 {
                     // Use a função PostSetorAsync para criar um novo setor
-                    int newSetorId = await sService.PostSetorAsync(model);
-                    model.Id = newSetorId; // Atualiza o ID com o valor retornado pela API
+                    Setor SetorCadastrado = await sService.PostSetorAsync(model);
+                    model.Id = SetorCadastrado.Id; // Atualiza o ID com o valor retornado pela API
                 }
                 else
                 {
@@ -243,8 +242,8 @@ namespace AppRpgEtec.ViewModels.Setores
 
                 this.IdColaborador = s.IdColaborador;
                 this.IdEmpresa = s.IdEmpresa;
-                this.DiSetor = s.Di_Setor;
-                this.DaSetor = s.Da_Setor;
+                this.DiSetor = s.DiSetor;
+                this.DaSetor = s.DaSetor;
                 this.StSetor = s.StSetor;
                 this.Id = s.Id;
                 this.Rotas = (List<Rota>)s.Rotas;

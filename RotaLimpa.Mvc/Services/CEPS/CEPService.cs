@@ -14,9 +14,19 @@ namespace RotaLimpa.Mvc.Services.CEPs
             _request = new Request();
         }
 
-        public async Task<int> PostCEPAsync(CEP cep)
+        public async Task<CEP> PostCEPAsync(CEP cep)
         {
-            return await _request.PostReturnIntAsync(apiUrlBase, cep);
+            try
+            {
+                // Chama a versão do método que não exige um token
+                return await _request.PostAsync(apiUrlBase, cep);
+            }
+            catch (Exception ex)
+            {
+                // Adicione tratamento de erro apropriado
+                Console.WriteLine($"Erro ao postar setor: {ex.Message}");
+                throw;
+            }
         }
 
         public async Task<ObservableCollection<CEP>> GetCEPsAsync()

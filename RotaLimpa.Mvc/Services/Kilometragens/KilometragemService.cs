@@ -14,9 +14,20 @@ namespace RotaLimpa.Mvc.Services.Kilometragens
             _request = new Request();
         }
 
-        public async Task<int> PostKilometragem(Kilometragem kilometragem)
+        public async Task<Kilometragem> PostKilometragem(Kilometragem kilometragem)
         {
-            return await _request.PostReturnIntAsync(apiUrlBase, kilometragem);
+
+            try
+            {
+                // Chama a versão do método que não exige um token
+                return await _request.PostAsync(apiUrlBase, kilometragem);
+            }
+            catch (Exception ex)
+            {
+                // Adicione tratamento de erro apropriado
+                Console.WriteLine($"Erro ao postar setor: {ex.Message}");
+                throw;
+            }
         }
 
         public async Task<ObservableCollection<Kilometragem>> GetKilometragensAsync()

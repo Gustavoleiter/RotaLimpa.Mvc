@@ -19,10 +19,19 @@ namespace RotaLimpa.Mvc.Services.Colaboradores
         }
 
 
-        public async Task<int> PostColaboradorAsync(Colaborador m)
+        public async Task<Colaborador> PostColaboradorAsync(Colaborador m)
         {
-            // Chama a versão do método que não exige um token
-            return await _request.PostReturnIntAsync(apiUrlBase, m);
+            try
+            {
+                // Chama a versão do método que não exige um token
+                return await _request.PostAsync(apiUrlBase, m);
+            }
+            catch (Exception ex)
+            {
+                // Adicione tratamento de erro apropriado
+                Console.WriteLine($"Erro ao postar setor: {ex.Message}");
+                throw;
+            }
         }
         public async Task<ObservableCollection<Colaborador>> GetColaboradoresAsync()
         {

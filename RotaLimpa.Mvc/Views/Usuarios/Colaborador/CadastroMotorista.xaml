@@ -38,22 +38,21 @@
                 </Grid.RowDefinitions>
 
                 <Label Grid.Column="0" Grid.Row="0" Text="NOME" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
-                <Entry Grid.Column="0" Grid.Row="1" TextColor="#000000" FontFamily="Comfortaa" Text="{Binding PNome}" FontSize="16"/>
+                <Entry Grid.Column="0" Grid.Row="1" TextColor="#000000" FontFamily="Comfortaa" Text="{Binding pNome}" FontSize="16"/>
 
                 <Label Grid.Column="2" Grid.Row="0" Text="RG" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
-                <Entry Grid.Column="2" Grid.Row="1" WidthRequest="350" TextColor="#000000" FontFamily="Comfortaa" Text="{Binding RG}"/>
+                <Entry Grid.Column="2" Grid.Row="1" WidthRequest="350" TextColor="#000000" FontFamily="Comfortaa" Text="{Binding rg}"/>
 
                 <Label Grid.Column="2" Grid.Row="2" Text="CPF" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
-                <Entry Grid.Column="2" Grid.Row="3" WidthRequest="350" TextColor="#000000" FontFamily="Comfortaa" Text="{Binding CPF}"/>
+                <Entry Grid.Column="2" Grid.Row="3" WidthRequest="350" TextColor="#000000" FontFamily="Comfortaa" Text="{Binding cpf}"/>
 
-                <Label Grid.Column="0" Grid.Row="2" Text="STATUS" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
-                <Entry Grid.Column="0" Grid.Row="3" WidthRequest="350" TextColor="#000000" FontFamily="Comfortaa" Text="{Binding StMotorista}"/>
+                <Label Grid.Column="0" Grid.Row="2" Text="SOBRENOME" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
+                <Entry Grid.Column="0" Grid.Row="3" WidthRequest="350" TextColor="#000000" FontFamily="Comfortaa" Text="{Binding sNome}"/>
 
-                <Label Grid.Column="0" Grid.Row="4" Text="LOGIN" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
-                <Entry Grid.Column="0" Grid.Row="5" WidthRequest="350" TextColor="#000000" FontFamily="Comfortaa" Text="{Binding Login}"/>
+                <Label Grid.Column="0" Grid.Row="4" Text="SENHA" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
+                <Entry Grid.Column="0" Grid.Row="5" WidthRequest="350" TextColor="#000000" FontFamily="Comfortaa" Text="{Binding senha}"/>
 
-                <Label Grid.Column="2" Grid.Row="4" Text="SENHA" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
-                <Entry Grid.Column="2" Grid.Row="5" WidthRequest="350" TextColor="#000000" FontFamily="Comfortaa" Text="{Binding Senha}"/>
+                
 
                 <!--<Label Grid.Column="2" Grid.Row="2" Text="ID DA EMPRESA" FontSize="16" Margin="0,15,0,0"/>
                 <Entry Grid.Column="2" Grid.Row="3" WidthRequest="350" TextColor="#A8A8A8" Keyboard="Numeric" Text="{Binding EmpresaId}"/>
