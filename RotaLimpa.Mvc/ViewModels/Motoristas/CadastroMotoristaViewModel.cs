@@ -31,6 +31,15 @@ namespace AppRpgEtec.ViewModels.Motoristas
             }
         }
 
+
+        public CadastroMotoristaViewModel()
+        {
+            motoristaService = new MotoristaService();
+
+            SalvarCommand = new Command(async () => await SalvarMotorista());
+
+        }
+
         private int id;
         private string pNome;
         private string sNome;
@@ -131,13 +140,6 @@ namespace AppRpgEtec.ViewModels.Motoristas
             }
         }
 
-        public CadastroMotoristaViewModel()
-        {
-            motoristaService = new MotoristaService();
-
-            SalvarCommand = new Command(async () => await SalvarMotorista());
-            
-        }
 
         public string MotoristaSelecionado { get => motoristaSelecionadoId; set => motoristaSelecionadoId = value; }
 
@@ -145,6 +147,8 @@ namespace AppRpgEtec.ViewModels.Motoristas
         {
             try
             {
+                
+
                 Motorista model = new Motorista()
                 {
                     PNome = this.pNome,
@@ -156,7 +160,19 @@ namespace AppRpgEtec.ViewModels.Motoristas
                     Id = this.id
                 };
 
-                if (model.Id == 0)
+
+                //
+
+                if (model.Login.EndsWith("G"))
+                {
+
+                }
+                else if (model.Login.EndsWith("G"))
+
+                    //
+
+
+                    if (model.Id == 0)
                 {
                     Motorista MotoristaCadastrado = await motoristaService.PostMotoristaAsync(model);
                     model.Id = MotoristaCadastrado.Id;
