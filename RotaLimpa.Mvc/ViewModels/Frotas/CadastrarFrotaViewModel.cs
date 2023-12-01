@@ -73,8 +73,8 @@ namespace RotaLimpa.Mvc.ViewModels.Frotas
             {
                 Frota frota = new Frota
                 {
-                    P_Veiculo = PVeiculo,
-                    Tmn_Veiculo = TmnVeiculo,
+                    PVeiculo = PVeiculo,
+                    TmnVeiculo = TmnVeiculo,
                     Di_Veiculo = DiVeiculo,
                     St_Veiculo = StVeiculo
                     // Adicione outras propriedades conforme necessário

@@ -9,8 +9,8 @@ namespace RotaLimpa.Mvc.Models
     public class Frota
     {
         public int Id { get; set; }
-        public string P_Veiculo { get; set; }
-        public double Tmn_Veiculo { get; set; }
+        public string PVeiculo { get; set; }
+        public double TmnVeiculo { get; set; }
         public DateTime Di_Veiculo { get; set; }
         public string St_Veiculo { get; set; }
         public Kilometragem? Kilometragem { get; set;}

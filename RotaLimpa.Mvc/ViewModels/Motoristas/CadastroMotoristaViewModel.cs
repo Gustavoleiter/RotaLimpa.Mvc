@@ -163,11 +163,11 @@ namespace AppRpgEtec.ViewModels.Motoristas
 
                 //
 
-                if (model.Login.EndsWith("G"))
-                {
+                //if (model.Login.EndsWith("G"))
+                //{
 
-                }
-                else if (model.Login.EndsWith("G"))
+                //}
+                //else if (model.Login.EndsWith("G"))
 
                     //
 

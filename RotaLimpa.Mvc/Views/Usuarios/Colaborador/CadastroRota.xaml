@@ -6,80 +6,64 @@
              Title="CadastroRota">
     <NavigationPage.TitleView>
         <local:MeuCabecalho />
-        <!-- Use o controle personalizado aqui -->
     </NavigationPage.TitleView>
 
-    <ContentPage.Content>
-        <StackLayout Padding="20">
-            <Entry Placeholder="Colaborador ID" FontFamily="Comfortaa" Text="{Binding Rota.ColaboradorId}" Keyboard="Numeric" />
-            <Entry Placeholder="Setor ID" FontFamily="Comfortaa" Text="{Binding Rota.SetorId}" Keyboard="Numeric" />
-            <!--<DatePicker Placeholder="Data da Rota" Date="{Binding Rota.DtRota}" />
-            <TimePicker Placeholder="Hora da Rota" Time="{Binding Rota.TmRota}" />-->
+    <ContentPage.Background>
+        <Color>#E7E7E7</Color>
+    </ContentPage.Background>
 
-            <Button FontFamily="Comfortaa" Text="Cadastrar Rota" Command="{Binding CadastrarRotaCommand}" />
-        </StackLayout>
-    </ContentPage.Content>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="3" Padding="15" HorizontalOptions="Center">
+
+            <Label Text="CADASTRO DE SETORES" HorizontalOptions="Center" FontSize="24" FontAttributes="Bold" Margin="0,15,0,5"/>
+            <BoxView BackgroundColor="Black" HeightRequest="2" WidthRequest="1200" Margin="0,0,0,65"/>
+
+            <Grid WidthRequest="700">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" Text="COLABORADOR" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
+                <Entry Grid.Column="0" Grid.Row="1" TextColor="#000000" Text="{Binding IdSetor}" FontFamily="Comfortaa" FontSize="16" Keyboard="Numeric"/>
+                <Label Grid.Column="2" Grid.Row="0" Text="EMPRESA" FontSize="16" Margin="0,15,0,0"/>
+                <Entry Grid.Column="2" Grid.Row="1" TextColor="#000000" Text="{Binding Id}" FontFamily="Comfortaa" FontSize="16" Keyboard="Numeric"/>
+                <!--<Label Grid.Column="0" Grid.Row="2" Text="TIPO DE SERVIÇO" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
+                <Entry Grid.Column="0" Grid.Row="3"  TextColor="#000000" Text="{Binding TipoServico }" FontFamily="Comfortaa" FontSize="16" Keyboard="Numeric"/>
+                <Label Grid.Column="2" Grid.Row="2" Text="STATUS DO SETOR" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
+                <Entry Grid.Column="2" Grid.Row="3" TextColor="#000000" Text="{Binding StSetor}" FontFamily="Comfortaa" FontSize="16"/>-->
+            </Grid>
+
+
+            <Grid WidthRequest="700">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="2" BackgroundColor="#02A3C7" BorderWidth="1" BorderColor="#02A3C7" TextColor="#1F1F1F" FontAttributes="Bold" Text="SALVAR" 
+                        Command="{Binding SalvarCommand}" Margin="0,15,0,0"></Button>
+                <Button Grid.Column="0" BackgroundColor="Transparent" BorderWidth="1" BorderColor="#02A3C7" TextColor="#02A3C7" FontAttributes="Bold" Text="CANCELAR" 
+                        CornerRadius="2" Command="{Binding CancelarCommand}" Margin="0,15,0,0"></Button>
+
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+
 
 </ContentPage>
-<!--<VerticalStackLayout  HorizontalOptions="Center" >
-        <HorizontalStackLayout>
-            <BoxView Rotation="45"  Color="#02A3C7" Margin="-5,-5,0,0" HeightRequest="10" WidthRequest="10"/>
-            <BoxView Color="#02A3C7" Margin="0,-5,0,0" HeightRequest="2" WidthRequest="1540"/>
-        </HorizontalStackLayout>
-
-        <HorizontalStackLayout HorizontalOptions="Center">
-            <Label Text="CADASTRO DE ROTAS" Margin="0,30,0,0" FontSize="36" FontAttributes="Bold" 
-                       HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" />
-        </HorizontalStackLayout>
-        <HorizontalStackLayout HorizontalOptions="Center">
-            <BoxView Color="Black" Margin="0,0,0,30" HeightRequest="2" WidthRequest="1200"/>
-        </HorizontalStackLayout>
-
-        <HorizontalStackLayout HorizontalOptions="Center" Margin="0,40,0,0">
-            <Label FontSize="16" TextColor="Black" Text="NOME DA RUA" WidthRequest="380"/>
-            <Label FontSize="16" TextColor="Black" Text="NÚMERO DO SETOR ASSOCIADO" WidthRequest="360"/>
-        </HorizontalStackLayout>
-        <HorizontalStackLayout HorizontalOptions="Center">
-            <Entry FontSize="16" Margin="0,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
-            <Entry FontSize="16" Margin="20,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
-        </HorizontalStackLayout>
-
-        <HorizontalStackLayout HorizontalOptions="Center" Margin="0,20,0,0">
-            <Label FontSize="16" TextColor="Black" Text="MOTORISTA 1" WidthRequest="380"/>
-            <Label FontSize="16" TextColor="Black" Text="CPF 1" WidthRequest="360"/>
-        </HorizontalStackLayout>
-        <HorizontalStackLayout HorizontalOptions="Center">
-            <Entry FontSize="16" Margin="0,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
-            <Entry FontSize="16" Margin="20,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
-        </HorizontalStackLayout>
-
-        <HorizontalStackLayout HorizontalOptions="Center" Margin="0,20,0,0">
-            <Label FontSize="16" TextColor="Black" Text="MOTORISTA 2" WidthRequest="380"/>
-            <Label FontSize="16" TextColor="Black" Text="CPF 2" WidthRequest="360"/>
-        </HorizontalStackLayout>
-        <HorizontalStackLayout HorizontalOptions="Center">
-            <Entry FontSize="16" Margin="0,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
-            <Entry FontSize="16" Margin="20,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
-        </HorizontalStackLayout>
-
-        <HorizontalStackLayout HorizontalOptions="Center" Margin="0,20,0,0">
-            <Label FontSize="16" TextColor="Black" Text="MOTORISTA 3" WidthRequest="380"/>
-            <Label FontSize="16" TextColor="Black" Text="CPF 3" WidthRequest="360"/>
-        </HorizontalStackLayout>
-        <HorizontalStackLayout HorizontalOptions="Center">
-            <Entry FontSize="16" Margin="0,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
-            <Entry FontSize="16" Margin="20,0,0,0" WidthRequest="360" HeightRequest="55" BackgroundColor="WhiteSmoke"/>
-        </HorizontalStackLayout>
-
-        <HorizontalStackLayout HorizontalOptions="Center">
-            <Button x:Name="btnCancelar" Text="CANCELAR" TextColor="#02A3C7" FontAttributes="Bold" FontSize="18" 
-                        Command="{Binding CancelarCommand}" Margin="0,40,0,0" WidthRequest="360" HeightRequest="55" 
-                        BackgroundColor="Transparent" BorderWidth="1.5" BorderColor="#02A3C7" CornerRadius="2"/>
-            <Button x:Name="btnSalvarSetor" Text="SALVAR" TextColor="Black" FontAttributes="Bold" FontSize="18" 
-                        Command="{Binding SalvarSetorCommand}" Margin="20,40,0,0" WidthRequest="360" HeightRequest="55" 
-                        BackgroundColor="#02A3C7" BorderWidth="1.5" BorderColor="#02A3C7" CornerRadius="2"/>
-        </HorizontalStackLayout>
-
-    </VerticalStackLayout>
-
-</ContentPage>-->
