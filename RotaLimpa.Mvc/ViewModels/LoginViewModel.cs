@@ -73,11 +73,12 @@ namespace RotaLimpa.Mvc.ViewModels
             }
             else
             {
-               
                 return TipoUsuario.Colaborador;
             }
         }
     }
+
+   
 
     public enum TipoUsuario
     {

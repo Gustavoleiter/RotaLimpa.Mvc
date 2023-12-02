@@ -12,15 +12,25 @@ namespace RotaLimpa.Mvc.Models
         public int Id { get; set; }
         
         public int IdEmpresa { get; set; }
-        public Empresa Empresa { get; set; }
-        public string Primeiro_Nome { get; set; }
+        
+        public Empresa? Empresa { get; set; }
+        
+        public string PNome { get; set; }
      
-        public string Sobre_Nome { get; set; }
+        public string SNome { get; set; }
         
         public string NomeEmpresa { get; set; }
 
-        public string DcColaborador { get; set; }
+        public DateTime Di_Colaborador { get; set; }
 
         public string StColaborador { get; set; }
+
+        public string Cpf { get; set; }
+        
+        public string Rg { get; set; }
+        
+        public string? Login { get; set; }
+        
+        public string Senha { get; set; }
     }
 }
