@@ -12,7 +12,7 @@ namespace RotaLimpa.Mvc.ViewModels
         public DateTime DiSetor { get; set; }
         public DateTime DaSetor { get; set; }
         public string StSetor { get; set; }
-        public string VeiculoPlaca { get; set; }
+        public string Veiculo { get; set; }
         public double TmnVeiculo { get; set; }
         public DateTime Di_Veiculo { get; set; }
         public string St_Veiculo { get; set; }

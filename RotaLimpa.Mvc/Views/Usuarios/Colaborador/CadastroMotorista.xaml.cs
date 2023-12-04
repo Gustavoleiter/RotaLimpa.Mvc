@@ -13,7 +13,6 @@ namespace RotaLimpa.Mvc.Views.Usuarios.Colaborador
             InitializeComponent();
             cadViewModel = new CadastroMotoristaViewModel();
             BindingContext = cadViewModel; // Atribuir a instância de viewModel ao BindingContext
-
             Title = "Novo Motorista";
 
         }

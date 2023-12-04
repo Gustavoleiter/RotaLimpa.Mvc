@@ -1,14 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using RotaLimpa.Mvc.Services;
+using RotaLimpa.Mvc.Services.Autenticar;
+
 
 
 namespace RotaLimpa.Mvc.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
+        private readonly AutenticarService autenticarService;
+
         private string login;
         private string senha;
 
@@ -17,7 +19,7 @@ namespace RotaLimpa.Mvc.ViewModels
             get => login;
             set
             {
-                Login = value;
+                login = value;
                 OnPropertyChanged();
             }
         }
@@ -36,29 +38,45 @@ namespace RotaLimpa.Mvc.ViewModels
 
         public LoginViewModel()
         {
+            autenticarService = new AutenticarService();
+
             LoginCommand = new Command(async () => await ExecuteLoginCommand());
         }
 
         private async Task ExecuteLoginCommand()
         {
-            // Determinar o tipo de usuário com base no dispositivo
-            TipoUsuario userType = ObterTipoUsuario();
-
-            // Redirecionar com base no tipo de usuário
-            if (userType == TipoUsuario.Motorista)
-            {
-                // Redirecionar para a parte do motorista
-                // Substitua "MotoristaPage" pela página real que você deseja navegar
-                await Shell.Current.GoToAsync($"//MotoristaPage");
-            }
-            else if (userType == TipoUsuario.Colaborador)
-            {
-                // Redirecionar para a parte do colaborador
-                // Substitua "ColaboradorPage" pela página real que você deseja navegar
-                await Shell.Current.GoToAsync($"//ColaboradorPage");
-            }
-            
+            // Chamar o método RealizarLogin com as credenciais fornecidas
+            //await RealizarLogin(Login, Senha);
         }
+
+        //private async Task RealizarLogin(string username, string senha)
+        //{
+        //    if (await autenticarService.AutenticarAsync(username, senha, out string perfil))
+        //    {
+        //        // Login bem-sucedido
+        //        Preferences.Set("PerfilUsuario", perfil);
+
+        //        // Redirecionar com base no tipo de usuário
+        //        TipoUsuario userType = ObterTipoUsuario();
+        //        if (userType == TipoUsuario.Motorista)
+        //        {
+        //            // Redirecionar para a parte do motorista
+        //            // Substitua "MotoristaPage" pela página real que você deseja navegar
+        //            await Shell.Current.GoToAsync($"//MotoristaPage");
+        //        }
+        //        else if (userType == TipoUsuario.Colaborador)
+        //        {
+        //            // Redirecionar para a parte do colaborador
+        //            // Substitua "ColaboradorPage" pela página real que você deseja navegar
+        //            await Shell.Current.GoToAsync($"//ColaboradorPage");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        // Falha no login
+        //        await Application.Current.MainPage.DisplayAlert("Falha no login", "Credenciais inválidas", "OK");
+        //    }
+        //}
 
         private TipoUsuario ObterTipoUsuario()
         {
@@ -66,7 +84,7 @@ namespace RotaLimpa.Mvc.ViewModels
             double larguraTela = DeviceDisplay.MainDisplayInfo.Width;
 
             // Lógica para determinar o tipo de usuário com base na largura da tela
-            if (larguraTela < 600) 
+            if (larguraTela < 600)
             {
                 // Se a largura da tela for menor que 600, assumimos que é um motorista
                 return TipoUsuario.Motorista;
@@ -78,13 +96,10 @@ namespace RotaLimpa.Mvc.ViewModels
         }
     }
 
-   
-
     public enum TipoUsuario
     {
         Desconhecido,
         Motorista,
         Colaborador
     }
-
 }

@@ -4,6 +4,7 @@ using RotaLimpa.Mvc.ViewModels;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Collections.ObjectModel;
 
 
 namespace AppRpgEtec.ViewModels.Motoristas
@@ -159,23 +160,11 @@ namespace AppRpgEtec.ViewModels.Motoristas
                     Senha = this.senha,
                     Id = this.id
                 };
-
-
-                //
-
-                //if (model.Login.EndsWith("G"))
-                //{
-
-                //}
-                //else if (model.Login.EndsWith("G"))
-
-                    //
-
-
-                    if (model.Id == 0)
+                if (model.Id == 0)
                 {
-                    Motorista MotoristaCadastrado = await motoristaService.PostMotoristaAsync(model);
-                    model.Id = MotoristaCadastrado.Id;
+                    await motoristaService.PostMotoristaAsync(model);
+                    //Motorista MotoristaCadastrado = await motoristaService.PostMotoristaAsync(model);
+                    //model.Id = MotoristaCadastrado.Id;
                 }
                 else
                 {
@@ -185,16 +174,17 @@ namespace AppRpgEtec.ViewModels.Motoristas
 
                 await Application.Current.MainPage.DisplayAlert("Mensagem", "Dados salvos com sucesso!", "Ok");
 
-               
-                if (Application.Current.MainPage is NavigationPage navigationPage)
-                {
-                    await navigationPage.PopAsync(); // Isso remove a página atual (CadastroMotorista)
+
+                await Shell.Current.GoToAsync("..");
+                //if (Application.Current.MainPage is NavigationPage navigationPage)
+                //{
+                //    await navigationPage.PopAsync(); // Isso remove a página atual (CadastroMotorista)
+                //}
                 }
-            }
-            catch (Exception ex)
-            {
-                await Application.Current.MainPage.DisplayAlert("Ops", ex.Message + "Detalhes: " + ex.InnerException, "Ok");
-            }
+                catch (Exception ex)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Ops", ex.Message + "Detalhes: " + ex.InnerException, "Ok");
+                }
         }
 
 
@@ -202,17 +192,17 @@ namespace AppRpgEtec.ViewModels.Motoristas
         {
             try
             {
-                Motorista motorista = await motoristaService.GetMotoristaAsync(int.Parse(motoristaSelecionadoId));
+                Motorista m = await motoristaService.GetMotoristaAsync(int.Parse(motoristaSelecionadoId));
 
-                this.PNome = motorista.PNome;
-                this.SNome = motorista.SNome;
-                this.Di_Motorista = motorista.Di_Motorista;
-                this.StMotorista = motorista.StMotorista;
-                this.Cpf = motorista.Cpf;
-                this.Rg = motorista.Rg;
-                this.Login = motorista.Login;
-                this.Senha = motorista.Senha;
-                this.Id = motorista.Id;
+                this.PNome = m.PNome;
+                this.SNome = m.SNome;
+                this.Di_Motorista = m.Di_Motorista;
+                this.StMotorista = m.StMotorista;
+                this.Cpf = m.Cpf;
+                this.Rg = m.Rg;
+                this.Login = m.Login;
+                this.Senha = m.Senha;
+                this.Id = m.Id;
             }
             catch (Exception ex)
             {

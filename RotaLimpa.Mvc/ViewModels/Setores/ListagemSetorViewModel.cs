@@ -11,7 +11,7 @@ namespace RotaLimpa.Mvc.ViewModels.Setores
     public class ListagemSetorViewModel : BaseViewModel
     {
         private SetorService setorService;
-        private InformacoesViewModel informacoesViewModel;
+        
 
         private ObservableCollection<Setor> _setores;
         public ObservableCollection<Setor> Setores
@@ -28,17 +28,16 @@ namespace RotaLimpa.Mvc.ViewModels.Setores
         {
             setorService = new SetorService();
             Setores = new ObservableCollection<Setor>();
-            informacoesViewModel = new InformacoesViewModel();
+            
 
             _ = ObterSetores();
             NovoSetor = new Command(async () => { await ExibirCadastroSetor(); });
-            RemoverSetorCommand = new Command<Setor>(async (Setor setor) => { await RemoverSetor(setor); });
-            ObterInformacoesCommand = new Command(async () => await ObterInformacoes());
+            
         }
 
         public ICommand RemoverSetorCommand { get; }
         public ICommand NovoSetor { get; }
-        public ICommand ObterInformacoesCommand { get; }
+        
 
         public async Task ObterSetores()
         {
@@ -89,9 +88,19 @@ namespace RotaLimpa.Mvc.ViewModels.Setores
             }
         }
 
-        public async Task ObterInformacoes()
+        private Setor setorSelecionado;
+
+        public Setor SetorSelecionado
         {
-            await informacoesViewModel.ObterInformacoes();
+            get { return setorSelecionado; }
+            set
+            {
+                if (value != value)
+                {
+                    setorSelecionado = value;
+                    Shell.Current.GoToAsync($"cadSetorView?pId={setorSelecionado.Id}");
+                }
+            }
         }
 
         private static ListagemSetorViewModel _instance;

@@ -1,6 +1,7 @@
 ﻿using RotaLimpa.Mvc.Models;
 using RotaLimpa.Mvc.Services.Motoristas; // Importe o serviço de Motoristas
 using RotaLimpa.Mvc.ViewModels;
+using RotaLimpa.Mvc.Views.Usuarios.Colaborador;
 using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
@@ -83,18 +84,26 @@ namespace RotaLimpa.Mvc.ViewModels.Motoristas
             }
         }
 
-        private static ListagemMotoristaViewModel _instance;
+       
 
-        public static ListagemMotoristaViewModel Instance
+
+
+        private Motorista motoristaSelecionado;
+        public Motorista MotoristaSelecionado
         {
-            get
+            get { return motoristaSelecionado; }
+            set
             {
-                if (_instance == null)
+                if (value != null)
                 {
-                    _instance = new ListagemMotoristaViewModel();
+                    motoristaSelecionado = value;
+                    Shell.Current.GoToAsync($"cadMotoristaView?mId={motoristaSelecionado.Id}");
+                    
                 }
-                return _instance;
             }
         }
+
+        
+
     }
 }

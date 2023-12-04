@@ -17,17 +17,17 @@ namespace RotaLimpa.Mvc.Services.Motoristas
             _request = new Request();
         }
 
-        public async Task<Motorista> PostMotoristaAsync(Motorista m)
+        public async Task<int> PostMotoristaAsync(Motorista m)
         {
            try
            {
                 // Chama a versão do método que não exige um token
-                return await _request.PostAsync(apiUrlBase, m);
+                return await _request.PostReturnIntAsync(apiUrlBase, m);
             }
             catch (Exception ex)
             {
                 // Adicione tratamento de erro apropriado
-                Console.WriteLine($"Erro ao postar setor: {ex.Message}");
+                Console.WriteLine($"Erro ao postar motorista: {ex.Message}");
                 throw;
             }
         }
@@ -67,5 +67,7 @@ namespace RotaLimpa.Mvc.Services.Motoristas
             m.Id = await _request.PostReturnIntAsync(apiUrlBase + urlComplementar, m);
             return m;
         }
+
+        
     }
 }
