@@ -7,6 +7,7 @@ namespace RotaLimpa.Mvc.Views.Usuarios.Colaborador
     {
         private CadastroMotoristaViewModel cadViewModel;
 
+
         public CadastroMotorista()
         {
             
@@ -16,7 +17,7 @@ namespace RotaLimpa.Mvc.Views.Usuarios.Colaborador
             Title = "Novo Motorista";
 
         }
-
+       
 
     }
 }

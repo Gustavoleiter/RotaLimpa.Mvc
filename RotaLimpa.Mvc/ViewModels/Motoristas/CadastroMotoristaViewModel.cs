@@ -5,7 +5,8 @@ using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
-
+using RotaLimpa.Mvc;
+using RotaLimpa.Mvc.Views.Usuarios.Motorista;
 
 namespace AppRpgEtec.ViewModels.Motoristas
 {
@@ -15,8 +16,11 @@ namespace AppRpgEtec.ViewModels.Motoristas
     {
         private MotoristaService motoristaService;
 
+        public ObservableCollection<Setor> Setores { get; set; }
+
         public ICommand SalvarCommand { get; }
         public ICommand CancelarCommand { get; }
+        public ICommand AutenticarCommand { get; set; }
 
         private string motoristaSelecionadoId;
 
@@ -38,7 +42,7 @@ namespace AppRpgEtec.ViewModels.Motoristas
             motoristaService = new MotoristaService();
 
             SalvarCommand = new Command(async () => await SalvarMotorista());
-
+            AutenticarCommand = new Command(async () => await AutenticarMotorista());
         }
 
         private int id;
@@ -56,8 +60,11 @@ namespace AppRpgEtec.ViewModels.Motoristas
             get => id;
             set
             {
-                id = value;
-                OnPropertyChanged();
+                if (id != value)
+                {
+                    id = value;
+                    OnPropertyChanged();
+                }
             }
         }
 
@@ -209,5 +216,49 @@ namespace AppRpgEtec.ViewModels.Motoristas
                 await Application.Current.MainPage.DisplayAlert("Ops", ex.Message + "Detalhes: " + ex.InnerException, "Ok");
             }
         }
+
+        public async Task AutenticarMotorista()
+        {
+            try
+            {
+                Motorista m = new Motorista
+                {
+                    Login = Login,
+                    Senha = Senha
+                };
+
+                // Adiciona o Id ao modelo de dados do motorista
+                // Dentro da ViewModel
+                m.Id = Convert.ToInt32(Id);
+
+
+                Motorista mAutenticado = await motoristaService.PostAutenticarUsuarioAsync( Id, m);
+
+                if (!string.IsNullOrEmpty(mAutenticado.SNome))
+                {
+                    string mensagem = $"Bem-vindo(a) {mAutenticado.PNome+SNome}.";
+
+                    // Guardando dados do usuário para uso futuro
+                    Id = mAutenticado.Id;
+                    Preferences.Set("UsuarioId", mAutenticado.Id);
+                    Preferences.Set("UsuarioUsername", mAutenticado.Login);
+
+                    await Application.Current.MainPage.DisplayAlert("Informação", mensagem, "Ok");
+
+                    Application.Current.MainPage = new RotaLimpa.Mvc.Views.Usuarios.Motorista.ListaTurno();
+                }
+                else
+                {
+                    await Application.Current.MainPage.DisplayAlert("Informação", "Dados incorretos :(", "Ok");
+                }
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Informação", ex.Message + " Detalhes: " + ex.InnerException, "Ok");
+            }
+        }
+
     }
+
+
 }

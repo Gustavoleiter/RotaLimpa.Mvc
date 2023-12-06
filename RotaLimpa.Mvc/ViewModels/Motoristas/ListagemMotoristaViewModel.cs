@@ -13,16 +13,8 @@ namespace RotaLimpa.Mvc.ViewModels.Motoristas
     {
         private MotoristaService motoristaService;
 
-        private ObservableCollection<Motorista> _motoristas;
-        public ObservableCollection<Motorista> Motoristas
-        {
-            get { return _motoristas; }
-            set
-            {
-                _motoristas = value;
-                OnPropertyChanged(nameof(Motoristas));
-            }
-        }
+        public ObservableCollection<Motorista> Motoristas {  get; set; }
+     
 
         public ListagemMotoristaViewModel()
         {

@@ -1,3 +1,4 @@
+using AppRpgEtec.ViewModels.Motoristas;
 using RotaLimpa.Mvc.ViewModels.Motoristas;
 using RotaLimpa.Mvc.ViewModels.Setores;
 
@@ -11,10 +12,14 @@ public partial class ListaMotoristas : ContentPage
         viewModel = new ListagemMotoristaViewModel();
 		InitializeComponent();
         BindingContext = viewModel;
+        Title = "Motoristas";
     }
     protected override void OnAppearing()
     {
         base.OnAppearing();
         _ = viewModel.ObterMotoristas();
     }
+
+   
+
 }

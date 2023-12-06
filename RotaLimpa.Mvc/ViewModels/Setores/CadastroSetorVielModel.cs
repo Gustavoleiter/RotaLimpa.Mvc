@@ -185,6 +185,7 @@ namespace AppRpgEtec.ViewModels.Setores
         }
 
         public string SetorSelecionado { get => setorSelecionadoId; set => setorSelecionadoId = value; }
+        public IEnumerable<object> Setores { get; internal set; }
 
         public async Task SalvarSetor()
         {

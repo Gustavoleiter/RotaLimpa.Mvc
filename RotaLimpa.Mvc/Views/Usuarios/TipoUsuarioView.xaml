@@ -1,9 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RotaLimpa.Mvc.Views.Usuarios.LoginView"
-             Title="LoginView"
-             NavigationPage.HasNavigationBar="False">
-
+             x:Class="RotaLimpa.Mvc.Views.Usuarios.TipoUsuarioView"
+             Title="TipoUsuarioView">
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#02A3C7" Offset="0"/>
@@ -48,18 +47,16 @@
                     </Grid.ColumnDefinitions>
 
                     <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" Text="ENTRAR" FontFamily="Comfortaa" 
-                           FontSize="22" TextColor="White" FontAttributes="Bold"/>
+                       FontSize="22" TextColor="White" FontAttributes="Bold"/>
 
                     <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Color="White" BackgroundColor="White" />
 
-                    <Entry Grid.Row="5" Grid.Column="1" BackgroundColor="WhiteSmoke" FontSize="16" FontFamily="Comfortaa" 
-                           Placeholder="NRO IDENTIFICAÇÃO" PlaceholderColor="Gray" x:Name="user"/>
+                    <Button Grid.Row="5" Grid.Column="1" Text="ACESSAR COMO MOTORISTA" FontSize="18" FontAttributes="Bold" TextColor="#0080C1" 
+                         BackgroundColor="#32C84A" x:Name="BtnMotoristaView" Clicked="btnMotoristaView" />
 
-                    <Entry Grid.Row="7" Grid.Column="1" BackgroundColor="WhiteSmoke" FontSize="16" FontFamily="Comfortaa" 
-                           Placeholder="SENHA" PlaceholderColor="Gray" IsPassword="True" x:Name="senha" Text="{Binding Senha}"/>
 
-                    <Button Grid.Row="10" Grid.Column="1" Text="ACESSAR" FontSize="18" FontAttributes="Bold" TextColor="#0080C1" 
-                            BackgroundColor="#32C84A" x:Name="btnAutenticar" Command="{Binding AutenticarCommand}" Clicked="btnAutenticarClicked"/>
+                    <Button Grid.Row="8" Grid.Column="1" Text="ACESSAR COMO GESTOR" FontSize="18" FontAttributes="Bold" TextColor="#0080C1" 
+                        BackgroundColor="#32C84A" x:Name="BtnColaboradorView" Clicked="btnColaboradorView" />
 
 
                 </Grid>

@@ -1,7 +1,9 @@
-﻿using RotaLimpa.Mvc.Models;
+﻿using Newtonsoft.Json;
+using RotaLimpa.Mvc.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,6 +72,29 @@ namespace RotaLimpa.Mvc.Services.Colaboradores
             // Implemente a lógica real para obter o colaborador logado de maneira assíncrona
             // Substitua o retorno e adicione tratamento de exceções conforme necessário
             return await _request.GetAsync<Colaborador>(apiUrlBase + "/ObterColaboradorLogado");
+        }
+
+        public async Task<Colaborador> PostAutenticarUsuarioAsync(int Id, Colaborador c)
+        {
+            try
+            {
+                // Log para verificar os valores antes de enviar a solicitação
+                Debug.WriteLine($"Autenticar Colaborador - Id: {c.Id}, Login: {c.Login}, Senha: {c.Senha}");
+
+                // Autenticar: Rota para o método na API que autentica com login e senha
+                string urlComplementar = $"/Authenticate/{c.Id}";
+                c = await _request.PostAsync(apiUrlBase + urlComplementar, c);
+
+                // Log para verificar a resposta da API
+                Debug.WriteLine($"Resposta da API: {JsonConvert.SerializeObject(c)}");
+
+                return c;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Erro na autenticação do colaborador: {ex.Message}");
+                throw; // Rejoga a exceção para que ela possa ser tratada no código chamador
+            }
         }
     }
 }

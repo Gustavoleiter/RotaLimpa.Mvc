@@ -1,0 +1,81 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RotaLimpa.Mvc.Views.Usuarios.Colaborador.LoginView"
+             Title="LoginView"
+             NavigationPage.HasNavigationBar="False">
+
+   
+
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#02A3C7" Offset="0"/>
+            <GradientStop Color="#16A34A" Offset="1"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="450"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="380"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.Column="1" Grid.Row="1" BackgroundColor="#0080C1" CornerRadius="3">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="2"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" Text="ENTRAR" FontFamily="Comfortaa" 
+                           FontSize="22" TextColor="White" FontAttributes="Bold"/>
+
+                    <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Color="White" BackgroundColor="White" />
+
+
+                    <Entry Grid.Row="5" Grid.Column="1" BackgroundColor="WhiteSmoke" FontSize="16" FontFamily="Comfortaa" 
+                           Placeholder="NRO IDENTIFICAÇÃO" PlaceholderColor="Gray" x:Name="user" Text="{Binding Login}"/>
+
+                    <Entry Grid.Row="7" Grid.Column="1" BackgroundColor="WhiteSmoke" FontSize="16" FontFamily="Comfortaa" 
+                           Placeholder="SENHA" PlaceholderColor="Gray" IsPassword="True" x:Name="senha" Text="{Binding Senha}"/>
+
+                    <Entry Grid.Row="3" Grid.Column="1" BackgroundColor="WhiteSmoke" FontSize="16" FontFamily="Comfortaa" 
+                           Placeholder="ID DO MOTORISTA" PlaceholderColor="Gray" IsPassword="False" x:Name="id" Text="{Binding Id}"/>
+
+                    <Button Grid.Row="13" Grid.Column="1" Text="ACESSAR" FontSize="18" FontAttributes="Bold" TextColor="#0080C1" 
+                            BackgroundColor="#32C84A" x:Name="btnAutenticar" Command="{Binding AutenticarCommand}" />
+
+
+                </Grid>
+
+            </Frame>
+
+
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

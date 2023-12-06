@@ -13,16 +13,9 @@ namespace RotaLimpa.Mvc.ViewModels.Setores
         private SetorService setorService;
         
 
-        private ObservableCollection<Setor> _setores;
-        public ObservableCollection<Setor> Setores
-        {
-            get { return _setores; }
-            set
-            {
-                _setores = value;
-                OnPropertyChanged(nameof(Setores));
-            }
-        }
+        private ObservableCollection<Setor> setores;
+        public ObservableCollection<Setor> Setores { get; set;  }
+        
 
         public ListagemSetorViewModel()
         {
@@ -95,7 +88,7 @@ namespace RotaLimpa.Mvc.ViewModels.Setores
             get { return setorSelecionado; }
             set
             {
-                if (value != value)
+                if (value != null)
                 {
                     setorSelecionado = value;
                     Shell.Current.GoToAsync($"cadSetorView?pId={setorSelecionado.Id}");

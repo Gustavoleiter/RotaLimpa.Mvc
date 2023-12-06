@@ -10,13 +10,11 @@ namespace RotaLimpa.Mvc.ViewModels
 {
    public  class AppShellViewModel : BaseViewModel
     {
-        private MotoristaService motoristaService;
-        private ColaboradorService colaboradorService;
+    
 
         public AppShellViewModel()
         {
-            motoristaService = new MotoristaService();
-            colaboradorService = new ColaboradorService();
+          
         }
     }
 }

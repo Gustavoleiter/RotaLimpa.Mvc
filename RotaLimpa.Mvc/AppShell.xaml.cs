@@ -10,8 +10,11 @@ public partial class AppShell : Shell
 	{
 		InitializeComponent();
 		Routing.RegisterRoute("cadMotoristaView", typeof(CadastroMotorista));
+		Routing.RegisterRoute("cadSetorView", typeof(CadastroSetor));
+        Routing.RegisterRoute("cadVeiculoView", typeof(CadastroVeiculo));
 
-		viewModel = new AppShellViewModel();
+        viewModel = new AppShellViewModel();
+		BindingContext = viewModel;
 		
 	}
 }

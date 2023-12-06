@@ -63,7 +63,10 @@
 	  <Compile Update="Views\Usuarios\Colaborador\CadastroVeiculo.xaml.cs">
 	    <DependentUpon>CadastroVeiculo.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Views\Usuarios\LoginView.xaml.cs">
+	  <Compile Update="Views\Usuarios\Colaborador\LoginView.xaml.cs">
+	    <DependentUpon>%(Filename)</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Usuarios\Motorista\LoginView.xaml.cs">
 	    <DependentUpon>LoginView.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
@@ -76,6 +79,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Usuarios\Colaborador\ListaFrota.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Usuarios\Colaborador\LoginView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Usuarios\Motorista\ListaTurno.xaml">
@@ -111,10 +117,13 @@
 	  <MauiXaml Update="Views\Usuarios\Colaborador\ListaSetores.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Usuarios\LoginView.xaml">
+	  <MauiXaml Update="Views\Usuarios\Motorista\LoginView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Usuarios\Motorista\Setores.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Usuarios\TipoUsuarioView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
