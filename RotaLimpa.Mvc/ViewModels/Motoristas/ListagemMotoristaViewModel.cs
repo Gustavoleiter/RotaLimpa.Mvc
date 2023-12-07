@@ -1,4 +1,5 @@
-﻿using RotaLimpa.Mvc.Models;
+﻿using AppRpgEtec.ViewModels.Motoristas;
+using RotaLimpa.Mvc.Models;
 using RotaLimpa.Mvc.Services.Motoristas; // Importe o serviço de Motoristas
 using RotaLimpa.Mvc.ViewModels;
 using RotaLimpa.Mvc.Views.Usuarios.Colaborador;
@@ -77,7 +78,12 @@ namespace RotaLimpa.Mvc.ViewModels.Motoristas
         }
 
        
+        public void NavegarParaCadastro(Motorista motorista)
+        {
+             Application.Current.MainPage.Navigation.PushAsync(new RotaLimpa.Mvc.Views.Usuarios.Colaborador.DetalhesMotorista(motorista));
+            
 
+        }
 
 
         private Motorista motoristaSelecionado;
@@ -89,7 +95,9 @@ namespace RotaLimpa.Mvc.ViewModels.Motoristas
                 if (value != null)
                 {
                     motoristaSelecionado = value;
-                    Shell.Current.GoToAsync($"cadMotoristaView?mId={motoristaSelecionado.Id}");
+                    NavegarParaCadastro(motoristaSelecionado);
+
+                    //Shell.Current.GoToAsync($"cadMotoristaView?mId={motoristaSelecionado.Id}");
                     
                 }
             }

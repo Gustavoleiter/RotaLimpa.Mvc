@@ -14,7 +14,7 @@
 
 
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding Motoristas}" SelectedItem="{Binding MotoristaSelecionado}">
+        <ListView ItemsSource="{Binding Motoristas}" SelectedItem="{Binding MotoristaSelecionado}" FlexLayout.AlignSelf="Auto">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

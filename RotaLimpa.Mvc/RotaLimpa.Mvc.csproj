@@ -75,7 +75,13 @@
 	  <MauiXaml Update="Views\Usuarios\Colaborador\CadastroMotorista.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Usuarios\Colaborador\DetalhesMotorista.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Usuarios\Colaborador\DetalhesSetor.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Usuarios\Colaborador\DetalhesVeiculo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Usuarios\Colaborador\ListaFrota.xaml">

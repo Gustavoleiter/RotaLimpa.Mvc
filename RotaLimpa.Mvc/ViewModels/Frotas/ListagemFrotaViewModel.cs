@@ -12,16 +12,7 @@ namespace RotaLimpa.Mvc.ViewModels.Frotas
     {
         private FrotaService frotaService;
 
-        private ObservableCollection<Frota> _frotas;
-        public ObservableCollection<Frota> Frotas
-        {
-            get { return _frotas; }
-            set
-            {
-                _frotas = value;
-                OnPropertyChanged(nameof(Frotas));
-            }
-        }
+        public ObservableCollection<Frota> Frotas { get; set; }
 
         public ListagemFrotaViewModel()
         {
@@ -48,6 +39,9 @@ namespace RotaLimpa.Mvc.ViewModels.Frotas
                 Console.WriteLine($"Erro ao obter frotas: {ex.Message}");
             }
         }
+
+
+
 
         public async Task ExibirCadastroFrota()
         {
@@ -78,6 +72,31 @@ namespace RotaLimpa.Mvc.ViewModels.Frotas
             catch (Exception ex)
             {
                 await Application.Current.MainPage.DisplayAlert("Ops", ex.Message + "Detalhes: " + ex.InnerException, "Ok");
+            }
+        }
+
+        public void NavegarParaCadastro(Frota frota)
+        {
+            Application.Current.MainPage.Navigation.PushAsync(new RotaLimpa.Mvc.Views.Usuarios.Colaborador.DetalhesVeiculo(frota));
+
+        }
+
+
+
+        private Frota frotaSelecionada;
+        public Frota FrotaSelecionada
+        {
+            get { return frotaSelecionada; }
+            set
+            {
+                if (value != null)
+                {
+                    frotaSelecionada = value;
+                    NavegarParaCadastro(frotaSelecionada);
+
+                    //Shell.Current.GoToAsync($"cadMotoristaView?mId={motoristaSelecionado.Id}");
+
+                }
             }
         }
     }

@@ -11,7 +11,6 @@ using RotaLimpa.Mvc.Views.Usuarios.Motorista;
 namespace AppRpgEtec.ViewModels.Motoristas
 {
     [QueryProperty("MotoristaSelecionadoId", "mId")]
-
     public class CadastroMotoristaViewModel : BaseViewModel
     {
         private MotoristaService motoristaService;
@@ -43,6 +42,24 @@ namespace AppRpgEtec.ViewModels.Motoristas
 
             SalvarCommand = new Command(async () => await SalvarMotorista());
             AutenticarCommand = new Command(async () => await AutenticarMotorista());
+        }
+
+        public CadastroMotoristaViewModel(Motorista mot)
+        {
+            motoristaService = new MotoristaService();
+
+            SalvarCommand = new Command(async () => await SalvarMotorista());
+            AutenticarCommand = new Command(async () => await AutenticarMotorista());
+
+            Id = mot.Id;
+            PNome = mot.PNome;
+            SNome = mot.SNome;
+            Cpf = mot.Cpf;
+            Rg = mot.Rg;
+            StMotorista = mot.StMotorista;
+            Di_Motorista = mot.Di_Motorista;
+
+
         }
 
         private int id;
@@ -245,7 +262,9 @@ namespace AppRpgEtec.ViewModels.Motoristas
 
                     await Application.Current.MainPage.DisplayAlert("Informação", mensagem, "Ok");
 
-                    Application.Current.MainPage = new RotaLimpa.Mvc.Views.Usuarios.Motorista.ListaTurno();
+
+                    await Application.Current.MainPage.Navigation.PushAsync(new RotaLimpa.Mvc.Views.Usuarios.Motorista.ListaTurno());
+                    //Application.Current.MainPage = new RotaLimpa.Mvc.Views.Usuarios.Motorista.ListaTurno();
                 }
                 else
                 {

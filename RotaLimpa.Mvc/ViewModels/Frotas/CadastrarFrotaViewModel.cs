@@ -7,12 +7,27 @@ using System.Windows.Input;
 
 namespace RotaLimpa.Mvc.ViewModels.Frotas
 {
+    [QueryProperty("FrotaSelecionadaId", "fId")]
     public class CadastroFrotaViewModel : BaseViewModel
     {
         private readonly FrotaService frotaService;
 
         public ICommand SalvarCommand { get; }
         public ICommand CancelarCommand { get; }
+
+        private string frotaSelecionadaId;
+
+        public string FrotaSelecionadaId
+        {
+            set
+            {
+                if (value != null)
+                {
+                    frotaSelecionadaId = Uri.UnescapeDataString(value);
+                    CarregarFrota();
+                }
+            }
+        }
 
         private string pVeiculo;
         private double tmnVeiculo;
@@ -67,6 +82,21 @@ namespace RotaLimpa.Mvc.ViewModels.Frotas
             CancelarCommand = new Command(CancelarCadastro);
         }
 
+        public CadastroFrotaViewModel(Frota frota)
+        {
+            frotaService = new FrotaService();
+
+            SalvarCommand = new Command(async () => await SalvarFrota());
+            CancelarCommand = new Command(CancelarCadastro);
+
+
+            PVeiculo = frota.PVeiculo;
+            TmnVeiculo = frota.TmnVeiculo;
+            DiVeiculo = frota.Di_Veiculo;
+            StVeiculo = frota.St_Veiculo;
+
+        }
+
         public async Task SalvarFrota()
         {
             try
@@ -97,6 +127,25 @@ namespace RotaLimpa.Mvc.ViewModels.Frotas
             catch (Exception ex)
             {
                 await Application.Current.MainPage.DisplayAlert("Ops", "Erro ao cadastrar a frota: " + ex.Message, "Ok");
+            }
+        }
+
+
+
+        public async void CarregarFrota()
+        {
+            try
+            {
+                Frota f = await frotaService.GetFrotaAsync(int.Parse(frotaSelecionadaId));
+
+                this.PVeiculo = f.PVeiculo;
+                this.TmnVeiculo = f.TmnVeiculo;
+                this.DiVeiculo = f.Di_Veiculo;
+                this.StVeiculo = f.St_Veiculo;
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Ops", ex.Message + "Detalhes: " + ex.InnerException, "Ok");
             }
         }
 
