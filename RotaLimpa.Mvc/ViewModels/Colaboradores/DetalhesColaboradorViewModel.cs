@@ -1,6 +1,7 @@
 ﻿using RotaLimpa.Mvc.Models;
 using RotaLimpa.Mvc.Services.Colaboradores;
 using System;
+using System.Security;
 using System.Threading.Tasks;
 
 namespace RotaLimpa.Mvc.ViewModels.Colaboradores
@@ -21,22 +22,58 @@ namespace RotaLimpa.Mvc.ViewModels.Colaboradores
             }
         }
 
-        public DetalhesColaboradorViewModel(int colaboradorId)
+        private string _nomeCompleto;
+
+        public string NomeCompleto
         {
-            colaboradorService = new ColaboradorService();
-            CarregarDetalhesColaborador(colaboradorId);
+            get => _nomeCompleto;
+            set
+            {
+                _nomeCompleto = value;
+                OnPropertyChanged();
+            }
         }
 
-        private async Task CarregarDetalhesColaborador(int colaboradorId)
+        private string _nomeEmpresa;
+        public string NomeEmpresa
         {
-            try
+            get => _nomeEmpresa;
+            set
             {
-                Colaborador = await colaboradorService.GetColaboradorAsync(colaboradorId);
+                _nomeCompleto = value;
+                OnPropertyChanged();
             }
-            catch (Exception ex)
+        }
+
+        public string DataInclusao
+        {
+            get => _nomeEmpresa;
+            set
             {
-                // Lidar com exceções conforme necessário
-                Console.WriteLine("Erro ao carregar detalhes do colaborador: " + ex.Message);
+                _nomeCompleto = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _situacaoColab;
+        public string SituacaoColab
+        {
+            get => _situacaoColab;
+            set
+            {
+                _nomeCompleto = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _cpf;
+        public string Cpf
+        {
+            get => _cpf;
+            set
+            {
+                _cpf = value;
+                OnPropertyChanged();
             }
         }
     }

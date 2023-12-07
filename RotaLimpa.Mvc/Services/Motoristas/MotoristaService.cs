@@ -70,7 +70,7 @@ namespace RotaLimpa.Mvc.Services.Motoristas
             return m;
         }
 
-        public async Task<Motorista> PostAutenticarUsuarioAsync( Motorista m)
+        public async Task<Motorista> PostAutenticarMotoristaAsync( Motorista m)
         {
             try
             {

@@ -1,12 +1,69 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RotaLimpa.Mvc.Views.Usuarios.Colaborador"
              x:Class="RotaLimpa.Mvc.Views.Usuarios.Colaborador.DetalhesSetor"
              Title="DetalhesSetor">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <NavigationPage.TitleView>
+        <local:MeuCabecalho />
+    </NavigationPage.TitleView>
+
+    <ContentPage.Background>
+        <Color>#E7E7E7</Color>
+    </ContentPage.Background>
+
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="3" Padding="15" HorizontalOptions="Center">
+
+            <Label Text="CADASTRO DE SETORES" HorizontalOptions="Center" FontSize="24" FontAttributes="Bold" Margin="0,15,0,5"/>
+            <BoxView BackgroundColor="Black" HeightRequest="2" WidthRequest="1200" Margin="0,0,0,65"/>
+
+            <Grid WidthRequest="700">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" Text="COLABORADOR" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
+                <Entry Grid.Column="0" Grid.Row="1" TextColor="#000000" Text="{Binding IdColaborador}" FontFamily="Comfortaa" FontSize="16" Keyboard="Numeric"/>
+                <Label Grid.Column="2" Grid.Row="0" Text="EMPRESA" FontSize="16" Margin="0,15,0,0"/>
+                <Entry Grid.Column="2" Grid.Row="1" TextColor="#000000" Text="{Binding IdEmpresa}" FontFamily="Comfortaa" FontSize="16" Keyboard="Numeric"/>
+                <Label Grid.Column="0" Grid.Row="2" Text="TIPO DE SERVIÇO" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
+                <Entry Grid.Column="0" Grid.Row="3"  TextColor="#000000" Text="{Binding TipoServico }" FontFamily="Comfortaa" FontSize="16" Keyboard="Numeric"/>
+                <Label Grid.Column="2" Grid.Row="2" Text="STATUS DO SETOR" FontSize="16" FontFamily="Comfortaa" Margin="0,15,0,0"/>
+                <Entry Grid.Column="2" Grid.Row="3" TextColor="#000000" Text="{Binding StSetor}" FontFamily="Comfortaa" FontSize="16"/>
+            </Grid>
+
+
+            <Grid WidthRequest="700">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="2" BackgroundColor="#02A3C7" BorderWidth="1" BorderColor="#02A3C7" TextColor="#1F1F1F" FontAttributes="Bold" Text="SALVAR" 
+                        Command="{Binding SalvarCommand}" Margin="0,15,0,0"></Button>
+                <Button Grid.Column="0" BackgroundColor="Transparent" BorderWidth="1" BorderColor="#02A3C7" TextColor="#02A3C7" FontAttributes="Bold" Text="CANCELAR" 
+                        CornerRadius="2" Command="{Binding CancelarCommand}" Margin="0,15,0,0"></Button>
+
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+
 </ContentPage>

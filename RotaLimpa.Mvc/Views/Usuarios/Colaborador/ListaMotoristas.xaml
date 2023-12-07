@@ -15,14 +15,14 @@
     <ContentPage.Content>
         <CollectionView ItemsSource="{Binding Motoristas}" SelectionMode="Single" SelectedItem="{Binding MotoristaSelecionado}">
             <CollectionView.ItemsLayout>
-                <GridItemsLayout HorizontalItemSpacing="5" VerticalItemSpacing="5" Span="5" Orientation="Vertical"/>
-                
+                <GridItemsLayout HorizontalItemSpacing="0" VerticalItemSpacing="0" Span="5" Orientation="Vertical"/>
+
             </CollectionView.ItemsLayout>
 
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame BackgroundColor="#94D9E9" Padding="5" CornerRadius="3" HeightRequest="300" WidthRequest="200">
-                        <Grid HeightRequest="300" WidthRequest="200" Padding="5">
+                    <Frame BackgroundColor="#94D9E9" Padding="5" Margin="5,10,5,0" CornerRadius="3">
+                        <Grid HeightRequest="275" Padding="5">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="40"/>
                                 <RowDefinition Height="60"/>
@@ -52,7 +52,7 @@
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <Label Grid.Column="0" Grid.Row="1" Text="{Binding PNome, StringFormat='NOME: {0} {0}'}" FontSize="14" FontAttributes="Bold" Margin="0,0,0,0"/>
+                                    <Label Grid.Column="0" Grid.Row="1" Text="{Binding PNome, StringFormat='NOME: {0}'}"  FontSize="14" FontAttributes="Bold" Margin="0,0,0,0"/>
                                     <Label Grid.Column="0" Grid.Row="2" Text="{Binding Cpf, StringFormat='CPF: {0}'}" FontSize="14" FontAttributes="Bold" Margin="0,0,0,0"/>
                                 </Grid>
                             </Frame>

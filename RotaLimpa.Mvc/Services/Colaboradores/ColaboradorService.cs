@@ -74,15 +74,15 @@ namespace RotaLimpa.Mvc.Services.Colaboradores
             return await _request.GetAsync<Colaborador>(apiUrlBase + "/ObterColaboradorLogado");
         }
 
-        public async Task<Colaborador> PostAutenticarUsuarioAsync(int Id, Colaborador c)
+        public async Task<Colaborador> PostAutenticarColaboradorAsync( Colaborador c)
         {
             try
             {
                 // Log para verificar os valores antes de enviar a solicitação
-                Debug.WriteLine($"Autenticar Colaborador - Id: {c.Id}, Login: {c.Login}, Senha: {c.Senha}");
+                
 
                 // Autenticar: Rota para o método na API que autentica com login e senha
-                string urlComplementar = $"/Authenticate/{c.Id}";
+                string urlComplementar = $"/Authenticate";
                 c = await _request.PostAsync(apiUrlBase + urlComplementar, c);
 
                 // Log para verificar a resposta da API
