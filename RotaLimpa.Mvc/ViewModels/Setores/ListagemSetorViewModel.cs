@@ -81,8 +81,15 @@ namespace RotaLimpa.Mvc.ViewModels.Setores
             }
         }
 
-        private Setor setorSelecionado;
+        public void NavegarParaCadastro(Setor setor)
+        {
+            Application.Current.MainPage.Navigation.PushAsync(new RotaLimpa.Mvc.Views.Usuarios.Colaborador.DetalhesSetor(setor));
 
+
+        }
+
+
+        private Setor setorSelecionado;
         public Setor SetorSelecionado
         {
             get { return setorSelecionado; }
@@ -91,24 +98,15 @@ namespace RotaLimpa.Mvc.ViewModels.Setores
                 if (value != null)
                 {
                     setorSelecionado = value;
-                    Shell.Current.GoToAsync($"cadSetorView?pId={setorSelecionado.Id}");
+                    NavegarParaCadastro(setorSelecionado);
+
+                    //Shell.Current.GoToAsync($"cadMotoristaView?mId={motoristaSelecionado.Id}");
+
                 }
             }
         }
 
-        private static ListagemSetorViewModel _instance;
 
-        public static ListagemSetorViewModel Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new ListagemSetorViewModel();
-                }
-                return _instance;
-            }
-        }
 
     }
 }

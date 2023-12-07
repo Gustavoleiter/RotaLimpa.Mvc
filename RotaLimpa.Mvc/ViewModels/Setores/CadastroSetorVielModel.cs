@@ -45,6 +45,23 @@ namespace AppRpgEtec.ViewModels.Setores
             CancelarCommand = new Command(async () => CancelarCadastro());
         }
 
+        public CadastroSetorViewModel(Setor set)
+        {
+            sService = new SetorService();
+
+            SalvarCommand = new Command(async () => { await SalvarSetor(); });
+            CancelarCommand = new Command(async () => CancelarCadastro());
+
+            Id = set.Id;
+            IdColaborador = set.IdColaborador;
+            IdEmpresa = set.IdEmpresa;
+            daSetor = set.DaSetor;
+            StSetor = set.StSetor;
+            rotas = (List<Rota>)set.Rotas;
+         
+
+
+        }
         private ServicoEnum tipoServicoSelecionado;
 
         public ServicoEnum TipoServicoSelecionado

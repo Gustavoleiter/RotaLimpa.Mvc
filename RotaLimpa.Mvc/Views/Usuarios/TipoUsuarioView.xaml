@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RotaLimpa.Mvc.Views.Usuarios.TipoUsuarioView"
-             Title="TipoUsuarioView">
+             Title="TipoUsuarioView"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#02A3C7" Offset="0"/>
@@ -38,7 +39,6 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="50"/>
-                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0"/>
@@ -51,11 +51,11 @@
 
                     <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Color="White" BackgroundColor="White" />
 
-                    <Button Grid.Row="5" Grid.Column="1" Text="ACESSAR COMO MOTORISTA" FontSize="18" FontAttributes="Bold" TextColor="#0080C1" 
+                    <Button Grid.Row="5" Grid.Column="1" Text="ACESSAR COMO MOTORISTA" FontSize="18" FontAttributes="Bold" TextColor="#FFFFFF" 
                          BackgroundColor="#32C84A" x:Name="BtnMotoristaView" Clicked="btnMotoristaView" />
 
 
-                    <Button Grid.Row="8" Grid.Column="1" Text="ACESSAR COMO GESTOR" FontSize="18" FontAttributes="Bold" TextColor="#0080C1" 
+                    <Button Grid.Row="8" Grid.Column="1" Text="ACESSAR COMO GESTOR" FontSize="18" FontAttributes="Bold" TextColor="#FFFFFF" 
                         BackgroundColor="#32C84A" x:Name="BtnColaboradorView" Clicked="btnColaboradorView" />
 
 

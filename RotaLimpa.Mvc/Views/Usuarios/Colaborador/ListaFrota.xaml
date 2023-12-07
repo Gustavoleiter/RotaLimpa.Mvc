@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RotaLimpa.Mvc.Views.Usuarios.Colaborador.ListaFrota"
@@ -12,51 +13,53 @@
     </ContentPage.Background>
 
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding Frotas}" SelectedItem="{Binding FrotaSelecionada}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Frame BackgroundColor="#94D9E9" Padding="5" CornerRadius="3" Margin="15,15,0,0">
-                            <Grid HeightRequest="225" Margin="0" Padding="5">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="40"/>
-                                    <RowDefinition Height="60"/>
-                                    <RowDefinition Height="40"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
+        <CollectionView ItemsSource="{Binding Frotas}" SelectionMode="Single" SelectedItem="{Binding FrotaSelecionada}">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="5" HorizontalItemSpacing="5" VerticalItemSpacing="5" />
+            </CollectionView.ItemsLayout>
 
-                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding PVeiculo, StringFormat='PLACA: {0}'}" FontAttributes="Bold" 
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="#94D9E9" Padding="5" CornerRadius="3" HeightRequest="225">
+                        <Grid HeightRequest="225" Margin="0" Padding="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="60"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding PVeiculo, StringFormat='PLACA: {0}'}" FontAttributes="Bold" 
                                    FontSize="16" Margin="0,10,0,0"/>
 
-                                <Frame Grid.Row="1" Grid.Column="0" CornerRadius="2" Padding="0">
-                                    <Grid Padding="5,0,5,0" BackgroundColor="#0284C7">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="10"/>
-                                            <RowDefinition Height="*"/>
-                                            <RowDefinition Height="*"/>
-                                            <RowDefinition Height="0"/>
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
+                            <Frame Grid.Row="1" Grid.Column="0" CornerRadius="2" Padding="0">
+                                <Grid Padding="5,0,5,0" BackgroundColor="#0284C7">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="10"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="0"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
 
-                                        <Label Grid.Column="0" Grid.Row="1" Text="{Binding TmnVeiculo, StringFormat='LARGURA DO VEICULO: {0}'}" FontSize="13" Margin="0,0,0,0"/>
-                                        <Label Grid.Column="0" Grid.Row="2" Text="{Binding StVeiculo, StringFormat='SITUAÇAO: {0}'}" FontSize="13" Margin="0,0,0,0"/>
-                                    </Grid>
-                                </Frame>
+                                    <Label Grid.Column="0" Grid.Row="1" Text="{Binding TmnVeiculo, StringFormat='LARGURA DO VEÍCULO: {0}'}" FontSize="13" Margin="0,0,0,0"/>
+                                    <Label Grid.Column="0" Grid.Row="2" Text="{Binding StVeiculo, StringFormat='SITUAÇÃO: {0}'}" FontSize="13" Margin="0,0,0,0"/>
+                                </Grid>
+                            </Frame>
 
-                                <BoxView Grid.Row="2" HeightRequest="2" Color="Black" BackgroundColor="Black"/>
-                            </Grid>
-                        </Frame>
-                    </ViewCell>
+                            <BoxView Grid.Row="2" HeightRequest="2" Color="Black" BackgroundColor="Black"/>
+                        </Grid>
+                    </Frame>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </ContentPage.Content>
 </ContentPage>

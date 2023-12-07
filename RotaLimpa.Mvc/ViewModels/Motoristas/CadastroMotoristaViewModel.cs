@@ -65,6 +65,7 @@ namespace AppRpgEtec.ViewModels.Motoristas
         private int id;
         private string pNome;
         private string sNome;
+        private string cNome;
         private DateTime diMotorista;
         private string stMotorista;
         private string cpf;
@@ -101,6 +102,16 @@ namespace AppRpgEtec.ViewModels.Motoristas
             set
             {
                 sNome = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string CNome
+        {
+            get => $"{pNome} {sNome}";
+            set
+            {
+                cNome = value;
                 OnPropertyChanged();
             }
         }
@@ -246,10 +257,10 @@ namespace AppRpgEtec.ViewModels.Motoristas
 
                 // Adiciona o Id ao modelo de dados do motorista
                 // Dentro da ViewModel
-                m.Id = Convert.ToInt32(Id);
+                
 
 
-                Motorista mAutenticado = await motoristaService.PostAutenticarUsuarioAsync( Id, m);
+                Motorista mAutenticado = await motoristaService.PostAutenticarUsuarioAsync(  m);
 
                 if (!string.IsNullOrEmpty(mAutenticado.SNome))
                 {

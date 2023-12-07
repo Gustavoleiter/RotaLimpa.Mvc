@@ -70,15 +70,12 @@ namespace RotaLimpa.Mvc.Services.Motoristas
             return m;
         }
 
-        public async Task<Motorista> PostAutenticarUsuarioAsync(int Id, Motorista m)
+        public async Task<Motorista> PostAutenticarUsuarioAsync( Motorista m)
         {
             try
             {
-                // Log para verificar os valores antes de enviar a solicitação
-                Debug.WriteLine($"Autenticar Motorista - Id: {m.Id}, Login: {m.Login}, Senha: {m.Senha}");
-
                 // Autenticar: Rota para o método na API que autentica com login e senha
-                string urlComplementar = $"/Authenticate/{m.Id}";
+                string urlComplementar = $"/Authenticate";
                 m = await _request.PostAsync(apiUrlBase + urlComplementar, m);
 
                 // Log para verificar a resposta da API

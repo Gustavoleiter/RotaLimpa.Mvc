@@ -4,7 +4,7 @@
              Title="LoginView"
              NavigationPage.HasNavigationBar="False">
 
-   
+
 
 
     <ContentPage.Background>
@@ -40,7 +40,6 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="45"/>
                         <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
                         <RowDefinition Height="50"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
@@ -61,9 +60,6 @@
 
                     <Entry Grid.Row="7" Grid.Column="1" BackgroundColor="WhiteSmoke" FontSize="16" FontFamily="Comfortaa" 
                            Placeholder="SENHA" PlaceholderColor="Gray" IsPassword="True" x:Name="senha" Text="{Binding Senha}"/>
-
-                    <Entry Grid.Row="3" Grid.Column="1" BackgroundColor="WhiteSmoke" FontSize="16" FontFamily="Comfortaa" 
-                           Placeholder="ID DO MOTORISTA" PlaceholderColor="Gray" IsPassword="False" x:Name="id" Text="{Binding Id}"/>
 
                     <Button Grid.Row="13" Grid.Column="1" Text="ACESSAR" FontSize="18" FontAttributes="Bold" TextColor="#0080C1" 
                             BackgroundColor="#32C84A" x:Name="btnAutenticar" Command="{Binding AutenticarCommand}" />
