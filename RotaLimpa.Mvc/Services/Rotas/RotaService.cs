@@ -67,5 +67,21 @@ namespace RotaLimpa.Mvc.Services.Rotas
             r.Id = await _request.PostReturnIntAsync(apiUrlBase + urlComplementar, r);
             return r;
         }
+
+        public async Task<ObservableCollection<string>> GetLatitudeAsync(int rotaId)
+        {
+            string urlComplementar = string.Format("/Latitude/{0}", rotaId);
+            ObservableCollection<string> listaLatitudes = await
+                _request.GetAsync<ObservableCollection<string>>(apiUrlBase + urlComplementar);
+            return listaLatitudes;
+        }
+
+        public async Task<ObservableCollection<string>> GetLongitudeAsync(int rotaId)
+        {
+            string urlComplementar = string.Format("/Longitude/{0}", rotaId);
+            ObservableCollection<string> listaLongitudes = await
+                _request.GetAsync<ObservableCollection<string>>(apiUrlBase + urlComplementar);
+            return listaLongitudes;
+        }
     }
 }

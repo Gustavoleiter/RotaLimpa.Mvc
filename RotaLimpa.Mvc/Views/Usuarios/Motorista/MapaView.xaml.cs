@@ -1,12 +1,20 @@
+using RotaLimpa.Mvc.ViewModels.Motoristas;
 using RotaLimpa.Mvc.Views.Usuarios.Colaborador;
+
+
 namespace RotaLimpa.Mvc.Views.Usuarios.Motorista;
 
 public partial class MapaView : ContentPage
 {
+    MapaViewModel viewModel; 
     public MapaView()
     {
         InitializeComponent();
         MenuBtn.Clicked += AbrirMenu;
+
+        viewModel = new MapaViewModel();
+        BindingContext = viewModel;
+
     }
 
     private framePhone FramePhone;

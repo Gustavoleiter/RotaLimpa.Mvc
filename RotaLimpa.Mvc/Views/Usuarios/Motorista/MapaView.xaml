@@ -18,7 +18,18 @@
                 <RowDefinition Height="{OnPlatform Android=80, iOS=100}"/>
             </Grid.RowDefinitions>
 
-            <maps:Map Grid.Row="0" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" IsShowingUser="True" IsZoomEnabled="True" IsTrafficEnabled="True"/>
+            <maps:Map Grid.Row="0" AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                      AbsoluteLayout.LayoutFlags="All" IsShowingUser="True" 
+                      IsZoomEnabled="True" IsTrafficEnabled="True"
+                      ItemsSource="{Binding RotaLimpaMapa}">
+                <maps:Map.ItemTemplate>
+                    <DataTemplate>
+                        <maps:Pin Location="{Binding Location}"
+                          Address="{Binding Address}"
+                          Label="{Binding Label}"/>
+                    </DataTemplate>
+                </maps:Map.ItemTemplate>
+            </maps:Map>
             <FlexLayout Grid.Row="1" BackgroundColor="#16A34A" Direction="Row" 
                         AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
                 <ImageButton Style="{StaticResource MyImgBtn}" Source="call.png" WidthRequest="50" Margin="40,5,0,0" Clicked="AbrirFrame"/>
