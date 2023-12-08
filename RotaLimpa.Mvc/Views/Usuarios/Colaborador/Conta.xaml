@@ -57,10 +57,9 @@
                            FontSize="32" FontFamily="Comfortaa" FontAttributes="Bold"/>
 
                     <HorizontalStackLayout Grid.Column="0" Grid.ColumnSpan="6" Grid.Row="3">
-                        <Label Text="BRENO" FontSize="24" FontFamily="Comfortaa" TextColor="Black"/>
-                        <!--{Binding Primeiro_Nome, StringFormat='NOME: {0}'}-->
-                        <Label Text=" LISBOA SOUZA" FontSize="24" FontFamily="Comfortaa" TextColor="Black"/>
-                        <!--{Binding Sobre_Nome}-->
+                        <Label Text="{Binding NomeCompleto, StringFormat='NOME: {0}'}" FontSize="24" FontFamily="Comfortaa" TextColor="Black"/>
+                        
+                        
                     </HorizontalStackLayout>
 
                     <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" Text="999.999.999.-00" FontSize="24" 
@@ -71,7 +70,7 @@
                            FontFamily="Comfortaa" TextColor="Black"/>
                     <!--{Binding StColaborador, StringFormat='STATUS: {0}'}-->
 
-                    <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" Text="ROTA LIMPA" FontSize="24" 
+                    <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" Text="{Binding NomeEmpresa, StringFormat='EMPRESA: {0}'}" FontSize="24" 
                            FontFamily="Comfortaa" TextColor="Black"/>
                     <!--{Binding NomeEmpresa, StringFormat='EMPRESA: {0}'}-->
                 </Grid>

@@ -1,5 +1,6 @@
 ﻿using RotaLimpa.Mvc.Models;
 using RotaLimpa.Mvc.Services.Colaboradores;
+using RotaLimpa.Mvc.Views.Usuarios.Colaborador;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -140,23 +141,41 @@ namespace RotaLimpa.Mvc.ViewModels.Colaboradores
 
                 // Adiciona o Id ao modelo de dados do motorista
                 // Dentro da ViewModel
-                c.Id = Convert.ToInt32(Id);
+              
 
 
-                Colaborador cAutenticado = await colaboradorService.PostAutenticarUsuarioAsync(Id, c);
+                Colaborador cAutenticado = await colaboradorService.PostAutenticarColaboradorAsync( c);
 
                 if (!string.IsNullOrEmpty(cAutenticado.SNome))
                 {
-                    string mensagem = $"Bem-vindo(a) {cAutenticado.PNome + SNome}.";
+                    string mensagem = $"Bem-vindo(a) {cAutenticado.PNome + cAutenticado.SNome}.";
 
                     // Guardando dados do usuário para uso futuro
                     Id = cAutenticado.Id;
                     Preferences.Set("UsuarioId", cAutenticado.Id);
                     Preferences.Set("UsuarioUsername", cAutenticado.Login);
 
-                    await Application.Current.MainPage.DisplayAlert("Informação", mensagem, "Ok");
+                    //await Application.Current.MainPage.DisplayAlert("Informação", mensagem, "Ok");
 
-                    Application.Current.MainPage = new RotaLimpa.Mvc.Views.Usuarios.Colaborador.Conta();
+                    //Application.Current.MainPage = new RotaLimpa.Mvc.Views.Usuarios.Colaborador.Conta();
+                    var detalhesColaboradorViewModel = new DetalhesColaboradorViewModel
+                    {
+                        NomeCompleto = $"{cAutenticado.PNome} {cAutenticado.SNome}",
+                        NomeEmpresa = $" {cAutenticado.NomeEmpresa}",
+                        DataInclusao= $" {cAutenticado.Di_Colaborador}",
+                        SituacaoColab = $" {cAutenticado.StColaborador}",
+                        Cpf = $" {cAutenticado.Cpf}",
+
+                    };
+
+                    // Criar a página e atribuir o ViewModel
+                    var detalhesColaboradorPage = new Conta
+                    {
+                        BindingContext = detalhesColaboradorViewModel
+                    };
+
+                    // Navegar para a nova página
+                    await Application.Current.MainPage.Navigation.PushAsync(detalhesColaboradorPage);
                 }
                 else
                 {

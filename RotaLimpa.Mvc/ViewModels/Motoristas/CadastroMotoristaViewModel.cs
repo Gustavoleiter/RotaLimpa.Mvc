@@ -260,11 +260,11 @@ namespace AppRpgEtec.ViewModels.Motoristas
                 
 
 
-                Motorista mAutenticado = await motoristaService.PostAutenticarUsuarioAsync(  m);
+                Motorista mAutenticado = await motoristaService.PostAutenticarMotoristaAsync(  m);
 
                 if (!string.IsNullOrEmpty(mAutenticado.SNome))
                 {
-                    string mensagem = $"Bem-vindo(a) {mAutenticado.PNome+SNome}.";
+                    string mensagem = $"Bem-vindo(a) {mAutenticado.PNome + mAutenticado.SNome}.";
 
                     // Guardando dados do usuário para uso futuro
                     Id = mAutenticado.Id;
