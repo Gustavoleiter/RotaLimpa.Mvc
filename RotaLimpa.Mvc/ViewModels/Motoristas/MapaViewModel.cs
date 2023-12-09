@@ -38,29 +38,48 @@ namespace RotaLimpa.Mvc.ViewModels.Motoristas
             }
         }
 
-        public async void InicializarMapa()
-        {
-            try
-            {
+       
 
-                ObservableCollection<string> latitudes = await uService.GetLongitudeAsync(int id);
-                List<Rota> rotas = new List<Rota>();
-                Map map = new Map();
+        //public async void InicializarMapa(int id)
+        //{
+        //    try
+        //    {
+               
+        //        ObservableCollection<CEP> ocCEPs = await uService.GetCEPAsync(int id);
+        //        List<CEP> ceps = new List<CEP>(ocCEPs);
+        //        Map map = new Map();
 
-                foreach (Rota r in rotas)
-                {
-                    foreach (Rua r in  )
-                    if (r.Ruas.IdCEP.Latitude != null )
-                    {
+        //        var polyline = new Polyline();
 
-                    }
-                }
-            }
-            catch (Exception)
-            {
+        //        foreach (CEP c in ceps)
+        //        {
+        //            if (c.latitude != null && c.longitude != null )
+        //            {
+        //                double latitude = (double)c.latitude;
+        //                double longitude = (double)c.longitude;
+        //                Location location = new Location(latitude, longitude);
 
-                throw;
-            }
-        }
+        //                Pin pinAtual = new Pin()
+        //                {
+        //                    Type = PinType.SavedPin,
+        //                    Label = c.Cidade,
+        //                    Address = $"{c.latitude}, {c.longitude}",
+        //                    Location = location
+        //                };
+        //                map.Pins.Add(pinAtual);
+        //            }
+
+        //            polyline.Geopath.Add(new Position(c.latitude, c.longitude));
+        //            map.MapElements.Add(polyline);
+        //        }
+
+
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        throw;
+        //    }
+        //}
     }
 }

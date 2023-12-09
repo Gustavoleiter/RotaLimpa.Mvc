@@ -274,7 +274,7 @@ namespace AppRpgEtec.ViewModels.Motoristas
                     await Application.Current.MainPage.DisplayAlert("Informação", mensagem, "Ok");
 
 
-                    await Application.Current.MainPage.Navigation.PushAsync(new RotaLimpa.Mvc.Views.Usuarios.Motorista.ListaTurno());
+                    await Application.Current.MainPage.Navigation.PushAsync(new RotaLimpa.Mvc.Views.Usuarios.Motorista.MenuRota());
                     //Application.Current.MainPage = new RotaLimpa.Mvc.Views.Usuarios.Motorista.ListaTurno();
                 }
                 else

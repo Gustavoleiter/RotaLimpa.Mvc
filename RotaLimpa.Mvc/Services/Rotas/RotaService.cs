@@ -83,5 +83,13 @@ namespace RotaLimpa.Mvc.Services.Rotas
                 _request.GetAsync<ObservableCollection<string>>(apiUrlBase + urlComplementar);
             return listaLongitudes;
         }
+
+        public async Task<ObservableCollection<CEP>> GetCEPAsync(int rotaId)
+        {
+            string urlComplementar = string.Format("/CEP/{0}", rotaId);
+            ObservableCollection<CEP> listaCEPs = await
+                _request.GetAsync<ObservableCollection<CEP>>(apiUrlBase + urlComplementar);
+            return listaCEPs;
+        }
     }
 }

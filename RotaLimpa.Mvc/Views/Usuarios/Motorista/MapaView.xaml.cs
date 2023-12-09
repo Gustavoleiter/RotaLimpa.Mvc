@@ -1,3 +1,4 @@
+using RotaLimpa.Mvc.Models;
 using RotaLimpa.Mvc.ViewModels.Motoristas;
 using RotaLimpa.Mvc.Views.Usuarios.Colaborador;
 
@@ -14,6 +15,7 @@ public partial class MapaView : ContentPage
 
         viewModel = new MapaViewModel();
         BindingContext = viewModel;
+        //viewModel.InicializarMapa(Rota.Id);
 
     }
 
