@@ -257,10 +257,10 @@ namespace AppRpgEtec.ViewModels.Motoristas
 
                 // Adiciona o Id ao modelo de dados do motorista
                 // Dentro da ViewModel
-                
 
 
-                Motorista mAutenticado = await motoristaService.PostAutenticarMotoristaAsync(  m);
+
+                Motorista mAutenticado = await motoristaService.PostAutenticarMotoristaAsync(m);
 
                 if (!string.IsNullOrEmpty(mAutenticado.SNome))
                 {
@@ -271,11 +271,27 @@ namespace AppRpgEtec.ViewModels.Motoristas
                     Preferences.Set("UsuarioId", mAutenticado.Id);
                     Preferences.Set("UsuarioUsername", mAutenticado.Login);
 
-                    await Application.Current.MainPage.DisplayAlert("Informação", mensagem, "Ok");
+                    //await Application.Current.MainPage.DisplayAlert("Informação", mensagem, "Ok");
 
+                    //Application.Current.MainPage = new RotaLimpa.Mvc.Views.Usuarios.Colaborador.Conta();
+                    //var detalhesColaboradorViewModel = new DetalhesColaboradorViewModel
+                    //{
+                    //    NomeCompleto = $"{mAutenticado.PNome} {mAutenticado.SNome}",
+                    //    NomeEmpresa = $" {mAutenticado.NomeEmpresa}",
+                    //    DataInclusao = $" {mAutenticado.Di_Colaborador}",
+                    //    SituacaoColab = $" {mAutenticado.StColaborador}",
+                    //    Cpf = $" {mAutenticado.Cpf}",
 
+                    //};
+
+                    //// Criar a página e atribuir o ViewModel
+                    //var detalhesColaboradorPage = new Conta
+                    //{
+                    //    BindingContext = detalhesColaboradorViewModel
+                    //};
+
+                    // Navegar para a nova página
                     await Application.Current.MainPage.Navigation.PushAsync(new RotaLimpa.Mvc.Views.Usuarios.Motorista.ListaTurno());
-                    //Application.Current.MainPage = new RotaLimpa.Mvc.Views.Usuarios.Motorista.ListaTurno();
                 }
                 else
                 {
@@ -287,7 +303,6 @@ namespace AppRpgEtec.ViewModels.Motoristas
                 await Application.Current.MainPage.DisplayAlert("Informação", ex.Message + " Detalhes: " + ex.InnerException, "Ok");
             }
         }
-
     }
 
 

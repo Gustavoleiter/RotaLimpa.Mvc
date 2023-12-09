@@ -43,18 +43,18 @@ namespace RotaLimpa.Mvc.ViewModels.Motoristas
             try
             {
 
-                ObservableCollection<string> latitudes = await uService.GetLongitudeAsync(int id);
-                List<Rota> rotas = new List<Rota>();
-                Map map = new Map();
+                //    ObservableCollection<string> latitudes = await uService.GetLongitudeAsync(int id);
+                //    List<Rota> rotas = new List<Rota>();
+                //    Map map = new Map();
 
-                foreach (Rota r in rotas)
-                {
-                    foreach (Rua r in  )
-                    if (r.Ruas.IdCEP.Latitude != null )
-                    {
+                //    foreach (Rota r in rotas)
+                //    {
+                //        foreach (Rua r in  )
+                //        if (r.Ruas.IdCEP.Latitude != null )
+                //        {
 
-                    }
-                }
+                //        }
+                //    }
             }
             catch (Exception)
             {
