@@ -10,7 +10,7 @@ namespace RotaLimpa.Mvc.Models
     {
         public int IdSetor { get; set; }
         public int IdFrota { get; set; }
-        public virtual Setor? Setor { get; set; }
-        public Frota? Frota { get; set; }
+        public Setor Setor { get; set; }
+        public Frota Frota { get; set; }
     }
 }
