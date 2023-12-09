@@ -15,7 +15,7 @@ namespace RotaLimpa.Mvc.ViewModels.Setores
 {
     [QueryProperty("SetorSelecionadoId", "sId")]
 
-    public class CadastroSetorViewModel : BaseViewModel
+    public class CadastroSetorMotoristaViewModel : BaseViewModel
     {
         private SetorService sService;
 
@@ -36,7 +36,7 @@ namespace RotaLimpa.Mvc.ViewModels.Setores
             }
         }
 
-        public CadastroSetorViewModel()
+        public CadastroSetorMotoristaViewModel()
         {
             sService = new SetorService();
             _ = ObterTiposServico();
@@ -45,7 +45,7 @@ namespace RotaLimpa.Mvc.ViewModels.Setores
             CancelarCommand = new Command(async () => CancelarCadastro());
         }
 
-        public CadastroSetorViewModel(Setor set)
+        public CadastroSetorMotoristaViewModel(Setor set)
         {
             sService = new SetorService();
 

@@ -1,11 +1,12 @@
-using AppRpgEtec.ViewModels.Setores;
+using RotaLimpa.Mvc.Models;
+using RotaLimpa.Mvc.ViewModels.Setores;
 
 namespace RotaLimpa.Mvc.Views.Usuarios.Colaborador;
 
 public partial class DetalhesSetor : ContentPage
 {
     CadastroSetorViewModel cadViewModel;
-    public DetalhesSetor(RotaLimpa.Mvc.Models.Setor setor)
+    public DetalhesSetor(Setor setor)
     {
         InitializeComponent();
         cadViewModel = new CadastroSetorViewModel(setor);

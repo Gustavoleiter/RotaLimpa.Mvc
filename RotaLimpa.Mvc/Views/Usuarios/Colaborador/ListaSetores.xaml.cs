@@ -1,5 +1,5 @@
 
-using AppRpgEtec.ViewModels.Setores;
+using RotaLimpa.Mvc.ViewModels.Setores;
 using RotaLimpa.Mvc.Models;
 using RotaLimpa.Mvc.ViewModels;
 using RotaLimpa.Mvc.ViewModels.Setores;

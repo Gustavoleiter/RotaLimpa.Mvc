@@ -38,48 +38,47 @@ namespace RotaLimpa.Mvc.ViewModels.Motoristas
             }
         }
 
-       
-
-        //public async void InicializarMapa(int id)
-        //{
-        //    try
-        //    {
-               
-        //        ObservableCollection<CEP> ocCEPs = await uService.GetCEPAsync(int id);
-        //        List<CEP> ceps = new List<CEP>(ocCEPs);
-        //        Map map = new Map();
-
-        //        var polyline = new Polyline();
-
-        //        foreach (CEP c in ceps)
-        //        {
-        //            if (c.latitude != null && c.longitude != null )
-        //            {
-        //                double latitude = (double)c.latitude;
-        //                double longitude = (double)c.longitude;
-        //                Location location = new Location(latitude, longitude);
-
-        //                Pin pinAtual = new Pin()
-        //                {
-        //                    Type = PinType.SavedPin,
-        //                    Label = c.Cidade,
-        //                    Address = $"{c.latitude}, {c.longitude}",
-        //                    Location = location
-        //                };
-        //                map.Pins.Add(pinAtual);
-        //            }
-
-        //            polyline.Geopath.Add(new Position(c.latitude, c.longitude));
-        //            map.MapElements.Add(polyline);
-        //        }
 
 
-        //    }
-        //    catch (Exception)
-        //    {
+        public async void InicializarMapa(int id)
+        {
+            try
+            {
+                int idRota = await uService.GetRotaSetorAsync(id);
+                ObservableCollection<CEP> ocCEPs = await uService.GetCEPAsync(idRota);
+                List<CEP> ceps = new List<CEP>(ocCEPs);
+                Map map = new Map();
 
-        //        throw;
-        //    }
-        //}
+                var polyline = new Polyline();
+
+                foreach (CEP c in ceps)
+                {
+                    if (c.latitude != null && c.longitude != null)
+                    {
+                        double latitude = (double)c.latitude;
+                        double longitude = (double)c.longitude;
+                        Location location = new Location(latitude, longitude);
+
+                        Pin pinAtual = new Pin()
+                        {
+                            Type = PinType.SavedPin,
+                            Label = c.Cidade,
+                            Address = $"{c.latitude}, {c.longitude}"
+                        };
+                        map.Pins.Add(pinAtual);
+                    }
+
+                    //polyline.Geopath.Add(new Position(c.latitude, c.longitude));
+                    //map.MapElements.Add(polyline);
+                }
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

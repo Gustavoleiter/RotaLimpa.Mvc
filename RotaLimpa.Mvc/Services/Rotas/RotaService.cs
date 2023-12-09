@@ -91,5 +91,12 @@ namespace RotaLimpa.Mvc.Services.Rotas
                 _request.GetAsync<ObservableCollection<CEP>>(apiUrlBase + urlComplementar);
             return listaCEPs;
         }
+
+        public async Task<int> GetRotaSetorAsync(int idSetor)
+        {
+            string urlComplementar = string.Format("/GetRotaSetor/{0}", idSetor);
+            int id = await _request.GetAsync<int>(apiUrlBase + urlComplementar);
+            return id;
+        }
     }
 }

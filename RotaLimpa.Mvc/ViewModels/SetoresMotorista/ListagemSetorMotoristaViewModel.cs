@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace RotaLimpa.Mvc.ViewModels.Setores
 {
-    public class ListagemSetorViewModel : BaseViewModel
+    public class ListagemSetorMotoristaViewModel : BaseViewModel
     {
         private SetorService setorService;
         
@@ -19,7 +19,7 @@ namespace RotaLimpa.Mvc.ViewModels.Setores
         public ObservableCollection<Setor> Setores { get; set;  }
         
 
-        public ListagemSetorViewModel()
+        public ListagemSetorMotoristaViewModel()
         {
             setorService = new SetorService();
             Setores = new ObservableCollection<Setor>();

@@ -1,4 +1,3 @@
-using AppRpgEtec.ViewModels.Setores;
 using RotaLimpa.Mvc.ViewModels.Setores;
 
 namespace RotaLimpa.Mvc.Views.Usuarios.Colaborador

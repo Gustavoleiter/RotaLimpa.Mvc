@@ -1,5 +1,6 @@
 using RotaLimpa.Mvc.Models;
 using RotaLimpa.Mvc.ViewModels.Motoristas;
+using RotaLimpa.Mvc.ViewModels.Setores;
 using RotaLimpa.Mvc.Views.Usuarios.Colaborador;
 
 
@@ -7,7 +8,9 @@ namespace RotaLimpa.Mvc.Views.Usuarios.Motorista;
 
 public partial class MapaView : ContentPage
 {
-    MapaViewModel viewModel; 
+    MapaViewModel viewModel;
+
+    ListagemSetorMotoristaViewModel setorViewModel;
     public MapaView()
     {
         InitializeComponent();
@@ -15,7 +18,9 @@ public partial class MapaView : ContentPage
 
         viewModel = new MapaViewModel();
         BindingContext = viewModel;
-        //viewModel.InicializarMapa(Rota.Id);
+        int id = 1;
+
+        viewModel.InicializarMapa(id);
 
     }
 
@@ -33,6 +38,6 @@ public partial class MapaView : ContentPage
 
     private async void AbrirMenu(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new RotaLimpa.Mvc.Views.Usuarios.Motorista.MenuRota());
+        await Navigation.PushAsync(new MenuRota());
     }
 }
