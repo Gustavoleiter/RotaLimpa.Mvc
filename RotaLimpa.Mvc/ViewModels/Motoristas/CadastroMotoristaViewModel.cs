@@ -291,7 +291,7 @@ namespace AppRpgEtec.ViewModels.Motoristas
                     //};
 
                     // Navegar para a nova página
-                    await Application.Current.MainPage.Navigation.PushAsync(new RotaLimpa.Mvc.Views.Usuarios.Motorista.ListaTurno());
+                    await Application.Current.MainPage.Navigation.PushAsync(new RotaLimpa.Mvc.Views.Usuarios.Motorista.MenuRota());
                 }
                 else
                 {

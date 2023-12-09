@@ -16,7 +16,7 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="450"/>
+                <RowDefinition Height="350"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -29,16 +29,16 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="25"/>
-                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="35"/>
                         <RowDefinition Height="2"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
-                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="55"/>
                         <RowDefinition Height="*"/>
-                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="55"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
-                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="0"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0"/>
@@ -46,16 +46,16 @@
                         <ColumnDefinition Width="0"/>
                     </Grid.ColumnDefinitions>
 
-                    <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" Text="ENTRAR" FontFamily="Comfortaa" 
+                    <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" Text="ENTRAR" FontFamily="Comfortaa-Bold" 
                        FontSize="22" TextColor="White" FontAttributes="Bold"/>
 
                     <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Color="White" BackgroundColor="White" />
 
-                    <Button Grid.Row="5" Grid.Column="1" Text="ACESSAR COMO MOTORISTA" FontSize="18" FontAttributes="Bold" TextColor="#FFFFFF" 
+                    <Button Grid.Row="5" Grid.Column="1" Text="ACESSAR COMO MOTORISTA" FontFamily="Comfortaa-Bold" FontSize="18" FontAttributes="Bold" TextColor="#FFFFFF" 
                          BackgroundColor="#32C84A" x:Name="BtnMotoristaView" Clicked="btnMotoristaView" />
 
 
-                    <Button Grid.Row="8" Grid.Column="1" Text="ACESSAR COMO GESTOR" FontSize="18" FontAttributes="Bold" TextColor="#FFFFFF" 
+                    <Button Grid.Row="7" Grid.Column="1" Text="ACESSAR COMO GESTOR" FontFamily="Comfortaa-Bold" FontSize="18" FontAttributes="Bold" TextColor="#FFFFFF" 
                         BackgroundColor="#32C84A" x:Name="BtnColaboradorView" Clicked="btnColaboradorView" />
 
 

@@ -9,8 +9,8 @@
 
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#02A3C7" Offset="0"/>
-            <GradientStop Color="#16A34A" Offset="1"/>
+            <GradientStop Color="#16A34A" Offset="0"/>
+            <GradientStop Color="#FFFFFF" Offset="1"/>
         </LinearGradientBrush>
     </ContentPage.Background>
 
@@ -28,11 +28,11 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Frame Grid.Column="1" Grid.Row="1" BackgroundColor="#0080C1" CornerRadius="3">
+            <Frame Grid.Column="1" Grid.Row="1" BackgroundColor="#FFFFFF" CornerRadius="3">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="25"/>
-                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="35"/>
                         <RowDefinition Height="2"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
@@ -41,7 +41,7 @@
                         <RowDefinition Height="45"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="50"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="55"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0"/>
@@ -49,19 +49,18 @@
                         <ColumnDefinition Width="0"/>
                     </Grid.ColumnDefinitions>
 
-                    <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" Text="ENTRAR" FontFamily="Comfortaa" 
-                           FontSize="22" TextColor="White" FontAttributes="Bold"/>
+                    <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" Text="ENTRAR" FontFamily="Comfortaa-Bold" 
+                           FontSize="22" TextColor="#32C84A"/>
 
-                    <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Color="White" BackgroundColor="White" />
+                    <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Color="#32C84A" BackgroundColor="White" />
 
-
-                    <Entry Grid.Row="5" Grid.Column="1" BackgroundColor="WhiteSmoke" FontSize="16" FontFamily="Comfortaa" 
+                    <Entry Grid.Row="5" Grid.Column="1" BackgroundColor="#D8D8D8" FontSize="16" FontFamily="Comfortaa-Bold" 
                            Placeholder="NRO IDENTIFICAÇÃO" PlaceholderColor="Gray" x:Name="user" Text="{Binding Login}"/>
 
-                    <Entry Grid.Row="7" Grid.Column="1" BackgroundColor="WhiteSmoke" FontSize="16" FontFamily="Comfortaa" 
+                    <Entry Grid.Row="7" Grid.Column="1" BackgroundColor="#D8D8D8" FontSize="16" FontFamily="Comfortaa-Bold" 
                            Placeholder="SENHA" PlaceholderColor="Gray" IsPassword="True" x:Name="senha" Text="{Binding Senha}"/>
 
-                    <Button Grid.Row="13" Grid.Column="1" Text="ACESSAR" FontSize="18" FontAttributes="Bold" TextColor="#0080C1" 
+                    <Button Grid.Row="11" Grid.Column="1" Text="ACESSAR" FontSize="18" FontFamily="Comfortaa-Bold" TextColor="#FFFFFF" 
                             BackgroundColor="#32C84A" x:Name="btnAutenticar" Command="{Binding AutenticarCommand}" />
 
 
