@@ -39,15 +39,29 @@ namespace RotaLimpa.Mvc.ViewModels.Motoristas
 
 
 
-        public async void InicializarMapa(int id)
+        public async void InicializarMapa()
         {
             try
             {
-                int idRota = await uService.GetRotaSetorAsync(id);
+                Location location = new Location(-23.5200241d, -46.596498d);
+                Pin pinEtec = new Pin()
+                {
+                    Type = PinType.Place,
+                    Label = "Etec Horácio",
+                    Address = "Rua alcântara, 113, Vila Guilherme",
+                    Location = location
+                };
+
+                Map map = new Map();
+                MapSpan mapSpan = MapSpan.FromCenterAndRadius(location, Distance.FromKilometers(5));
+                map.Pins.Add(pinEtec);
+                map.MoveToRegion(mapSpan);
+
+                RotaLimpaMapa = map;
+                /*int idRota = await uService.GetRotaSetorAsync(id);
                 ObservableCollection<CEP> ocCEPs = await uService.GetCEPAsync(idRota);
                 List<CEP> ceps = new List<CEP>(ocCEPs);
                 Map map = new Map();
-                MapSpan mapSpan = null;
 
 
                 foreach (CEP c in ceps)
@@ -67,12 +81,12 @@ namespace RotaLimpa.Mvc.ViewModels.Motoristas
 
                         map.Pins.Add(packMan);
                     }
-                }
+                }*/
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                await Application.Current.MainPage.DisplayAlert("Erro", ex.Message, "Ok");
             }
         }
 

@@ -291,7 +291,7 @@ namespace RotaLimpa.Mvc.ViewModels.Motoristas
                     //};
 
                     // Navegar para a nova página
-                    await Application.Current.MainPage.Navigation.PushAsync(new RotaLimpa.Mvc.Views.Usuarios.Motorista.MenuRota());
+                    await Application.Current.MainPage.Navigation.PushAsync(new RotaLimpa.Mvc.Views.Usuarios.Motorista.MapaView());
                 }
                 else
                 {

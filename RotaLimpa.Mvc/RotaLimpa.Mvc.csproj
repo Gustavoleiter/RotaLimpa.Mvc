@@ -100,6 +100,9 @@
 	  <MauiXaml Update="Views\Usuarios\Motorista\ListaTurno.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Usuarios\Motorista\MapaMotoristaView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Usuarios\Motorista\MapaView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

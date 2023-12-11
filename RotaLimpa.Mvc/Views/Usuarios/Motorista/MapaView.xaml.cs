@@ -4,6 +4,7 @@ using RotaLimpa.Mvc.ViewModels.Setores;
 using RotaLimpa.Mvc.Views.Usuarios.Colaborador;
 
 
+
 namespace RotaLimpa.Mvc.Views.Usuarios.Motorista;
 
 public partial class MapaView : ContentPage
@@ -14,15 +15,12 @@ public partial class MapaView : ContentPage
     public MapaView()
     {
         InitializeComponent();
-        MenuBtn.Clicked += AbrirMenu;
 
         viewModel = new MapaViewModel();
         BindingContext = viewModel;
-
-        int id = 1;
-
-        viewModel.InicializarMapa(id);
-
+        viewModel.InicializarMapa();
+        
+        MenuBtn.Clicked += AbrirMenu;
     }
 
     private framePhone FramePhone;

@@ -7,6 +7,7 @@
              NavigationPage.HasNavigationBar="False"
              Title="MapaView">
 
+
     <ContentPage.BackgroundColor>
         <Color>#DDDDDD</Color>
     </ContentPage.BackgroundColor>
@@ -25,8 +26,8 @@
                 <maps:Map.ItemTemplate>
                     <DataTemplate>
                         <maps:Pin Location="{Binding Location}"
-                          Address="{Binding Address}"
-                          Label="{Binding Label}"/>
+                                  Address="{Binding Address}"
+                                  Label="{Binding Label}"/>
                     </DataTemplate>
                 </maps:Map.ItemTemplate>
             </maps:Map>
