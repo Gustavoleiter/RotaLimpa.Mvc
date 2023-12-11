@@ -1,6 +1,3 @@
-
-
-using AppRpgEtec.ViewModels.Motoristas;
 using RotaLimpa.Mvc.ViewModels.Motoristas;
 
 namespace RotaLimpa.Mvc.Views.Usuarios.Motorista

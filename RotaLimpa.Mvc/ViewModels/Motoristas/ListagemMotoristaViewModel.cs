@@ -1,5 +1,4 @@
-﻿using AppRpgEtec.ViewModels.Motoristas;
-using RotaLimpa.Mvc.Models;
+﻿using RotaLimpa.Mvc.Models;
 using RotaLimpa.Mvc.Services.Motoristas; // Importe o serviço de Motoristas
 using RotaLimpa.Mvc.ViewModels;
 using RotaLimpa.Mvc.Views.Usuarios.Colaborador;

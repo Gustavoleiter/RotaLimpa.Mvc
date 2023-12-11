@@ -1,4 +1,3 @@
-using AppRpgEtec.ViewModels.Motoristas;
 using RotaLimpa.Mvc.ViewModels.Motoristas;
 
 
