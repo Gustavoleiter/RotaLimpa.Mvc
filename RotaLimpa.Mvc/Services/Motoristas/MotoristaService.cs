@@ -74,6 +74,9 @@ namespace RotaLimpa.Mvc.Services.Motoristas
         {
             try
             {
+                // Log para verificar os valores antes de enviar a solicitação
+
+
                 // Autenticar: Rota para o método na API que autentica com login e senha
                 string urlComplementar = $"/Authenticate";
                 m = await _request.PostAsync(apiUrlBase + urlComplementar, m);

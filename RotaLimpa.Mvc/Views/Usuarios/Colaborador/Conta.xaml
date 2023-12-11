@@ -62,11 +62,11 @@
                         
                     </HorizontalStackLayout>
 
-                    <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" Text="999.999.999.-00" FontSize="24" 
+                    <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" Text="{Binding Cpf, StringFormat='CPF: {0}'}" FontSize="24" 
                            FontFamily="Comfortaa" TextColor="Black"/>
                     <!--{Binding DcColaborador, StringFormat='DOCUMENTO: {0}'}-->
 
-                    <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" Text="ATIVO" FontSize="24" 
+                    <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" Text="{Binding SituacaoColab, StringFormat='SITUAÇÃO: {0}'}" FontSize="24" 
                            FontFamily="Comfortaa" TextColor="Black"/>
                     <!--{Binding StColaborador, StringFormat='STATUS: {0}'}-->
 

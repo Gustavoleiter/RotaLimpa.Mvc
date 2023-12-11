@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<networkconfig>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">rotalimpabanco.somee.com</domain>
+    </domain-config>
+</networkconfig>
