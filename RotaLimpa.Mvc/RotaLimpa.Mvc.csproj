@@ -54,8 +54,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Ellumination.Protobuf" Version="1.1.0.962" />
+		<PackageReference Include="GMap.NET.WindowsForms" Version="1.7.5" />
+		<PackageReference Include="Google.Maps" Version="0.12.0.36639" />
+		<PackageReference Include="Google.Maps.Routing.V2" Version="1.0.0-beta10" />
+		<PackageReference Include="IsraelHiking.GPSBabel" Version="1.5.4" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
-		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.96" />
+		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="8.0.3" />
+		<PackageReference Include="Microsoft.Maui.Maps" Version="8.0.3" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="System.ObjectModel" Version="4.3.0" />
 	</ItemGroup>

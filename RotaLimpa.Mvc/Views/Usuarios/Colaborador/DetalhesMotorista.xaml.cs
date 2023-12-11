@@ -1,11 +1,12 @@
-using AppRpgEtec.ViewModels.Motoristas;
+using RotaLimpa.Mvc.ViewModels.Motoristas;
+using RotaLimpa.Mvc.Models;
 
 namespace RotaLimpa.Mvc.Views.Usuarios.Colaborador;
 
 public partial class DetalhesMotorista : ContentPage
 {
     CadastroMotoristaViewModel cadViewModel;
-	public DetalhesMotorista(RotaLimpa.Mvc.Models.Motorista motorista)
+	public DetalhesMotorista(Models.Motorista motorista)
 	{
             InitializeComponent();
             cadViewModel = new CadastroMotoristaViewModel(motorista);

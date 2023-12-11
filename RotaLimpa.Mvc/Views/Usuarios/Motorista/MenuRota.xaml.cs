@@ -11,11 +11,11 @@ public partial class MenuRota : ContentPage
 
     private async void AbrirDetalhes(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new RotaLimpa.Mvc.Views.Usuarios.Motorista.DetalhesMenu());
+        await Navigation.PushAsync(new DetalhesMenu());
     }
 
     private async void AbrirMapa(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new RotaLimpa.Mvc.Views.Usuarios.Motorista.MapaView());
+        await Navigation.PushAsync(new MapaView());
     }
 }

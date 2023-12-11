@@ -18,6 +18,7 @@ public partial class MapaView : ContentPage
 
         viewModel = new MapaViewModel();
         BindingContext = viewModel;
+
         int id = 1;
 
         viewModel.InicializarMapa(id);

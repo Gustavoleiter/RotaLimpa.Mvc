@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 using RotaLimpa.Mvc;
 using RotaLimpa.Mvc.Views.Usuarios.Motorista;
 
-namespace AppRpgEtec.ViewModels.Motoristas
+namespace RotaLimpa.Mvc.ViewModels.Motoristas
 {
     [QueryProperty("MotoristaSelecionadoId", "mId")]
     public class CadastroMotoristaViewModel : BaseViewModel
